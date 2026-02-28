@@ -18,21 +18,14 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "Projects",
-          description: "A growing collection of your cool projects.",
+          description: "A growing collection of my cool projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "Education, research experience, technical skills, teaching, and awards.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
         },{id: "nav-teaching",
           title: "Teaching",
-          description: "Course materials, schedules, and resources for classes taught.",
+          description: "Courses for which I have served as a Teaching Assistant at the University of California, Riverside.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
@@ -401,51 +394,31 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-language-guided-image-editing-via-segmentation-amp-diffusion",
+          title: 'Language-Guided Image Editing via Segmentation &amp;amp; Diffusion',
+          description: "TLDR: Combines GroundingDINO + SAM with Stable Diffusion Inpainting to surgically edit arbitrary image regions using natural language — no masks needed.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+              window.location.href = "/projects/1_image_editing/";
+            },},{id: "projects-temporal-memory-in-deep-rl-benchmarking-dqn-vs-drqn-under-partial-observability",
+          title: 'Temporal Memory in Deep RL: Benchmarking DQN vs. DRQN under Partial Observability',
+          description: "TLDR: Demonstrates that augmenting Q-networks with LSTM memory (DRQN) yields significant performance gains over vanilla DQN in partially observable Atari environments.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+              window.location.href = "/projects/2_drqn_rl/";
+            },},{id: "projects-physics-faithful-rigid-body-simulation-with-impulse-based-collision-resolution",
+          title: 'Physics-Faithful Rigid Body Simulation with Impulse-Based Collision Resolution',
+          description: "TLDR: A custom physics engine implementing impulse-based collision and friction modeling, cross-validated against MuJoCo&#39;s built-in solver for accuracy and realism.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+              window.location.href = "/projects/3_rigidbody/";
+            },},{id: "projects-transformer-driven-person-re-identification-across-camera-views",
+          title: 'Transformer-Driven Person Re-Identification Across Camera Views',
+          description: "TLDR: Explores Vision Transformer architectures for robust cross-camera person re-identification, with attention mechanisms that capture global appearance cues invariant to viewpoint and occlusion.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+              window.location.href = "/projects/4_treid/";
+            },},{id: "projects-high-performance-three-way-dna-sequence-alignment-via-numba-accelerated-dynamic-programming",
+          title: 'High-Performance Three-Way DNA Sequence Alignment via Numba-Accelerated Dynamic Programming',
+          description: "TLDR: Memory-efficient 3D multiple sequence alignment using divide-and-conquer Needleman-Wunsch, accelerated with Numba JIT for production-grade throughput on large DNA sequences.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/5_compbio/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
