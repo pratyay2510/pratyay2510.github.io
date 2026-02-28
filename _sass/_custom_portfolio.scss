@@ -63,12 +63,23 @@ html {
   flex-shrink: 0;
 }
 
-.hero-image-wrap img {
-  width: 220px;
-  height: 220px;
+.hero-profile-img {
+  width: 360px;
+  height: 360px;
+  max-width: 85vw;
+  max-height: 85vw;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid var(--global-theme-color);
+}
+
+@media (min-width: 768px) {
+  .hero-profile-img {
+    width: 520px;
+    height: 520px;
+    max-width: 520px;
+    max-height: 520px;
+  }
 }
 
 .hero-text {
@@ -85,16 +96,24 @@ html {
 
 .hero-designation {
   font-size: 1.15rem;
+  color: var(--global-theme-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.hero-short-bio {
+  font-size: 0.95rem;
   color: var(--global-text-color-light);
-  margin: 0;
+  margin: 0 0 1.5rem 0;
+  max-width: 420px;
+  line-height: 1.5;
 }
 
 .hero-social-boxes {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  justify-content: center;
-  margin-top: 2.5rem;
+  justify-content: flex-start;
+  margin-top: 0;
   width: 100%;
 }
 
@@ -264,6 +283,13 @@ html {
 .navbar-light {
   background-color: var(--global-bg-color) !important;
   box-shadow: 0 1px 0 var(--global-divider-color);
+}
+
+/* Name at extreme left on Projects, Publications, etc. */
+.navbar-container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
