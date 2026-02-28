@@ -48,12 +48,16 @@
 
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              {{- about_title }}
-              {% if page.permalink == '/' %}
+            {% if page.permalink == '/' %}
+              <a class="nav-link" href="#about">
+                {{- about_title }}
                 <span class="sr-only">(current)</span>
-              {% endif %}
-            </a>
+              </a>
+            {% else %}
+              <a class="nav-link" href="{{ '/' | relative_url }}#about">
+                {{- about_title }}
+              </a>
+            {% endif %}
           </li>
 
           <!-- Other pages -->
