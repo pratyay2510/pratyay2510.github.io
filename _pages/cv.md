@@ -4,7 +4,7 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 5
-cv_pdf: resume-research.pdf
+cv_pdf: /assets/pdf/resume-research.pdf
 description: Education, research experience, technical skills, teaching, and awards.
 toc:
   sidebar: left

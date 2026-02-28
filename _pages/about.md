@@ -6,7 +6,7 @@ subtitle: Ph.D. Student in Computer Science | <a href="https://www.ucr.edu/">Uni
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: self.jpg
   image_circular: false
   more_info: >
     <p>Winston Chung Hall</p>
