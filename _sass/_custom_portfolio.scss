@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Custom portfolio: black background + lime green accents
+ * Custom portfolio: black background + sunrise yellow accents
  ******************************************************************************/
 @use "variables" as v;
 
-$lime: #b7d12a;
-$lime-bright: #c8e03a;
+$lime: #ffc94a;
+$lime-bright: #ffe48a;
 $black: #0a0a0a;
 
 :root,
@@ -125,7 +125,7 @@ html {
   border-radius: 999px;
   background: var(--global-card-bg-color);
   color: var(--global-theme-color);
-  border: 1px solid rgba(183, 209, 42, 0.35);
+  border: 1px solid rgba(255, 201, 74, 0.4);
   text-decoration: none;
   font-size: 0.95rem;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -324,7 +324,7 @@ html {
   height: 14px;
   border-radius: 50%;
   background: var(--global-theme-color);
-  box-shadow: 0 0 0 4px rgba(183, 209, 42, 0.15);
+  box-shadow: 0 0 0 4px rgba(255, 201, 74, 0.2);
   z-index: 1;
 }
 
@@ -438,8 +438,8 @@ html {
 }
 
 .skill-tag {
-  background: rgba(183, 209, 42, 0.1);
-  border: 1px solid rgba(183, 209, 42, 0.25);
+  background: rgba(255, 201, 74, 0.1);
+  border: 1px solid rgba(255, 201, 74, 0.25);
   color: var(--global-text-color-light);
   border-radius: 999px;
   padding: 0.2rem 0.7rem;
@@ -486,16 +486,16 @@ html {
   0%,
   100% {
     box-shadow:
-      0 0 10px 4px rgba(183, 209, 42, 0.45),
-      0 0 28px 8px rgba(183, 209, 42, 0.18);
-    background: #b7d12a;
+      0 0 10px 4px rgba(255, 201, 74, 0.6),
+      0 0 28px 8px rgba(255, 201, 74, 0.26);
+    background: #ffc94a;
   }
 
   50% {
     box-shadow:
-      0 0 26px 10px rgba(200, 224, 58, 0.78),
-      0 0 55px 22px rgba(183, 209, 42, 0.32);
-    background: #c8e03a;
+      0 0 26px 10px rgba(255, 228, 138, 0.9),
+      0 0 55px 22px rgba(255, 201, 74, 0.38);
+    background: #ffe48a;
   }
 }
 
@@ -524,7 +524,7 @@ html {
 
 .hero-social-link:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 10px 24px rgba(183, 209, 42, 0.35) !important;
+  box-shadow: 0 10px 24px rgba(255, 201, 74, 0.45) !important;
   background: var(--global-theme-color) !important;
   color: var(--global-hover-text-color) !important;
   border-color: var(--global-theme-color) !important;
@@ -591,14 +591,14 @@ html {
   height: 13px;
   border-radius: 50%;
   background: var(--global-theme-color);
-  box-shadow: 0 0 0 3px rgba(183, 209, 42, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 201, 74, 0.28);
   z-index: 1;
 }
 
 .pub-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(183, 209, 42, 0.18);
-  border-color: rgba(183, 209, 42, 0.38);
+  box-shadow: 0 8px 28px rgba(255, 201, 74, 0.26);
+  border-color: rgba(255, 201, 74, 0.45);
   text-decoration: none;
   color: inherit;
 }
@@ -608,8 +608,8 @@ html {
   width: 88px;
   height: 88px;
   border-radius: 10px;
-  background: rgba(183, 209, 42, 0.08);
-  border: 1px solid rgba(183, 209, 42, 0.18);
+  background: rgba(255, 201, 74, 0.08);
+  border: 1px solid rgba(255, 201, 74, 0.24);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -628,8 +628,8 @@ html {
 
 .pub-abbr {
   display: inline-block;
-  background: rgba(183, 209, 42, 0.12);
-  border: 1px solid rgba(183, 209, 42, 0.3);
+  background: rgba(255, 201, 74, 0.12);
+  border: 1px solid rgba(255, 201, 74, 0.34);
   color: var(--global-theme-color);
   font-size: 0.75rem;
   font-weight: 700;
@@ -734,7 +734,7 @@ html {
   border-radius: 16px;
   overflow: hidden;
   background: var(--global-card-bg-color);
-  border: 1px solid rgba(183, 209, 42, 0.15);
+  border: 1px solid rgba(255, 201, 74, 0.2);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   text-decoration: none;
   color: inherit;
@@ -748,9 +748,9 @@ html {
   transform: translateY(-8px);
   box-shadow:
     0 16px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(183, 209, 42, 0.35),
-    0 0 20px rgba(183, 209, 42, 0.12);
-  border-color: rgba(183, 209, 42, 0.45);
+    0 0 0 1px rgba(255, 201, 74, 0.5),
+    0 0 24px rgba(255, 201, 74, 0.2);
+  border-color: rgba(255, 201, 74, 0.6);
   text-decoration: none;
   color: inherit;
 }
@@ -813,8 +813,8 @@ html {
 }
 
 .proj-tag {
-  background: rgba(183, 209, 42, 0.1);
-  border: 1px solid rgba(183, 209, 42, 0.22);
+  background: rgba(255, 201, 74, 0.1);
+  border: 1px solid rgba(255, 201, 74, 0.28);
   color: var(--global-theme-color);
   border-radius: 999px;
   padding: 0.15rem 0.6rem;
