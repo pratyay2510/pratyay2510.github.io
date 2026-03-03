@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "Projects",
-          description: "A growing collection of my cool projects.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/projects/";
-          },
         },{id: "nav-teaching",
           title: "Teaching",
           description: "Courses for which I have served as a Teaching Assistant at the University of California, Riverside.",
@@ -394,28 +387,28 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-language-guided-image-editing-via-segmentation-amp-diffusion",
-          title: 'Language-Guided Image Editing via Segmentation &amp;amp; Diffusion',
+          section: "News",},{id: "projects-talk-to-segment",
+          title: 'Talk To Segment',
           description: "TLDR: Combines GroundingDINO + SAM with Stable Diffusion Inpainting to surgically edit arbitrary image regions using natural language — no masks needed.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_image_editing/";
-            },},{id: "projects-temporal-memory-in-deep-rl-benchmarking-dqn-vs-drqn-under-partial-observability",
-          title: 'Temporal Memory in Deep RL: Benchmarking DQN vs. DRQN under Partial Observability',
+            },},{id: "projects-remember-to-play",
+          title: 'Remember To Play',
           description: "TLDR: Demonstrates that augmenting Q-networks with LSTM memory (DRQN) yields significant performance gains over vanilla DQN in partially observable Atari environments.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_drqn_rl/";
-            },},{id: "projects-physics-faithful-rigid-body-simulation-with-impulse-based-collision-resolution",
-          title: 'Physics-Faithful Rigid Body Simulation with Impulse-Based Collision Resolution',
+            },},{id: "projects-impulseforge",
+          title: 'ImpulseForge',
           description: "TLDR: A custom physics engine implementing impulse-based collision and friction modeling, cross-validated against MuJoCo&#39;s built-in solver for accuracy and realism.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_rigidbody/";
-            },},{id: "projects-transformer-driven-person-re-identification-across-camera-views",
-          title: 'Transformer-Driven Person Re-Identification Across Camera Views',
+            },},{id: "projects-eyewitness",
+          title: 'EyeWitness',
           description: "TLDR: Explores Vision Transformer architectures for robust cross-camera person re-identification, with attention mechanisms that capture global appearance cues invariant to viewpoint and occlusion.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_treid/";
-            },},{id: "projects-high-performance-three-way-dna-sequence-alignment-via-numba-accelerated-dynamic-programming",
-          title: 'High-Performance Three-Way DNA Sequence Alignment via Numba-Accelerated Dynamic Programming',
+            },},{id: "projects-tristrand",
+          title: 'TriStrand',
           description: "TLDR: Memory-efficient 3D multiple sequence alignment using divide-and-conquer Needleman-Wunsch, accelerated with Numba JIT for production-grade throughput on large DNA sequences.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_compbio/";

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){AOS.init({duration:650,once:!0,easing:"ease-out-cubic",offset:60})});
