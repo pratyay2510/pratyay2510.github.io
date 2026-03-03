@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Temporal Memory in Deep RL: Benchmarking DQN vs. DRQN under Partial Observability"
+title: "Remember To Play"
 description: "TLDR: Demonstrates that augmenting Q-networks with LSTM memory (DRQN) yields significant performance gains over vanilla DQN in partially observable Atari environments."
 img: assets/img/projects/drqn-rl.png
 importance: 2

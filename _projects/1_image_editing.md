@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Language-Guided Image Editing via Segmentation & Diffusion"
+title: "Talk To Segment"
 description: "TLDR: Combines GroundingDINO + SAM with Stable Diffusion Inpainting to surgically edit arbitrary image regions using natural language — no masks needed."
 img: assets/img/12.jpg
 importance: 1

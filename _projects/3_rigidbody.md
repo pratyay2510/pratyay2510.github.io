@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Physics-Faithful Rigid Body Simulation with Impulse-Based Collision Resolution"
+title: "ImpulseForge"
 description: "TLDR: A custom physics engine implementing impulse-based collision and friction modeling, cross-validated against MuJoCo's built-in solver for accuracy and realism."
 img: assets/img/projects/rigidbody.png
 importance: 3

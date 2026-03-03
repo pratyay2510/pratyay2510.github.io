@@ -2,20 +2,22 @@
 layout: default
 ---
 <div class="home-sections">
-  <!-- Section 1: Hero - clean first screen -->
+  <!-- ── Section 1: Hero ───────────────────────────────────────────────── -->
   <section id="hero" class="hero-section">
     <div class="hero-inner">
-      <div class="hero-image-wrap">
+      <div class="hero-image-wrap hero-enter-right">
         {% if page.profile and page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          <img
-            src="{{ profile_image_path | relative_url | bust_file_cache }}"
-            alt="{{ site.first_name }} {{ site.last_name }}"
-            class="hero-profile-img"
-          >
+          <div class="hero-img-glow-wrap">
+            <img
+              src="{{ profile_image_path | relative_url | bust_file_cache }}"
+              alt="{{ site.first_name }} {{ site.last_name }}"
+              class="hero-profile-img"
+            >
+          </div>
         {% endif %}
       </div>
-      <div class="hero-text">
+      <div class="hero-text hero-enter-left">
         <h1 class="hero-name">
           {% if site.title == 'blank' %}
             {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}
@@ -56,14 +58,14 @@ layout: default
     </div>
   </section>
 
-  <!-- Section 2: About Me (card layout) -->
+  <!-- ── Section 2: About Me ───────────────────────────────────────────── -->
   <section id="about" class="about-section">
-    <h2>About Me</h2>
-    <div class="about-intro">
+    <h2 data-aos="fade-up">About Me</h2>
+    <div class="about-intro" data-aos="fade-up" data-aos-delay="100">
       {{ content }}
     </div>
 
-    <div class="about-grid">
+    <div class="about-grid" data-aos="fade-up" data-aos-delay="150">
       <div>
         <div class="achievement-cards">
           <div class="achievement-card">
@@ -93,29 +95,103 @@ layout: default
       </div>
     </div>
 
-    <div class="research-areas">
+    <!-- Research Areas -->
+    <div class="research-areas" data-aos="fade-up">
       <h3>Research Areas</h3>
       <div class="research-cards">
-        <div class="research-card">
+        <div class="research-card" data-aos="fade-up" data-aos-delay="100">
           <h4>Computer Vision</h4>
           <p>Developing algorithms for person re-identification, occlusion handling, and event-based vision using heat diffusion and transformer architectures.</p>
         </div>
-        <div class="research-card">
+        <div class="research-card" data-aos="fade-up" data-aos-delay="200">
           <h4>Deep Learning</h4>
           <p>Designing physics-based and diffusion models for feature inpainting, latent reconstruction, and robust representation learning.</p>
         </div>
-        <div class="research-card">
+        <div class="research-card" data-aos="fade-up" data-aos-delay="300">
           <h4>Physics-based Modeling</h4>
           <p>Applying anisotropic heat diffusion and PDE-inspired methods for information flow in neural networks and spatiotemporal representation learning.</p>
         </div>
       </div>
     </div>
 
-    <!-- Experience Section -->
-    <div class="timeline-section">
+    <!-- ── Publications ─────────────────────────────────────────────────── -->
+    <div class="pub-section" data-aos="fade-up">
+      <h3>Publications</h3>
+      <div class="pub-timeline">
+
+        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="100">
+          <div class="pub-img-wrap">
+            <i class="fa-solid fa-eye pub-img-icon"></i>
+          </div>
+          <div class="pub-content">
+            <span class="pub-abbr">TBIOM 2025</span>
+            <p class="pub-title">POANet: Parts-based Occlusion Aware Network for Person Re-ID</p>
+            <p class="pub-authors">Pratyay Dutta, Padmaja Jonnalagedda, Bir Bhanu</p>
+            <p class="pub-abstract">A parts-based occlusion-aware network for robust person re-identification, addressing partial visibility through structured part-level feature learning and attention-guided reconstruction.</p>
+          </div>
+          <span class="pub-year">2025</span>
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="200">
+          <div class="pub-img-wrap">
+            <i class="fa-solid fa-fire pub-img-icon"></i>
+          </div>
+          <div class="pub-content">
+            <span class="pub-abbr">Under Review 2025</span>
+            <p class="pub-title">A Physics-Based Anisotropic Heat Diffusion Framework for Enhanced Edge-Robust Spatiotemporal Representation Learning</p>
+            <p class="pub-authors">Pratyay Dutta, Bir Bhanu</p>
+            <p class="pub-abstract">A novel framework replacing self-attention in Vision Transformers with anisotropic heat diffusion, enabling gradient-aware information flow for event-based data with edge-robust spatiotemporal representation learning.</p>
+          </div>
+          <span class="pub-year">2025</span>
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="100">
+          <div class="pub-img-wrap">
+            <i class="fa-solid fa-wand-magic-sparkles pub-img-icon"></i>
+          </div>
+          <div class="pub-content">
+            <span class="pub-abbr">TCSVT 2025</span>
+            <p class="pub-title">Latent Diffusion-Guided Feature Inpainting for Occluded Person Re-Identification With Hybrid Re-Ranking</p>
+            <p class="pub-authors">Pratyay Dutta, Bir Bhanu</p>
+            <p class="pub-abstract">A robust feature inpainting method using a modified reconstruction loss in the denoising objective to obtain clean feature representations from occluded inputs for downstream vision tasks.</p>
+          </div>
+          <span class="pub-year">2025</span>
+        </a>
+
+        <a href="https://ieeexplore.ieee.org/document/9923440" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="200">
+          <div class="pub-img-wrap">
+            <i class="fa-solid fa-syringe pub-img-icon"></i>
+          </div>
+          <div class="pub-content">
+            <span class="pub-abbr">TCBB 2022</span>
+            <p class="pub-title">Hierarchical Vaccine Allocation based on Epidemiological and Behavioral Considerations</p>
+            <p class="pub-authors">Satyaki Roy, Pratyay Dutta, Preetam Ghosh</p>
+            <p class="pub-abstract">An optimized hierarchical vaccine distribution strategy incorporating epidemiological and behavioral factors with clustering-based zone allocation for improved vaccine redistribution across demographics.</p>
+          </div>
+          <span class="pub-year">2022</span>
+        </a>
+
+        <a href="https://ieeexplore.ieee.org/document/9669600" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="100">
+          <div class="pub-img-wrap">
+            <i class="fa-solid fa-virus pub-img-icon"></i>
+          </div>
+          <div class="pub-content">
+            <span class="pub-abbr">BIBM 2021</span>
+            <p class="pub-title">Generalizable Multi-Vaccine Distribution Strategy based on Demographic and Behavioral Heterogeneity</p>
+            <p class="pub-authors">Satyaki Roy, Pratyay Dutta, Preetam Ghosh</p>
+            <p class="pub-abstract">A generalizable multi-vaccine distribution strategy using linear optimization and clustering algorithms to address demographic and behavioral heterogeneity across geographic zones.</p>
+          </div>
+          <span class="pub-year">2021</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── Experience ───────────────────────────────────────────────────── -->
+    <div class="timeline-section" data-aos="fade-up">
       <h3>Experience</h3>
       <div class="timeline">
-        <div class="timeline-item">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
           <span class="timeline-year">2023 –<br>Present</span>
           <div class="timeline-content">
             <p class="timeline-title">Research Assistant</p>
@@ -123,7 +199,7 @@ layout: default
             <p class="timeline-desc">Conducting research under Dr. Bir Bhanu on event-based vision with anisotropic heat diffusion, virtual cloth try-off using Stable Diffusion, and latent diffusion-guided feature inpainting for occluded person re-identification.</p>
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
           <span class="timeline-year">Jun –<br>Aug 2022</span>
           <div class="timeline-content">
             <p class="timeline-title">Research Intern</p>
@@ -131,7 +207,7 @@ layout: default
             <p class="timeline-desc">Built a predictive modeling pipeline on Lichess chess data and trained a PPO-based RL agent capable of defeating amateur players below a target FIDE rating, under Dr. Yannick Marchand.</p>
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
           <span class="timeline-year">Jun –<br>Nov 2021</span>
           <div class="timeline-content">
             <p class="timeline-title">Research Intern</p>
@@ -142,11 +218,11 @@ layout: default
       </div>
     </div>
 
-    <!-- Awards Section -->
-    <div class="timeline-section">
+    <!-- ── Awards ───────────────────────────────────────────────────────── -->
+    <div class="timeline-section" data-aos="fade-up">
       <h3>Awards &amp; Honors</h3>
       <div class="timeline">
-        <div class="timeline-item">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
           <span class="timeline-year">2023</span>
           <div class="timeline-content">
             <p class="timeline-title">Dean's Fellowship</p>
@@ -154,7 +230,7 @@ layout: default
             <p class="timeline-desc">Awarded for outstanding research acumen upon admission. Acceptance rate: 15%.</p>
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
           <span class="timeline-year">2020</span>
           <div class="timeline-content">
             <p class="timeline-title">MITACS Fellowship</p>
@@ -162,7 +238,7 @@ layout: default
             <p class="timeline-desc">Funded summer research internship at Dalhousie University, Canada. Acceptance rate: 18%.</p>
           </div>
         </div>
-        <div class="timeline-item">
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
           <span class="timeline-year">2019</span>
           <div class="timeline-content">
             <p class="timeline-title">Bishop Thoburn Award — Student of the Year</p>
@@ -173,11 +249,11 @@ layout: default
       </div>
     </div>
 
-    <!-- Skills Section -->
-    <div class="skills-section">
+    <!-- ── Skills ───────────────────────────────────────────────────────── -->
+    <div class="skills-section" data-aos="fade-up">
       <h3>Technical Skills</h3>
       <div class="skills-grid">
-        <div class="skill-group">
+        <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
           <span class="skill-label"><i class="fa-solid fa-code"></i> Languages</span>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
@@ -187,7 +263,7 @@ layout: default
             <span class="skill-tag">SQL</span>
           </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
           <span class="skill-label"><i class="fa-solid fa-book"></i> Libraries &amp; Frameworks</span>
           <div class="skill-tags">
             <span class="skill-tag">PyTorch</span>
@@ -198,7 +274,7 @@ layout: default
             <span class="skill-tag">Matplotlib</span>
           </div>
         </div>
-        <div class="skill-group">
+        <div class="skill-group" data-aos="fade-up" data-aos-delay="300">
           <span class="skill-label"><i class="fa-solid fa-screwdriver-wrench"></i> Developer Tools</span>
           <div class="skill-tags">
             <span class="skill-tag">Git</span>
@@ -211,5 +287,89 @@ layout: default
         </div>
       </div>
     </div>
+
+    <!-- ── Projects ─────────────────────────────────────────────────────── -->
+    <div class="home-projects-section" data-aos="fade-up">
+      <h3>Projects</h3>
+      <div class="home-projects-grid">
+
+        <a href="https://github.com/pratyay2510/Image-Editing" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="proj-card-img" style="background: linear-gradient(135deg, #1a2a0a 0%, #2d4a12 100%);">
+            <i class="fa-solid fa-wand-magic-sparkles proj-card-icon"></i>
+          </div>
+          <div class="proj-card-body">
+            <h4 class="proj-card-title">Talk To Segment</h4>
+            <p class="proj-card-tldr">Edit any image region using natural language — no masks needed. GroundingDINO + SAM + Stable Diffusion.</p>
+            <div class="proj-card-tags">
+              <span class="proj-tag">PyTorch</span>
+              <span class="proj-tag">SAM</span>
+              <span class="proj-tag">Diffusion</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/pratyay2510/DRQN_RL" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="proj-card-img" style="background: #0a0a0a;">
+            <img src="{{ 'assets/img/projects/drqn-rl.png' | relative_url }}" alt="Remember To Play" class="proj-card-thumbnail">
+          </div>
+          <div class="proj-card-body">
+            <h4 class="proj-card-title">Remember To Play</h4>
+            <p class="proj-card-tldr">DRQN vs DQN on Atari — proving recurrent memory beats memoryless agents in partially observable environments.</p>
+            <div class="proj-card-tags">
+              <span class="proj-tag">PyTorch</span>
+              <span class="proj-tag">LSTM</span>
+              <span class="proj-tag">RL</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/pratyay2510/RigidBody-Simulation" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="proj-card-img" style="background: #0a0a0a;">
+            <img src="{{ 'assets/img/projects/rigidbody.png' | relative_url }}" alt="ImpulseForge" class="proj-card-thumbnail">
+          </div>
+          <div class="proj-card-body">
+            <h4 class="proj-card-title">ImpulseForge</h4>
+            <p class="proj-card-tldr">Custom impulse-based physics engine cross-validated against MuJoCo's native solver. Collision, friction, and stacking.</p>
+            <div class="proj-card-tags">
+              <span class="proj-tag">MuJoCo</span>
+              <span class="proj-tag">NumPy</span>
+              <span class="proj-tag">Physics</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/pratyay2510/Treid" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="proj-card-img" style="background: linear-gradient(135deg, #0a1a2a 0%, #122a40 100%);">
+            <i class="fa-solid fa-person-walking-arrow-loop-left proj-card-icon"></i>
+          </div>
+          <div class="proj-card-body">
+            <h4 class="proj-card-title">EyeWitness</h4>
+            <p class="proj-card-tldr">Transformer-powered person re-identification across non-overlapping camera views using global attention and triplet loss.</p>
+            <div class="proj-card-tags">
+              <span class="proj-tag">ViT</span>
+              <span class="proj-tag">Triplet Loss</span>
+              <span class="proj-tag">ReID</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/pratyay2510/Computational-Bio" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="proj-card-img" style="background: linear-gradient(135deg, #0a1a0a 0%, #1a3020 100%);">
+            <i class="fa-solid fa-dna proj-card-icon"></i>
+          </div>
+          <div class="proj-card-body">
+            <h4 class="proj-card-title">TriStrand</h4>
+            <p class="proj-card-tldr">Numba-accelerated 3D Needleman-Wunsch alignment of three DNA sequences using divide-and-conquer DP. Near-C speed.</p>
+            <div class="proj-card-tags">
+              <span class="proj-tag">Numba</span>
+              <span class="proj-tag">NumPy</span>
+              <span class="proj-tag">Bioinformatics</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
   </section>
 </div>

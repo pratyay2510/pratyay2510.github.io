@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Transformer-Driven Person Re-Identification Across Camera Views"
+title: "EyeWitness"
 description: "TLDR: Explores Vision Transformer architectures for robust cross-camera person re-identification, with attention mechanisms that capture global appearance cues invariant to viewpoint and occlusion."
 img: assets/img/11.jpg
 importance: 4

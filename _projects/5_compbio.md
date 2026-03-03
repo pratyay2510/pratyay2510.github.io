@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "High-Performance Three-Way DNA Sequence Alignment via Numba-Accelerated Dynamic Programming"
+title: "TriStrand"
 description: "TLDR: Memory-efficient 3D multiple sequence alignment using divide-and-conquer Needleman-Wunsch, accelerated with Numba JIT for production-grade throughput on large DNA sequences."
 img: assets/img/7.jpg
 importance: 5
