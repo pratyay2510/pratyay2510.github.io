@@ -119,7 +119,7 @@ layout: default
       <h3>Publications</h3>
       <div class="pub-timeline">
 
-        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="100">
+        <a href="https://ieeexplore.ieee.org/abstract/document/11278837/" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="100">
           <div class="pub-img-wrap">
             <i class="fa-solid fa-eye pub-img-icon"></i>
           </div>
@@ -132,20 +132,7 @@ layout: default
           <span class="pub-year">2025</span>
         </a>
 
-        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="200">
-          <div class="pub-img-wrap">
-            <i class="fa-solid fa-fire pub-img-icon"></i>
-          </div>
-          <div class="pub-content">
-            <span class="pub-abbr">Under Review 2025</span>
-            <p class="pub-title">A Physics-Based Anisotropic Heat Diffusion Framework for Enhanced Edge-Robust Spatiotemporal Representation Learning</p>
-            <p class="pub-authors">Pratyay Dutta, Bir Bhanu</p>
-            <p class="pub-abstract">A novel framework replacing self-attention in Vision Transformers with anisotropic heat diffusion, enabling gradient-aware information flow for event-based data with edge-robust spatiotemporal representation learning.</p>
-          </div>
-          <span class="pub-year">2025</span>
-        </a>
-
-        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="100">
+        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="150">
           <div class="pub-img-wrap">
             <i class="fa-solid fa-wand-magic-sparkles pub-img-icon"></i>
           </div>
@@ -153,7 +140,20 @@ layout: default
             <span class="pub-abbr">TCSVT 2025</span>
             <p class="pub-title">Latent Diffusion-Guided Feature Inpainting for Occluded Person Re-Identification With Hybrid Re-Ranking</p>
             <p class="pub-authors">Pratyay Dutta, Bir Bhanu</p>
-            <p class="pub-abstract">A robust feature inpainting method using a modified reconstruction loss in the denoising objective to obtain clean feature representations from occluded inputs for downstream vision tasks.</p>
+            <p class="pub-abstract">Our De-Occluder (DDO) uses AI to "fill in" hidden parts of a person's image, allowing for accurate identification even when someone is partially blocked. Combined with a smart re-ranking system, it achieves state-of-the-art results in identifying people through dense crowds.</p>
+          </div>
+          <span class="pub-year">2025</span>
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=TxKX5p8AAAAJ" target="_blank" rel="noopener noreferrer" class="pub-item" data-aos="fade-left" data-aos-delay="200">
+          <div class="pub-img-wrap">
+            <i class="fa-solid fa-fire pub-img-icon"></i>
+          </div>
+          <div class="pub-content">
+            <span class="pub-abbr">Under Review 2025</span>
+            <p class="pub-title">SAKE: Structure Aware Kernel Experts for Event-Based Object Detection</p>
+            <p class="pub-authors">Pratyay Dutta, Bir Bhanu</p>
+            <p class="pub-abstract">SAKE replaces heavy AI calculations with a heat-flow mechanism that mimics how information spreads along the edges of objects. This physics-inspired approach allows the model to "see" clearly in low light or fast motion with much less computing power.</p>
           </div>
           <span class="pub-year">2025</span>
         </a>
@@ -208,7 +208,7 @@ layout: default
           </div>
         </div>
         <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-          <span class="timeline-year">Jun –<br>Nov 2021</span>
+          <span class="timeline-year">Jun 2020 –<br>Nov 2021</span>
           <div class="timeline-content">
             <p class="timeline-title">Research Intern</p>
             <p class="timeline-org">Virginia Commonwealth University, USA</p>
@@ -309,8 +309,8 @@ layout: default
         </a>
 
         <a href="https://github.com/pratyay2510/DRQN_RL" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="proj-card-img" style="background: #0a0a0a;">
-            <img src="{{ 'assets/img/projects/drqn-rl.png' | relative_url }}" alt="Remember To Play" class="proj-card-thumbnail">
+          <div class="proj-card-img" style="background: linear-gradient(135deg, #050b1a 0%, #1a2b4a 100%);">
+            <i class="fa-solid fa-gamepad proj-card-icon"></i>
           </div>
           <div class="proj-card-body">
             <h4 class="proj-card-title">Remember To Play</h4>
@@ -324,8 +324,8 @@ layout: default
         </a>
 
         <a href="https://github.com/pratyay2510/RigidBody-Simulation" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="300">
-          <div class="proj-card-img" style="background: #0a0a0a;">
-            <img src="{{ 'assets/img/projects/rigidbody.png' | relative_url }}" alt="ImpulseForge" class="proj-card-thumbnail">
+          <div class="proj-card-img" style="background: linear-gradient(135deg, #190f02 0%, #4a2e0b 100%);">
+            <i class="fa-solid fa-cubes proj-card-icon"></i>
           </div>
           <div class="proj-card-body">
             <h4 class="proj-card-title">ImpulseForge</h4>
@@ -368,6 +368,34 @@ layout: default
           </div>
         </a>
 
+      </div>
+    </div>
+
+    <!-- ── Signature / Contact ───────────────────────────────────────────── -->
+    <div class="home-footer-section" data-aos="fade-up">
+      <h2 class="home-footer-name">{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}</h2>
+      <p class="home-footer-tagline">
+        Ph.D. student in Computer Science, building vision systems at the intersection of physics and deep learning.
+      </p>
+      <div class="hero-social-boxes home-footer-links">
+        {% assign socials = site.data.socials %}
+        {% if socials.github_username %}
+          <a class="hero-social-link" href="https://github.com/{{ socials.github_username }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+        {% endif %}
+        {% if socials.linkedin_username %}
+          <a class="hero-social-link" href="https://www.linkedin.com/in/{{ socials.linkedin_username }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+        {% endif %}
+        {% if socials.email %}
+          <a class="hero-social-link" href="mailto:{{
+            socials.email
+          }}">
+            <i class="fa-solid fa-envelope"></i> Email
+          </a>
+        {% endif %}
       </div>
     </div>
 

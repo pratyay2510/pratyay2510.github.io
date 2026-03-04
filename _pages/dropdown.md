@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Submenus
+title: More of me
 nav: true
 nav_order: 8
 dropdown: true

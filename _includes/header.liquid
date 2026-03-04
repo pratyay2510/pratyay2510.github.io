@@ -40,22 +40,23 @@
         <span class="icon-bar bottom-bar"></span>
       </button>
 
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav flex-nowrap">
           {% for page in site.pages %}
             {% if page.permalink == '/' %} {% assign about_title = page.title %} {% endif %}
           {% endfor %}
 
-          <!-- About -->
+          <!-- Home / About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             {% if page.permalink == '/' %}
               <a class="nav-link" href="#about">
-                {{- about_title }}
+                <i class="fa-solid fa-house"></i>
                 <span class="sr-only">(current)</span>
               </a>
             {% else %}
               <a class="nav-link" href="{{ '/' | relative_url }}#about">
-                {{- about_title }}
+                <i class="fa-solid fa-house"></i>
+                <span class="sr-only">{{ about_title }}</span>
               </a>
             {% endif %}
           </li>

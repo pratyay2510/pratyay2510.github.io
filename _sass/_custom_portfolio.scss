@@ -156,7 +156,7 @@ html {
 
 .about-intro {
   color: var(--global-text-color-light);
-  max-width: 720px;
+  max-width: 900px;
   margin: 0 auto 2.5rem;
   line-height: 1.7;
   text-align: left;
@@ -444,6 +444,32 @@ html {
   border-radius: 999px;
   padding: 0.2rem 0.7rem;
   font-size: 0.8rem;
+}
+
+/* ── Home footer signature section ─────────────────────────────────────── */
+
+.home-footer-section {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.home-footer-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.35rem;
+}
+
+.home-footer-tagline {
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  max-width: 540px;
+  margin: 0 auto 1.6rem;
+}
+
+.home-footer-links {
+  justify-content: center;
 }
 
 /* ── Hero entrance animations ─────────────────────────────────────────── */

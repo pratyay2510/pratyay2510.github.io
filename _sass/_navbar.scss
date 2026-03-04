@@ -48,6 +48,27 @@
   }
 }
 
+/* Center navbar items on larger screens */
+@media (min-width: 576px) {
+  #navbarNav {
+    justify-content: center;
+  }
+}
+
+/* Show dropdown on hover for “More of me” and other dropdowns */
+.navbar .dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.navbar .dropdown-toggle::after {
+  transition: transform 0.15s ease-in-out;
+}
+
+.navbar .dropdown.show .dropdown-toggle::after,
+.navbar .dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
 .navbar.navbar-light {
   a {
     &:hover {
