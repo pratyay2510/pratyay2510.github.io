@@ -7,7 +7,7 @@ short_bio: Specializing in Computer Vision, Deep Learning, and Physics-based Mod
 
 profile:
   align: left
-  image: self.jpg
+  image: self.jpeg
   image_circular: true
   more_info: ""
 
