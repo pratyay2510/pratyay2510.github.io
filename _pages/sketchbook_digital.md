@@ -2,7 +2,7 @@
 layout: page
 title: Digital Art
 permalink: /digital-art/
-description: A collection of digital artwork.
+description: A collection of my digital artwork. All in Procreate!
 nav: false
 ---
 
