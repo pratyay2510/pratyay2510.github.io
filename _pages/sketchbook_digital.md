@@ -66,7 +66,7 @@ nav: false
 
   /* ── Image wrapper ──────────────────────────────────────── */
   .art-img-wrapper {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 5;
     background-color: var(--global-code-bg-color);
     border-radius: 8px;
     overflow: hidden;
@@ -113,44 +113,93 @@ nav: false
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Digital art piece 1" loading="lazy">
+      <img src="{{ '/assets/img/art/digital/piece-2.png' | relative_url }}" alt="Digital art piece 2" loading="lazy">
     </div>
-    <figcaption>Layered texture study — Procreate</figcaption>
+    <figcaption>Tried some color blocking!</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Digital art piece 2" loading="lazy">
+      <img src="{{ '/assets/img/art/digital/piece-3.png' | relative_url }}" alt="Digital art piece 3" loading="lazy">
     </div>
-    <figcaption>Character concept sketch — digital medium</figcaption>
+    <figcaption>Inspired from Laura Castellano in Doctors by Erich Segal</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Digital art piece 3" loading="lazy">
+      <img src="{{ '/assets/img/art/digital/piece-4.png' | relative_url }}" alt="Digital art piece 4" loading="lazy">
     </div>
-    <figcaption>Environmental mood piece</figcaption>
+    <figcaption>Sukuna in his full glamour</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Digital art piece 4" loading="lazy">
+      <img src="{{ '/assets/img/art/digital/piece-5.png' | relative_url }}" alt="Digital art piece 5" loading="lazy">
     </div>
-    <figcaption>Abstract color exploration</figcaption>
+    <figcaption>More color blocking. I love this piece so much.</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Digital art piece 5" loading="lazy">
+      <img src="{{ '/assets/img/art/digital/piece-6.png' | relative_url }}" alt="Digital art piece 6" loading="lazy">
     </div>
-    <figcaption>Stylized portrait — digital watercolor</figcaption>
+    <figcaption>"Say my name"</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Digital art piece 6" loading="lazy">
+      <img src="{{ '/assets/img/art/digital/piece-7.png' | relative_url }}" alt="Digital art piece 7" loading="lazy">
     </div>
-    <figcaption>Sci-fi environment concept</figcaption>
+    <figcaption>Proof that Tony Stark has a heart.</figcaption>
+  </figure>
+
+  <figure class="art-piece">
+    <div class="art-img-wrapper">
+      <img src="{{ '/assets/img/art/digital/piece-8.png' | relative_url }}" alt="Digital art piece 8" loading="lazy">
+    </div>
+    <figcaption>Inspiration from Rennaissance</figcaption>
+  </figure>
+
+  <figure class="art-piece">
+    <div class="art-img-wrapper">
+      <img src="{{ '/assets/img/art/digital/piece-9.png' | relative_url }}" alt="Digital art piece 9" loading="lazy">
+    </div>
+    <figcaption>Marylin Monroe cna never not be iconic!</figcaption>
+  </figure>
+
+  <figure class="art-piece">
+    <div class="art-img-wrapper">
+      <img src="{{ '/assets/img/art/digital/piece-10.png' | relative_url }}" alt="Digital art piece 10" loading="lazy">
+    </div>
+    <figcaption>Mandalorian</figcaption>
+  </figure>
+
+  <figure class="art-piece">
+    <div class="art-img-wrapper">
+      <img src="{{ '/assets/img/art/digital/piece-11.png' | relative_url }}" alt="Digital art piece 11" loading="lazy">
+    </div>
+    <figcaption>"Lets put a smile on that face"</figcaption>
+  </figure>
+
+  <figure class="art-piece">
+    <div class="art-img-wrapper">
+      <img src="{{ '/assets/img/art/digital/piece-12.png' | relative_url }}" alt="Digital art piece 12" loading="lazy">
+    </div>
+    <figcaption>Mi amor :3</figcaption>
+  </figure>
+
+  <figure class="art-piece">
+    <div class="art-img-wrapper">
+      <img src="{{ '/assets/img/art/digital/piece-13.png' | relative_url }}" alt="Digital art piece 13" loading="lazy">
+    </div>
+    <figcaption>Naruto</figcaption>
+  </figure>
+
+  <figure class="art-piece">
+    <div class="art-img-wrapper">
+      <img src="{{ '/assets/img/art/digital/piece-14.png' | relative_url }}" alt="Digital art piece 14" loading="lazy">
+    </div>
+    <figcaption>" Shinzo wo Sasageyo!!""</figcaption>
   </figure>
 
 </div>

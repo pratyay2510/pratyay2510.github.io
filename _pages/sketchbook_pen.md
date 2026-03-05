@@ -66,7 +66,7 @@ nav: false
 
   /* ── Image wrapper ──────────────────────────────────────── */
   .art-img-wrapper {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4 / 5;
     background-color: var(--global-code-bg-color);
     border-radius: 8px;
     overflow: hidden;
