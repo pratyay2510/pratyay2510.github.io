@@ -23,6 +23,20 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/books/";
               },
+            },{id: "dropdown-pen-art",
+              title: "Pen Art",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/pen-art/";
+              },
+            },{id: "dropdown-digital-art",
+              title: "Digital Art",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/digital-art/";
+              },
             },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
