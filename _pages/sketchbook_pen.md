@@ -113,44 +113,44 @@ nav: false
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Pen art piece 1" loading="lazy">
+      <img src="{{ '/assets/img/art/pen/piece-9.jpg' | relative_url }}" alt="Pen art piece 1" loading="lazy">
     </div>
-    <figcaption>A quiet afternoon study — ink on paper</figcaption>
+    <figcaption>Stippling. 'Only time heals certain wounds'</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Pen art piece 2" loading="lazy">
+      <img src="{{ '/assets/img/art/pen/piece-1.jpg' | relative_url }}" alt="Pen art piece 2" loading="lazy">
     </div>
-    <figcaption>Urban skyline series — fine liner on cartridge paper</figcaption>
+    <figcaption>A Victorian lady</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Pen art piece 3" loading="lazy">
+      <img src="{{ '/assets/img/art/pen/piece-2.jpg' | relative_url }}" alt="Pen art piece 3" loading="lazy">
     </div>
-    <figcaption>Crosshatch portrait study</figcaption>
+    <figcaption>Breaking the fourth wall</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Pen art piece 4" loading="lazy">
+      <img src="{{ '/assets/img/art/pen/piece-3.jpg' | relative_url }}" alt="Pen art piece 4" loading="lazy">
     </div>
-    <figcaption>Botanical illustration — ink on bristol board</figcaption>
+    <figcaption>Till death do us part</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Pen art piece 5" loading="lazy">
+      <img src="{{ '/assets/img/art/pen/piece-8.jpg' | relative_url }}" alt="Pen art piece 5" loading="lazy">
     </div>
-    <figcaption>Abstract geometric composition</figcaption>
+    <figcaption>Mariam from 'A Thousand Splendid Suns'</figcaption>
   </figure>
 
   <figure class="art-piece">
     <div class="art-img-wrapper">
-      <img src="{{ '/assets/img/art/placeholder.svg' | relative_url }}" alt="Pen art piece 6" loading="lazy">
+      <img src="{{ '/assets/img/art/pen/piece-4.jpg' | relative_url }}" alt="Pen art piece 6" loading="lazy">
     </div>
-    <figcaption>Landscape sketch — field study in pen</figcaption>
+    <figcaption>Abstraction on the ferocity of women</figcaption>
   </figure>
 
 </div>
