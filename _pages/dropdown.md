@@ -8,4 +8,8 @@ children:
   - title: Bookshelf
     permalink: /books/
   - title: divider
+  - title: Pen Art
+    permalink: /pen-art/
+  - title: Digital Art
+    permalink: /digital-art/
 ---
