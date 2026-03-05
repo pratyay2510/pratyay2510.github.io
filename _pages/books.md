@@ -27,6 +27,9 @@ nav: false
 - **One Hundred Years of Solitude** — Gabriel García Márquez  
 - **Chronicle of a Death Foretold** — Gabriel García Márquez  
 - **The General in His Labyrinth** — Gabriel García Márquez  
+- **The Namesake** — Jhumpa Lahiri  
+- **Metamorphosis** — Franz Kafka  
+- **Norwegian Wood** — Haruki Murakami  
 
 ## Mythology & Retellings
 
@@ -40,12 +43,19 @@ nav: false
 ## Thrillers & Mystery
 
 - **The Last Don** — Mario Puzo  
+- **The Godfather** — Mario Puzo
+- **Calcutta Chromosome** - Amitav Ghosh  
 - **The Fourth Protocol** — Frederick Forsyth  
 - **The Day of the Jackal** — Frederick Forsyth  
 - **The Da Vinci Code** — Dan Brown  
 - **Angels & Demons** — Dan Brown  
 - **Inferno** — Dan Brown  
 - **Deception Point** — Dan Brown  
+- **Eye of the Needle** — Ken Follet  
+- **Murder on the Orient Express** — Agatha Christie  
+- **The Murder of Roger Ackroyd** — Agatha Christie  
+- **Death on the Nile** — Agatha Christie  
+- **The Cuckoo's Calling** — Robert Galbraith  
 
 ## Young Adult & Fantasy Series
 
@@ -53,3 +63,12 @@ nav: false
 - **Percy Jackson and the Olympians** (series) — Rick Riordan  
 - **The Hunger Games** (series) — Suzanne Collins  
 - **Immortals of Meluha** (trilogy) — Amish Tripathi  
+
+## Plays & Drama
+
+- **The Merchant of Venice** — William Shakespeare  
+- **Macbeth** — William Shakespeare  
+- **The Taming of the Shrew** — William Shakespeare  
+- **The Tempest** — William Shakespeare  
+- **Hamlet** — William Shakespeare  
+- **Othello** — William Shakespeare  
