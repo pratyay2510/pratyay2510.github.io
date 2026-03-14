@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: Ph.D. Student in Computer Science | University of California, Riverside
+subtitle: Ph.D. Candidate in Computer Science | University of California, Riverside
 short_bio: Specializing in Computer Vision, Deep Learning, and Physics-based Modeling.
 
 profile:
