@@ -1,10 +1,10 @@
 cv:
   name: Pratyay Dutta
-  label: Ph.D. Student in Computer Science
+  label: Ph.D. Candidate in Computer Science
   email: pdutt005@ucr.edu
   location: Riverside, CA
   image: ""
-  summary: Ph.D. student at UC Riverside working on Computer Vision, Deep Learning, and Physics-based Modeling under Dr. Bir Bhanu.
+  summary: Ph.D. candidate at UC Riverside working on Computer Vision, Deep Learning, and Physics-based Modeling under Dr. Bir Bhanu.
 
   social_networks:
     - network: GitHub
