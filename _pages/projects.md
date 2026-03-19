@@ -5,61 +5,46 @@ permalink: /projects/
 description: A growing collection of my cool projects.
 nav: false
 nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+display_categories: [work]
 ---
 
-<!-- pages/projects.md -->
-<div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
+<div class="projects projects-premium">
+  {% assign sorted_projects = site.projects | sort: 'importance' %}
+
+  <div class="projects-grid uniform-project-grid">
     {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endfor %}
+      {% assign mod = forloop.index0 | modulo: 6 %}
+      {% assign project_bg = 'project-bg--drishtikon' %}
+      {% if mod == 1 %}
+        {% assign project_bg = 'project-bg--glamour' %}
+      {% elsif mod == 2 %}
+        {% assign project_bg = 'project-bg--weave' %}
+      {% elsif mod == 3 %}
+        {% assign project_bg = 'project-bg--dor' %}
+      {% elsif mod == 4 %}
+        {% assign project_bg = 'project-bg--carpet' %}
+      {% elsif mod == 5 %}
+        {% assign project_bg = 'project-bg--dye' %}
+      {% endif %}
 
-{% else %}
+      <a href="{{ project.url | relative_url }}" class="project-card reveal-up">
+        <div class="project-card-bg {{ project_bg }}"></div>
+        <div class="project-card-overlay"></div>
 
-<!-- Display projects without categories -->
-
-{% assign sorted_projects = site.projects | sort: "importance" %}
-
-  <!-- Generate cards for each project -->
-
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
+        <div class="project-card-content">
+          <span class="project-number">0{{ forloop.index }}</span>
+          <div class="project-category">{{ project.category | default: 'Research' }}</div>
+          <h2 class="project-name">{{ project.title }}</h2>
+          <p class="project-tagline">{{ project.description }}</p>
+          <div class="project-meta">
+            <span>Open details</span>
+            {% if project.github %}
+              <span>Code</span>
+            {% endif %}
+          </div>
+          <div class="project-arrow" aria-hidden="true">→</div>
+        </div>
+      </a>
     {% endfor %}
   </div>
-  {% endif %}
-{% endif %}
 </div>

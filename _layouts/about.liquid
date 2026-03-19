@@ -2,117 +2,199 @@
 layout: default
 ---
 <div class="home-sections">
-  <!-- ── Section 1: Hero ───────────────────────────────────────────────── -->
-  <section id="hero" class="hero-section">
-    <div class="hero-inner">
-      <div class="hero-image-wrap hero-enter-right">
-        {% if page.profile and page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          <div class="hero-img-glow-wrap">
-            <img
-              src="{{ profile_image_path | relative_url | bust_file_cache }}"
-              alt="{{ site.first_name }} {{ site.last_name }}"
-              class="hero-profile-img"
-            >
-          </div>
-        {% endif %}
-      </div>
-      <div class="hero-text hero-enter-left">
-        <h1 class="hero-name">
-          {% if site.title == 'blank' %}
-            {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
-          {% endif %}
+  <section id="hero" class="hero-section hero-section-premium">
+    <div class="hero-bg-text" aria-hidden="true">VISION</div>
+
+    <div class="hero-content">
+      <div class="hero-left reveal-left">
+        <div class="hero-label">Portfolio · 2026</div>
+
+        <h1 class="hero-name hero-name-premium">
+          <span class="hero-name-first">{{ site.first_name }}</span>
+          <span class="hero-name-last">{{ site.last_name }}</span>
         </h1>
-        <p class="hero-designation">Ph.D. Candidate in Computer Science</p>
+
+        <div class="hero-title-tag">Ph.D. Candidate · Computer Science · UC Riverside</div>
+        <div class="hero-divider"></div>
+
         {% if page.short_bio %}
-          <p class="hero-short-bio">{{ page.short_bio }}</p>
+          <p class="hero-bio">{{ page.short_bio }}</p>
         {% elsif site.description %}
-          <p class="hero-short-bio">{{ site.description | strip_newlines | split: '.' | first }}.</p>
+          <p class="hero-bio">{{ site.description | strip_newlines }}</p>
         {% endif %}
-        <div class="hero-social-boxes">
+
+        <nav class="hero-links" aria-label="Contact links">
           {% assign socials = site.data.socials %}
           {% if socials.linkedin_username %}
-            <a class="hero-social-link" href="https://www.linkedin.com/in/{{ socials.linkedin_username }}" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-linkedin"></i> LinkedIn
+            <a class="hero-link" href="https://www.linkedin.com/in/{{ socials.linkedin_username }}" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-linkedin"></i>
+              LinkedIn
             </a>
           {% endif %}
           {% if socials.scholar_userid %}
-            <a class="hero-social-link" href="https://scholar.google.com/citations?user={{ socials.scholar_userid }}" target="_blank" rel="noopener noreferrer">
-              <i class="ai ai-google-scholar"></i> Google Scholar
+            <a class="hero-link" href="https://scholar.google.com/citations?user={{ socials.scholar_userid }}" target="_blank" rel="noopener noreferrer">
+              <i class="ai ai-google-scholar"></i>
+              Scholar
             </a>
           {% endif %}
           {% if socials.email %}
-            <a class="hero-social-link" href="mailto:{{ socials.email }}">
-              <i class="fa-solid fa-envelope"></i> Email
+            <a class="hero-link" href="mailto:{{ socials.email }}">
+              <i class="fa-solid fa-envelope"></i>
+              Email
             </a>
           {% endif %}
           {% if socials.cv_pdf %}
-            <a class="hero-social-link" href="{{ socials.cv_pdf | relative_url }}" target="_blank" rel="noopener noreferrer" download="resume-research.pdf">
-              <i class="fa-solid fa-file-pdf"></i> Download CV
+            <a class="hero-link" href="{{ socials.cv_pdf | relative_url }}" target="_blank" rel="noopener noreferrer" download="resume-research.pdf">
+              <i class="fa-solid fa-file-pdf"></i>
+              CV
             </a>
           {% endif %}
+        </nav>
+      </div>
+
+      <div class="hero-right reveal-right">
+        {% if page.profile and page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          <div class="hero-photo-frame">
+            <div class="hero-photo-inner">
+              <img
+                src="{{ profile_image_path | relative_url | bust_file_cache }}"
+                alt="{{ site.first_name }} {{ site.last_name }}"
+                class="hero-profile-img hero-profile-premium"
+              >
+            </div>
+            <div class="hero-photo-accent" aria-hidden="true"></div>
+          </div>
+        {% endif %}
+
+        <div class="hero-stats reveal-up" style="--delay:0.3s">
+          <div class="stat-item">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Papers</div>
+          </div>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-sep" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-num">5</div>
+            <div class="stat-label">Courses Taught</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Section 2: About Me ───────────────────────────────────────────── -->
-  <section id="about" class="about-section">
-    <h2 data-aos="fade-up">About Me</h2>
+  <section id="about" class="about-section about-premium-section">
+    <h2 data-aos="fade-up">About</h2>
     <div class="about-intro" data-aos="fade-up" data-aos-delay="100">
       {{ content }}
     </div>
+    <blockquote class="hero-quote about-quote" data-aos="fade-up" data-aos-delay="160">
+      "Stay Hungry. Stay Foolish"
+    </blockquote>
+  </section>
 
-    <div class="about-grid" data-aos="fade-up" data-aos-delay="150">
-      <div>
-        <div class="achievement-cards">
-          <div class="achievement-card">
-            <span class="num">5+</span>
-            <p class="label">Publications</p>
-          </div>
-          <div class="achievement-card">
-            <span class="num">6+</span>
-            <p class="label">Years Research Experience</p>
-          </div>
-          <div class="achievement-card">
-            <span class="num">5</span>
-            <p class="label">Courses Taught (TA)</p>
+  <section id="education" class="education-showcase-section">
+    <div class="section-header reveal-up">
+      <div class="section-label">Education</div>
+      <h2 class="section-title">Academic Background</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="education-grid">
+      <div class="edu-card edu-card--primary reveal-up" style="--delay:0s">
+        <div class="edu-card-year">2023 - Present</div>
+        <div class="edu-card-body">
+          <h3 class="edu-card-degree">Doctor of Philosophy (Ph.D.)</h3>
+          <div class="edu-card-major">Computer Science</div>
+          <div class="edu-card-inst">University of California, Riverside</div>
+          <div class="edu-card-detail">Grade: 3.94/4.0</div>
+          <div class="edu-card-badge">Currently Pursuing</div>
+        </div>
+        <div class="edu-card-gpa">
+          <div class="edu-gpa-ring">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="4" opacity="0.2"></circle>
+              <circle
+                class="gpa-arc"
+                cx="40"
+                cy="40"
+                r="34"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="213.6"
+                stroke-dashoffset="213.6"
+                data-offset="3.2"
+              ></circle>
+            </svg>
+            <div class="edu-gpa-val">3.94</div>
           </div>
         </div>
       </div>
-      <div class="education-block">
-        <h3>Education</h3>
-        <div class="education-item">
-          <p class="degree">Ph.D. in Computer Science</p>
-          <p class="meta">University of California, Riverside | 2023 – Present (Expected 2027)</p>
+
+      <div class="edu-card reveal-up" style="--delay:0.15s">
+        <div class="edu-card-year">2019 - 2023</div>
+        <div class="edu-card-body">
+          <h3 class="edu-card-degree">Bachelor of Engineering</h3>
+          <div class="edu-card-major">Electronics and Telecommunication Engineering</div>
+          <div class="edu-card-inst">Jadavpur University</div>
+          <div class="edu-card-detail">Grade: 9.5/10</div>
         </div>
-        <div class="education-item">
-          <p class="degree">B.E. in Electronics and Telecommunication Engineering</p>
-          <p class="meta">Jadavpur University | 2019 – 2023 | GPA: 9.5/10</p>
+        <div class="edu-card-gpa">
+          <div class="edu-gpa-ring">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="40" r="34" fill="none" stroke="currentColor" stroke-width="4" opacity="0.2"></circle>
+              <circle
+                class="gpa-arc"
+                cx="40"
+                cy="40"
+                r="34"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-dasharray="213.6"
+                stroke-dashoffset="213.6"
+                data-offset="10.7"
+              ></circle>
+            </svg>
+            <div class="edu-gpa-val">9.5</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-card reveal-up" style="--delay:0.3s">
+        <div class="edu-card-year">2005 - 2019</div>
+        <div class="edu-card-body">
+          <h3 class="edu-card-degree">Primary, Middle and High School</h3>
+          <div class="edu-card-major">ICSE and ISC</div>
+          <div class="edu-card-inst">Calcutta Boys' School</div>
+          <div class="edu-card-detail">Class 10 (ICSE): 99.2% · Class 12 (ISC): 98.75%</div>
+        </div>
+        <div class="edu-card-scores">
+          <div class="score-bar-wrap">
+            <div class="score-label">Class X</div>
+            <div class="score-bar">
+              <div class="score-fill" style="--pct:99.2%"></div>
+            </div>
+            <div class="score-val">99.2%</div>
+          </div>
+          <div class="score-bar-wrap">
+            <div class="score-label">Class XII</div>
+            <div class="score-bar">
+              <div class="score-fill" style="--pct:98.75%"></div>
+            </div>
+            <div class="score-val">98.75%</div>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Research Areas -->
-    <div class="research-areas" data-aos="fade-up">
-      <h3>Research Areas</h3>
-      <div class="research-cards">
-        <div class="research-card" data-aos="fade-up" data-aos-delay="100">
-          <h4>Computer Vision</h4>
-          <p>Developing algorithms for person re-identification, occlusion handling, and event-based vision using heat diffusion and transformer architectures.</p>
-        </div>
-        <div class="research-card" data-aos="fade-up" data-aos-delay="200">
-          <h4>Deep Learning</h4>
-          <p>Designing physics-based and diffusion models for feature inpainting, latent reconstruction, and robust representation learning.</p>
-        </div>
-        <div class="research-card" data-aos="fade-up" data-aos-delay="300">
-          <h4>Physics-based Modeling</h4>
-          <p>Applying anisotropic heat diffusion and PDE-inspired methods for information flow in neural networks and spatiotemporal representation learning.</p>
-        </div>
-      </div>
-    </div>
+  </section>
 
     <!-- ── Publications ─────────────────────────────────────────────────── -->
     <div class="pub-section" data-aos="fade-up">
@@ -249,125 +331,100 @@ layout: default
       </div>
     </div>
 
-    <!-- ── Skills ───────────────────────────────────────────────────────── -->
-    <div class="skills-section" data-aos="fade-up">
-      <h3>Technical Skills</h3>
-      <div class="skills-grid">
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
-          <span class="skill-label"><i class="fa-solid fa-code"></i> Languages</span>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">C/C++</span>
-            <span class="skill-tag">SQL</span>
+    <div class="skills-section skills-section-premium" data-aos="fade-up">
+      <div class="section-header reveal-up">
+        <div class="section-label">Skills</div>
+        <h3 class="section-title">Capabilities</h3>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skills-category reveal-up" style="--delay:0s">
+          <div class="skills-cat-header">
+            <span class="skills-cat-num" aria-hidden="true">01</span>
+            <span class="skills-cat-title">Technical Software</span>
+          </div>
+          <div class="skills-grid software-grid">
+            {% assign software_items = 'Python|MATLAB|Java|C/C++|SQL|PyTorch|TensorFlow|OpenCV|Pandas|NumPy|Matplotlib|Git|Docker|Google Cloud Platform|VS Code|PyCharm|Virtual Environments|CUDA DDP/FSDP' | split: '|' %}
+            {% for skill in software_items %}
+              <div class="skill-box" tabindex="0" role="button" aria-label="{{ skill }}">
+                <div class="skill-thumb"><i class="fa-solid fa-microchip"></i></div>
+                <div class="skill-info">
+                  <div class="skill-name">{{ skill }}</div>
+                  <div class="skill-desc">Applied in research workflows, model development, evaluation pipelines, and production-scale experimentation.</div>
+                </div>
+              </div>
+            {% endfor %}
           </div>
         </div>
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
-          <span class="skill-label"><i class="fa-solid fa-book"></i> Libraries &amp; Frameworks</span>
-          <div class="skill-tags">
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">OpenCV</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
-            <span class="skill-tag">Matplotlib</span>
+
+        <div class="skills-category reveal-up" style="--delay:0.1s">
+          <div class="skills-cat-header">
+            <span class="skills-cat-num" aria-hidden="true">02</span>
+            <span class="skills-cat-title">Languages</span>
           </div>
-        </div>
-        <div class="skill-group" data-aos="fade-up" data-aos-delay="300">
-          <span class="skill-label"><i class="fa-solid fa-screwdriver-wrench"></i> Developer Tools</span>
-          <div class="skill-tags">
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">GCP</span>
-            <span class="skill-tag">CUDA DDP/FSDP</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">PyCharm</span>
+          <div class="languages-bars">
+            <div class="lang-item">
+              <div class="lang-header"><span class="lang-name">English</span><span class="lang-pct">99%</span></div>
+              <div class="lang-bar"><div class="lang-fill" style="--w:99%"></div></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-header"><span class="lang-name">Bengali</span><span class="lang-pct">98%</span></div>
+              <div class="lang-bar"><div class="lang-fill" style="--w:98%"></div></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-header"><span class="lang-name">Hindi</span><span class="lang-pct">67%</span></div>
+              <div class="lang-bar"><div class="lang-fill" style="--w:67%"></div></div>
+            </div>
+            <div class="lang-item">
+              <div class="lang-header"><span class="lang-name">German</span><span class="lang-pct">11.1%</span></div>
+              <div class="lang-bar"><div class="lang-fill" style="--w:11.1%"></div></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── Projects ─────────────────────────────────────────────────────── -->
-    <div class="home-projects-section" data-aos="fade-up">
-      <h3>Projects</h3>
-      <div class="home-projects-grid">
+    <div class="home-projects-section projects-section-premium" data-aos="fade-up">
+      <div class="section-header reveal-up">
+        <div class="section-label">Projects</div>
+        <h3 class="section-title">Featured Work</h3>
+        <div class="section-rule"></div>
+      </div>
 
-        <a href="https://github.com/pratyay2510/Talk-to-Segment" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="100">
-          <div class="proj-card-img" style="background: linear-gradient(135deg, #1a2a0a 0%, #2d4a12 100%);">
-            <i class="fa-solid fa-wand-magic-sparkles proj-card-icon"></i>
-          </div>
-          <div class="proj-card-body">
-            <h4 class="proj-card-title">Talk To Segment</h4>
-            <p class="proj-card-tldr">Edit any image region using natural language — no masks needed. GroundingDINO + SAM + Stable Diffusion.</p>
-            <div class="proj-card-tags">
-              <span class="proj-tag">PyTorch</span>
-              <span class="proj-tag">SAM</span>
-              <span class="proj-tag">Diffusion</span>
+      <div class="projects-grid uniform-project-grid">
+        {% assign sorted_projects = site.projects | sort: 'importance' %}
+        {% for project in sorted_projects %}
+          {% assign mod = forloop.index0 | modulo: 5 %}
+          {% assign project_bg = 'project-bg--drishtikon' %}
+          {% if mod == 1 %}
+            {% assign project_bg = 'project-bg--glamour' %}
+          {% elsif mod == 2 %}
+            {% assign project_bg = 'project-bg--weave' %}
+          {% elsif mod == 3 %}
+            {% assign project_bg = 'project-bg--dor' %}
+          {% elsif mod == 4 %}
+            {% assign project_bg = 'project-bg--carpet' %}
+          {% endif %}
+
+          <a href="{{ project.url | relative_url }}" class="project-card reveal-up">
+            <div class="project-card-bg {{ project_bg }}"></div>
+            <div class="project-card-overlay"></div>
+            <div class="project-card-content">
+              <span class="project-number">0{{ forloop.index }}</span>
+              <div class="project-category">Research Project</div>
+              <h4 class="project-name">{{ project.title }}</h4>
+              <p class="project-tagline">{{ project.description }}</p>
+              <div class="project-meta">
+                <span>Details</span>
+                {% if project.github %}
+                  <span>GitHub</span>
+                {% endif %}
+              </div>
+              <div class="project-arrow" aria-hidden="true">→</div>
             </div>
-          </div>
-        </a>
-
-        <a href="https://github.com/pratyay2510/Remember-to-Play" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="proj-card-img" style="background: linear-gradient(135deg, #050b1a 0%, #1a2b4a 100%);">
-            <i class="fa-solid fa-gamepad proj-card-icon"></i>
-          </div>
-          <div class="proj-card-body">
-            <h4 class="proj-card-title">Remember To Play</h4>
-            <p class="proj-card-tldr">DRQN vs DQN on Atari — proving recurrent memory beats memoryless agents in partially observable environments.</p>
-            <div class="proj-card-tags">
-              <span class="proj-tag">PyTorch</span>
-              <span class="proj-tag">LSTM</span>
-              <span class="proj-tag">RL</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://github.com/pratyay2510/ImpulseForge" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="300">
-          <div class="proj-card-img" style="background: linear-gradient(135deg, #190f02 0%, #4a2e0b 100%);">
-            <i class="fa-solid fa-cubes proj-card-icon"></i>
-          </div>
-          <div class="proj-card-body">
-            <h4 class="proj-card-title">ImpulseForge</h4>
-            <p class="proj-card-tldr">Custom impulse-based physics engine cross-validated against MuJoCo's native solver. Collision, friction, and stacking.</p>
-            <div class="proj-card-tags">
-              <span class="proj-tag">MuJoCo</span>
-              <span class="proj-tag">NumPy</span>
-              <span class="proj-tag">Physics</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://github.com/pratyay2510/EyeWitness" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="100">
-          <div class="proj-card-img" style="background: linear-gradient(135deg, #0a1a2a 0%, #122a40 100%);">
-            <i class="fa-solid fa-person-walking-arrow-loop-left proj-card-icon"></i>
-          </div>
-          <div class="proj-card-body">
-            <h4 class="proj-card-title">EyeWitness</h4>
-            <p class="proj-card-tldr">Transformer-powered person re-identification across non-overlapping camera views using global attention and triplet loss.</p>
-            <div class="proj-card-tags">
-              <span class="proj-tag">ViT</span>
-              <span class="proj-tag">Triplet Loss</span>
-              <span class="proj-tag">ReID</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://github.com/pratyay2510/Computational-Bio" target="_blank" rel="noopener noreferrer" class="proj-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="proj-card-img" style="background: linear-gradient(135deg, #0a1a0a 0%, #1a3020 100%);">
-            <i class="fa-solid fa-dna proj-card-icon"></i>
-          </div>
-          <div class="proj-card-body">
-            <h4 class="proj-card-title">TriStrand</h4>
-            <p class="proj-card-tldr">Numba-accelerated 3D Needleman-Wunsch alignment of three DNA sequences using divide-and-conquer DP. Near-C speed.</p>
-            <div class="proj-card-tags">
-              <span class="proj-tag">Numba</span>
-              <span class="proj-tag">NumPy</span>
-              <span class="proj-tag">Bioinformatics</span>
-            </div>
-          </div>
-        </a>
-
+          </a>
+        {% endfor %}
       </div>
     </div>
 
@@ -399,3 +456,38 @@ layout: default
 
   </section>
 </div>
+
+<script>
+  (function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+
+          el.querySelectorAll('.gpa-arc').forEach((arc) => {
+            const target = arc.dataset.offset;
+            if (target) {
+              setTimeout(() => {
+                arc.style.strokeDashoffset = target;
+              }, 150);
+            }
+          });
+
+          el.querySelectorAll('.score-fill, .lang-fill').forEach((bar) => {
+            setTimeout(() => {
+              bar.classList.add('animated');
+            }, 220);
+          });
+
+          observer.unobserve(el);
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document
+      .querySelectorAll('.education-showcase-section, .skills-section-premium, .projects-section-premium')
+      .forEach((el) => observer.observe(el));
+  })();
+</script>
