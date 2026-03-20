@@ -1,11 +1,37 @@
 ---
-layout: page
+layout: project-premium
 title: "EyeWitness"
-description: "TLDR: Explores Vision Transformer architectures for robust cross-camera person re-identification, with attention mechanisms that capture global appearance cues invariant to viewpoint and occlusion."
+description: "Cross-camera identity matching with transformer attention that remembers the whole person, not just local patches." 
 img: assets/img/11.jpg
 importance: 4
 category: work
 github: https://github.com/pratyay2510/Treid
+readme_url: https://github.com/pratyay2510/Treid/blob/main/README.md
+techniques:
+	- Vision Transformer
+	- Triplet Loss
+	- Hard Negative Mining
+	- Cross-view Embeddings
+	- Person Re-identification
+concept_notes:
+	- Learn robust person embeddings under viewpoint shift and partial occlusion.
+	- Use global transformer attention to preserve long-range appearance cues.
+	- Connect this baseline to your broader occluded-ReID research pipeline.
+readme_highlights:
+	- heading: "Repository Scope"
+		body: "Current README is brief; repository is positioned as transformer-based person ReID implementation."
+	- heading: "Primary Direction"
+		body: "Focus remains on transformer features for cross-camera matching stability."
+	- heading: "Planned Expansion"
+		body: "This page includes placeholders for dataset protocol, metrics, and visual retrieval outputs."
+quickstart:
+	- "Clone repo and prepare environment according to dependency file or notebook imports."
+	- "Train/fine-tune transformer encoder with triplet-style objective."
+	- "Evaluate rank-based retrieval metrics and qualitative retrieval panels."
+placeholders:
+	- "[Add dataset names and train/val/test split protocol]"
+	- "[Add mAP and Rank-1 metrics table]"
+	- "[Add retrieval gallery examples]"
 ---
 
 A transformer-based framework for **person re-identification (ReID)** — the task of matching pedestrian identities across non-overlapping camera views, a core challenge in intelligent surveillance and autonomous systems.

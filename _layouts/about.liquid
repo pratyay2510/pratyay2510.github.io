@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="home-sections">
+<div class="home-sections page-float-in">
   <section id="hero" class="hero-section hero-section-premium">
     <div class="hero-bg-text" aria-hidden="true">VISION</div>
 
@@ -22,6 +22,15 @@ layout: default
         {% elsif site.description %}
           <p class="hero-bio">{{ site.description | strip_newlines }}</p>
         {% endif %}
+
+        <div id="about" class="hero-about-inline">
+          <div class="hero-about-copy">
+            {{ content }}
+          </div>
+          <blockquote class="hero-quote about-quote">
+            "Stay Hungry. Stay Foolish"
+          </blockquote>
+        </div>
 
         <nav class="hero-links" aria-label="Contact links">
           {% assign socials = site.data.socials %}
@@ -85,16 +94,6 @@ layout: default
         </div>
       </div>
     </div>
-  </section>
-
-  <section id="about" class="about-section about-premium-section">
-    <h2 data-aos="fade-up">About</h2>
-    <div class="about-intro" data-aos="fade-up" data-aos-delay="100">
-      {{ content }}
-    </div>
-    <blockquote class="hero-quote about-quote" data-aos="fade-up" data-aos-delay="160">
-      "Stay Hungry. Stay Foolish"
-    </blockquote>
   </section>
 
   <section id="education" class="education-showcase-section">
@@ -197,7 +196,7 @@ layout: default
   </section>
 
     <!-- ── Publications ─────────────────────────────────────────────────── -->
-    <div class="pub-section" data-aos="fade-up">
+    <div id="publications" class="pub-section" data-aos="fade-up">
       <h3>Publications</h3>
       <div class="pub-timeline">
 
@@ -270,7 +269,7 @@ layout: default
     </div>
 
     <!-- ── Experience ───────────────────────────────────────────────────── -->
-    <div class="timeline-section" data-aos="fade-up">
+    <div id="experience" class="timeline-section" data-aos="fade-up">
       <h3>Experience</h3>
       <div class="timeline">
         <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
@@ -331,7 +330,7 @@ layout: default
       </div>
     </div>
 
-    <div class="skills-section skills-section-premium" data-aos="fade-up">
+    <div id="skills" class="skills-section skills-section-premium" data-aos="fade-up">
       <div class="section-header reveal-up">
         <div class="section-label">Skills</div>
         <h3 class="section-title">Capabilities</h3>
@@ -385,7 +384,7 @@ layout: default
       </div>
     </div>
 
-    <div class="home-projects-section projects-section-premium" data-aos="fade-up">
+    <div id="projects" class="home-projects-section projects-section-premium" data-aos="fade-up">
       <div class="section-header reveal-up">
         <div class="section-label">Projects</div>
         <h3 class="section-title">Featured Work</h3>

@@ -1,0 +1,124 @@
+---
+layout: default
+---
+<div class="project-premium page-float-in">
+  <section class="project-hero">
+    <p class="project-kicker">Project spotlight</p>
+    <h1 class="project-title">{{ page.title }}</h1>
+    <p class="project-tldr">{{ page.description }}</p>
+
+    {% if page.techniques %}
+      <div class="project-tech-bubbles">
+        {% for item in page.techniques %}
+          <span class="tech-bubble">{{ item }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="project-hero-links">
+      {% if page.github %}
+        <a class="project-cta" href="{{ page.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+      {% endif %}
+      {% if page.readme_url %}
+        <a class="project-cta ghost" href="{{ page.readme_url }}" target="_blank" rel="noopener noreferrer">README</a>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="project-grid">
+    <article class="project-panel reveal-card" style="--delay:0s">
+      <h2>Concept Notes</h2>
+      {% if page.concept_notes %}
+        <ul>
+          {% for note in page.concept_notes %}
+            <li>{{ note }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <ul>
+          <li>[Add concept motivation and use case]</li>
+          <li>[Add research challenge and approach summary]</li>
+        </ul>
+      {% endif %}
+    </article>
+
+    <article class="project-panel reveal-card" style="--delay:0.08s">
+      <h2>README Highlights</h2>
+      {% if page.readme_highlights %}
+        <div class="readme-cards">
+          {% for point in page.readme_highlights %}
+            <div class="readme-card">
+              <h3>{{ point.heading }}</h3>
+              <p>{{ point.body }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="readme-cards">
+          <div class="readme-card"><h3>Overview</h3><p>[Add concise repository overview]</p></div>
+          <div class="readme-card"><h3>Method</h3><p>[Add core method summary]</p></div>
+          <div class="readme-card"><h3>Results</h3><p>[Add quantitative/qualitative outcomes]</p></div>
+        </div>
+      {% endif %}
+    </article>
+
+    <article class="project-panel reveal-card" style="--delay:0.16s">
+      <h2>Quickstart</h2>
+      {% if page.quickstart %}
+        <ol>
+          {% for step in page.quickstart %}
+            <li>{{ step }}</li>
+          {% endfor %}
+        </ol>
+      {% else %}
+        <ol>
+          <li>[Add environment setup step]</li>
+          <li>[Add installation step]</li>
+          <li>[Add run command]</li>
+        </ol>
+      {% endif %}
+    </article>
+
+    <article class="project-panel reveal-card" style="--delay:0.24s">
+      <h2>Implementation Checklist</h2>
+      {% if page.placeholders %}
+        <ul>
+          {% for item in page.placeholders %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <ul>
+          <li>[Add dataset/config details]</li>
+          <li>[Add benchmark or ablation notes]</li>
+          <li>[Add demo links, visuals, or videos]</li>
+        </ul>
+      {% endif %}
+    </article>
+  </section>
+
+  <section class="project-notes reveal-card" style="--delay:0.3s">
+    <h2>Extended Notes</h2>
+    <article class="project-richtext">
+      {{ content }}
+    </article>
+  </section>
+</div>
+
+<script>
+  (function () {
+    const cards = document.querySelectorAll('.reveal-card');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  })();
+</script>

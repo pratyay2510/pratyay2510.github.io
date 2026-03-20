@@ -1671,3 +1671,400 @@ a:not(.hero-social-link):not(.nav-link) {
     transform: none;
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/* Navigation + entry animation                                                */
+/* -------------------------------------------------------------------------- */
+
+.prerana-navbar {
+  background: rgba(9, 7, 5, 0.88) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(217, 170, 46, 0.18);
+  box-shadow: 0 8px 34px rgba(0, 0, 0, 0.28);
+}
+
+.nav-brand-prem {
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: #f5edd8 !important;
+}
+
+.prerana-navbar .navbar-nav {
+  gap: 0.34rem;
+}
+
+.prerana-navbar .navbar-nav .nav-link {
+  color: #d4cbba;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  transition: all 0.22s ease;
+}
+
+.prerana-navbar .navbar-nav .nav-link:hover,
+.prerana-navbar .navbar-nav .nav-link.active,
+.prerana-navbar .navbar-nav .nav-link.is-active {
+  color: #f8e1b1;
+  background: rgba(217, 170, 46, 0.16);
+  box-shadow: inset 0 0 0 1px rgba(217, 170, 46, 0.22);
+}
+
+.page-float-in {
+  animation: pageFloatIn 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.reveal-left,
+.reveal-right,
+.reveal-up {
+  opacity: 0;
+  animation: softReveal 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+
+.reveal-left {
+  transform: translateX(-20px);
+}
+
+.reveal-right {
+  transform: translateX(20px);
+}
+
+.reveal-up {
+  transform: translateY(20px);
+}
+
+@keyframes pageFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softReveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Hero about inline                                                           */
+/* -------------------------------------------------------------------------- */
+
+.hero-about-inline {
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(217, 170, 46, 0.16);
+  background: rgba(217, 170, 46, 0.04);
+}
+
+.hero-about-copy {
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.hero-about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.hero-about-inline .about-quote {
+  margin: 1rem 0 0;
+  font-size: 1.05rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Project detail pages                                                        */
+/* -------------------------------------------------------------------------- */
+
+.project-premium {
+  width: min(1080px, 94vw);
+  margin: 5.5rem auto 3rem;
+}
+
+.project-hero {
+  margin-bottom: 1.5rem;
+}
+
+.project-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  color: #e2b84a;
+}
+
+.project-title {
+  margin: 0.45rem 0;
+  font-size: clamp(2rem, 3.8vw, 3.35rem);
+  line-height: 1.02;
+}
+
+.project-tldr {
+  margin: 0;
+  color: #f4e5bf;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.project-tech-bubbles {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tech-bubble {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 170, 46, 0.34);
+  background: rgba(217, 170, 46, 0.12);
+  color: #f4e5bf;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.project-hero-links {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.project-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.52rem 1.05rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(217, 170, 46, 0.32);
+  background: rgba(217, 170, 46, 0.19);
+  color: #f6ebd4;
+  text-decoration: none;
+}
+
+.project-cta.ghost {
+  background: transparent;
+}
+
+.project-cta:hover {
+  background: rgba(217, 170, 46, 0.3);
+  color: #fff;
+  text-decoration: none;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 1.15rem 1.2rem;
+}
+
+.project-panel h2 {
+  margin-top: 0;
+  font-size: 1.06rem;
+}
+
+.project-panel ul,
+.project-panel ol {
+  margin-bottom: 0;
+  padding-left: 1.1rem;
+}
+
+.project-panel li {
+  margin-bottom: 0.4rem;
+  color: #d0cbc2;
+}
+
+.readme-cards {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.readme-card {
+  border-radius: 10px;
+  border: 1px solid rgba(217, 170, 46, 0.18);
+  background: rgba(217, 170, 46, 0.06);
+  padding: 0.72rem 0.8rem;
+}
+
+.readme-card h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.9rem;
+  color: #f0c85c;
+}
+
+.readme-card p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #cfc9bf;
+}
+
+.project-notes {
+  margin-top: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.2rem;
+}
+
+.project-notes h2 {
+  margin-top: 0;
+}
+
+.project-richtext {
+  color: #d8d2c9;
+  line-height: 1.72;
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.56s ease, transform 0.56s ease;
+  transition-delay: var(--delay, 0s);
+}
+
+.reveal-card.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* More of me page                                                             */
+/* -------------------------------------------------------------------------- */
+
+.moreofme-shell {
+  width: min(1100px, 94vw);
+  margin: 5.5rem auto 3rem;
+}
+
+.moreofme-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #e2b84a;
+  font-size: 0.72rem;
+}
+
+.moreofme-title {
+  margin: 0.45rem 0;
+  font-size: clamp(1.8rem, 3.4vw, 3.05rem);
+}
+
+.moreofme-subtitle {
+  max-width: 62ch;
+  color: #bfb8ae;
+}
+
+.moreofme-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.moreofme-card {
+  position: relative;
+  min-height: 380px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  isolation: isolate;
+  text-decoration: none;
+}
+
+.moreofme-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.42s ease;
+}
+
+.moreofme-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8, 6, 3, 0.96) 0%, rgba(8, 6, 3, 0.45) 55%, rgba(8, 6, 3, 0.18) 100%);
+  transition: background 0.3s ease;
+}
+
+.moreofme-content {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 1.1rem;
+}
+
+.moreofme-content h3 {
+  margin: 0 0 0.24rem;
+  color: #f8f2e4;
+}
+
+.moreofme-content p {
+  margin: 0;
+  color: #cec7bb;
+  font-size: 0.86rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.moreofme-content span {
+  display: inline-flex;
+  margin-top: 0.55rem;
+  padding: 0.23rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 170, 46, 0.34);
+  background: rgba(217, 170, 46, 0.17);
+  color: #f4e5bf;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.moreofme-card:hover img {
+  transform: scale(1.06);
+}
+
+.moreofme-card:hover .moreofme-overlay {
+  background: linear-gradient(to top, rgba(8, 6, 3, 0.98) 0%, rgba(217, 170, 46, 0.28) 62%, rgba(217, 170, 46, 0.1) 100%);
+}
+
+.moreofme-card:hover .moreofme-content p {
+  max-height: 130px;
+  opacity: 1;
+}
+
+@media (max-width: 960px) {
+  .moreofme-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
