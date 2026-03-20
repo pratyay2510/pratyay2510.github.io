@@ -25,12 +25,12 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         {% if page.permalink == '/' %}
           <ul class="navbar-nav flex-nowrap home-nav-links">
-            <li class="nav-item"><a class="nav-link section-link is-active" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link section-link" href="#hero">About</a></li>
             <li class="nav-item"><a class="nav-link section-link" href="#experience">Experience</a></li>
             <li class="nav-item"><a class="nav-link section-link" href="#education">Education</a></li>
             <li class="nav-item"><a class="nav-link section-link" href="#skills">Skills</a></li>
             <li class="nav-item"><a class="nav-link section-link" href="#projects">Projects</a></li>
-            <li class="nav-item nav-item-more"><a class="nav-link nav-link-more" href="{{ '/more-of-me/' | relative_url }}">More of Me</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ '/more-of-me/' | relative_url }}">More of Me</a></li>
           </ul>
         {% else %}
           <ul class="navbar-nav flex-nowrap">
@@ -67,39 +67,65 @@
 {% if page.permalink == '/' %}
   <script>
     (function () {
-      const links = Array.from(document.querySelectorAll('.section-link'));
-      const ids = links
-        .map((link) => link.getAttribute('href'))
-        .filter((href) => href && href.startsWith('#'))
-        .map((href) => href.slice(1));
+      var links = Array.from(document.querySelectorAll('.section-link'));
 
-      links.forEach((link) => {
-        link.addEventListener('click', (event) => {
-          const href = link.getAttribute('href');
+      /* Smooth scroll on click */
+      links.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var href = link.getAttribute('href');
           if (!href || !href.startsWith('#')) return;
-          const target = document.querySelector(href);
+          var target = document.querySelector(href);
           if (!target) return;
-          event.preventDefault();
+          e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
       });
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            links.forEach((l) => l.classList.remove('is-active'));
-            const active = links.find((l) => l.getAttribute('href') === '#' + entry.target.id);
-            if (active) active.classList.add('is-active');
-          });
-        },
-        { threshold: 0.45, rootMargin: '-90px 0px -40% 0px' }
-      );
+      /* Scroll-position active-link tracking */
+      var navbarH = document.getElementById('navbar') ? document.getElementById('navbar').offsetHeight : 60;
 
-      ids.forEach((id) => {
-        const section = document.getElementById(id);
-        if (section) observer.observe(section);
-      });
+      function getActiveSectionId() {
+        /* Collect all anchored sections */
+        var sections = links
+          .map(function (l) { return document.querySelector(l.getAttribute('href')); })
+          .filter(Boolean);
+
+        var scrollY = window.scrollY || window.pageYOffset;
+        var offset = navbarH + 20;
+
+        /* Walk from bottom up — first section whose top is above (scrollY + offset) wins */
+        var active = sections[0];
+        for (var i = 0; i < sections.length; i++) {
+          if (sections[i].getBoundingClientRect().top + scrollY - offset <= scrollY) {
+            active = sections[i];
+          }
+        }
+        return active ? active.id : null;
+      }
+
+      function updateNav() {
+        var activeId = getActiveSectionId();
+        links.forEach(function (l) {
+          var href = l.getAttribute('href');
+          if (href && href === '#' + activeId) {
+            l.classList.add('is-active');
+          } else {
+            l.classList.remove('is-active');
+          }
+        });
+      }
+
+      /* Set initial state */
+      updateNav();
+
+      /* Throttled scroll handler */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(function () { updateNav(); ticking = false; });
+          ticking = true;
+        }
+      }, { passive: true });
     })();
   </script>
 {% endif %}

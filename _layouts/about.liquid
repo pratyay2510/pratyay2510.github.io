@@ -394,24 +394,16 @@ layout: default
       <div class="projects-grid uniform-project-grid">
         {% assign sorted_projects = site.projects | sort: 'importance' %}
         {% for project in sorted_projects %}
-          {% assign mod = forloop.index0 | modulo: 5 %}
-          {% assign project_bg = 'project-bg--drishtikon' %}
-          {% if mod == 1 %}
-            {% assign project_bg = 'project-bg--glamour' %}
-          {% elsif mod == 2 %}
-            {% assign project_bg = 'project-bg--weave' %}
-          {% elsif mod == 3 %}
-            {% assign project_bg = 'project-bg--dor' %}
-          {% elsif mod == 4 %}
-            {% assign project_bg = 'project-bg--carpet' %}
-          {% endif %}
+          {% assign idx = forloop.index %}
+          {% assign project_bg = 'project-bg--p' | append: idx %}
+          {% assign cat_label = project.chapter_sub | split: ' · ' | first | default: 'Research' %}
 
           <a href="{{ project.url | relative_url }}" class="project-card reveal-up">
             <div class="project-card-bg {{ project_bg }}"></div>
             <div class="project-card-overlay"></div>
             <div class="project-card-content">
               <span class="project-number">0{{ forloop.index }}</span>
-              <div class="project-category">Research Project</div>
+              <div class="project-category">{{ cat_label }}</div>
               <h4 class="project-name">{{ project.title }}</h4>
               <p class="project-tagline">{{ project.description }}</p>
               <div class="project-meta">

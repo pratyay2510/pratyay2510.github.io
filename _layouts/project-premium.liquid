@@ -3,20 +3,23 @@ layout: default
 ---
 <div class="pj-page page-float-in">
 
+  <!-- Fixed project navigation bar -->
   <nav class="pj-nav">
     <div class="pj-nav-inner">
       <a href="{{ '/' | relative_url }}" class="pj-back">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
         Back to Portfolio
       </a>
-      <div class="pj-nav-label">Research Project</div>
+      <div class="pj-nav-label">{{ page.chapter_num | default: "Research Project" }}</div>
     </div>
   </nav>
 
+  <!-- Full-width hero banner — unique gradient per project -->
   <div class="pj-hero">
+    <div style="position:absolute;inset:0;background:{{ page.hero_gradient | default: 'linear-gradient(180deg,#0a0a0a 0%,#111108 60%,#0a0a0a 100%)' }};"></div>
     <div class="pj-hero-overlay"></div>
     <div class="pj-hero-content reveal-up">
-      <div class="pj-chapter">Research Project &nbsp;·&nbsp; Pratyay Dutta · UC Riverside</div>
+      <div class="pj-chapter">{{ page.chapter_num | default: "Research Project" }} &nbsp;·&nbsp; {{ page.chapter_sub | default: "Pratyay Dutta · UC Riverside" }}</div>
       <h1 class="pj-hero-title">{{ page.title }}</h1>
       <p class="pj-hero-subtitle">{{ page.description }}</p>
       {% if page.techniques %}
@@ -31,25 +34,25 @@ layout: default
 
   <main class="pj-body">
 
+    <!-- Concept Note block (Prerana's signature element) -->
     {% if page.concept_notes %}
     <div class="pj-concept reveal-up">
-      <div class="pj-concept-label">Concept Notes</div>
-      <ul class="pj-concept-list">
-        {% for note in page.concept_notes %}
-          <li>{{ note }}</li>
-        {% endfor %}
-      </ul>
+      <div class="pj-concept-label">Concept Note</div>
+      {% for note in page.concept_notes %}
+        <p class="pj-concept-text">{{ note }}</p>
+      {% endfor %}
     </div>
     {% endif %}
 
+    <!-- Two-column: Project Brief + Tech Stack -->
     <div class="pj-two-col reveal-up">
       <div>
-        <h2 class="pj-section-title">Project Overview</h2>
+        <h2 class="pj-section-title">The Project Brief</h2>
         <div class="pj-richtext">{{ content }}</div>
       </div>
       <div>
         {% if page.techniques %}
-        <h2 class="pj-section-title">Tech Stack</h2>
+        <h2 class="pj-section-title">Techniques</h2>
         <div class="pj-tags">
           {% for item in page.techniques %}
             <span class="pj-tag">{{ item }}</span>
@@ -71,8 +74,25 @@ layout: default
       </div>
     </div>
 
+    <!-- Key Components grid (Prerana's "swatches" equivalent) -->
+    {% if page.key_components %}
+    <h2 class="pj-section-title reveal-up">Key Components</h2>
+    <div class="pj-swatches reveal-up">
+      {% for comp in page.key_components %}
+        <div class="pj-swatch">
+          <div class="pj-swatch-visual">{{ comp.emoji }}</div>
+          <div class="pj-swatch-body">
+            <div class="pj-swatch-label">{{ comp.label }}</div>
+            <div class="pj-swatch-detail">{{ comp.detail }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- README Highlights — process list (Prerana's numbered steps) -->
     {% if page.readme_highlights %}
-    <h2 class="pj-section-title reveal-up">Key Highlights</h2>
+    <h2 class="pj-section-title reveal-up">Project Highlights</h2>
     <div class="pj-process reveal-up">
       {% for point in page.readme_highlights %}
         <div class="pj-process-item">
@@ -86,6 +106,7 @@ layout: default
     </div>
     {% endif %}
 
+    <!-- Quickstart (Prerana's "process list" style) -->
     {% if page.quickstart %}
     <h2 class="pj-section-title reveal-up">Quickstart</h2>
     <div class="pj-process reveal-up">
@@ -98,19 +119,16 @@ layout: default
     </div>
     {% endif %}
 
-    {% if page.placeholders %}
-    <div class="pj-concept pj-concept--checklist reveal-up" style="margin-top:1rem;">
-      <div class="pj-concept-label">Implementation Checklist</div>
-      <ul class="pj-concept-list">
-        {% for item in page.placeholders %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
-    </div>
+    <!-- Closing pull-quote (Prerana's signature closing element) -->
+    {% if page.closing_quote %}
+    <blockquote class="pj-pull-quote reveal-up">
+      "{{ page.closing_quote }}"
+    </blockquote>
     {% endif %}
 
   </main>
 
+  <!-- Page footer -->
   <footer class="pj-footer">
     <div class="pj-footer-inner">
       <a href="{{ '/' | relative_url }}" class="pj-footer-back">
@@ -126,10 +144,10 @@ layout: default
 <script>
   (function () {
     document.querySelectorAll('.reveal-up').forEach(function (el, i) {
-      el.style.setProperty('--delay', (i * 0.06) + 's');
+      el.style.setProperty('--delay', (i * 0.07) + 's');
       var obs = new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting) { el.classList.add('revealed'); obs.disconnect(); }
-      }, { threshold: 0.1 });
+      }, { threshold: 0.08 });
       obs.observe(el);
     });
   })();

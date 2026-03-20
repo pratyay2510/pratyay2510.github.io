@@ -1500,29 +1500,58 @@ a:not(.hero-social-link):not(.nav-link) {
   transform: scale(1.06);
 }
 
-.project-bg--drishtikon {
-  background: radial-gradient(ellipse at 30% 40%, rgba(217, 170, 46, 0.5) 0%, transparent 55%), radial-gradient(ellipse at 85% 75%, rgba(80, 59, 14, 0.45) 0%, transparent 55%), linear-gradient(160deg, #0e0b03 0%, #2a1f08 56%, #140e04 100%);
+/* Project-specific card backgrounds — one per project */
+
+/* Talk To Segment — blue/purple (Vision · Language · Diffusion) */
+.project-bg--p1 {
+  background:
+    radial-gradient(ellipse at 30% 35%, rgba(80, 130, 255, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 82% 72%, rgba(160, 80, 255, 0.3) 0%, transparent 55%),
+    linear-gradient(160deg, #04060e 0%, #0c1028 56%, #060412 100%);
 }
 
-.project-bg--glamour {
-  background: radial-gradient(ellipse at 68% 30%, rgba(182, 142, 36, 0.55) 0%, transparent 58%), radial-gradient(ellipse at 22% 78%, rgba(245, 221, 155, 0.16) 0%, transparent 50%), linear-gradient(136deg, #0d0903 0%, #33270d 62%, #0f0a03 100%);
+/* Remember To Play — red/orange (Reinforcement Learning) */
+.project-bg--p2 {
+  background:
+    radial-gradient(ellipse at 68% 28%, rgba(220, 80, 50, 0.62) 0%, transparent 58%),
+    radial-gradient(ellipse at 22% 78%, rgba(220, 140, 50, 0.28) 0%, transparent 50%),
+    repeating-linear-gradient(-30deg, transparent 0px, transparent 14px, rgba(220, 80, 50, 0.04) 14px, rgba(220, 80, 50, 0.04) 15px),
+    linear-gradient(136deg, #0e0402 0%, #281008 62%, #100504 100%);
 }
 
-.project-bg--weave {
-  background: repeating-linear-gradient(90deg, transparent 0px, transparent 10px, rgba(217, 170, 46, 0.08) 10px, rgba(217, 170, 46, 0.08) 11px), repeating-linear-gradient(0deg, transparent 0px, transparent 10px, rgba(217, 170, 46, 0.08) 10px, rgba(217, 170, 46, 0.08) 11px), linear-gradient(135deg, #0a0803 0%, #20180a 56%, #0c0903 100%);
+/* ImpulseForge — cyan/teal (Physics · Simulation) */
+.project-bg--p3 {
+  background:
+    radial-gradient(ellipse at 50% 28%, rgba(50, 200, 200, 0.52) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 78%, rgba(50, 220, 120, 0.22) 0%, transparent 55%),
+    repeating-linear-gradient(45deg, transparent 0px, transparent 12px, rgba(50, 200, 200, 0.05) 12px, rgba(50, 200, 200, 0.05) 13px),
+    linear-gradient(160deg, #030d0e 0%, #081820 56%, #030a0c 100%);
 }
 
-.project-bg--dor {
-  background: radial-gradient(ellipse at 50% 100%, rgba(217, 170, 46, 0.42) 0%, transparent 60%), repeating-linear-gradient(-45deg, transparent 0px, transparent 8px, rgba(250, 229, 170, 0.06) 8px, rgba(250, 229, 170, 0.06) 9px), linear-gradient(180deg, #0b0803 0%, #231a08 60%, #0b0803 100%);
+/* EyeWitness — green/teal (Computer Vision · Person Re-ID) */
+.project-bg--p4 {
+  background:
+    radial-gradient(ellipse at 38% 38%, rgba(50, 200, 120, 0.58) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 82%, rgba(50, 180, 220, 0.24) 0%, transparent 50%),
+    linear-gradient(160deg, #030e07 0%, #081a10 56%, #040c07 100%);
 }
 
-.project-bg--carpet {
-  background: radial-gradient(ellipse at 50% 50%, rgba(184, 143, 35, 0.38) 0%, transparent 55%), repeating-conic-gradient(from 0deg at 50% 50%, rgba(245, 221, 155, 0.05) 0deg, transparent 2deg, transparent 20deg), linear-gradient(135deg, #0a0702 0%, #241b08 50%, #0c0902 100%);
+/* TriStrand — purple/magenta (Computational Biology) */
+.project-bg--p5 {
+  background:
+    radial-gradient(ellipse at 55% 32%, rgba(160, 60, 220, 0.58) 0%, transparent 55%),
+    radial-gradient(ellipse at 18% 80%, rgba(220, 60, 160, 0.3) 0%, transparent 50%),
+    repeating-conic-gradient(from 0deg at 50% 50%, rgba(160, 60, 220, 0.03) 0deg, transparent 3deg, transparent 20deg),
+    linear-gradient(160deg, #070310 0%, #12081e 56%, #08040c 100%);
 }
 
-.project-bg--dye {
-  background: radial-gradient(ellipse at 20% 50%, rgba(217, 170, 46, 0.48) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(118, 91, 28, 0.34) 0%, transparent 50%), linear-gradient(90deg, #0d0903 0%, #2e2309 50%, #0d0903 100%);
-}
+/* Keep legacy names for any remaining references */
+.project-bg--drishtikon { background: linear-gradient(160deg, #0e0b03 0%, #2a1f08 56%, #140e04 100%); }
+.project-bg--glamour    { background: linear-gradient(136deg, #0d0903 0%, #33270d 62%, #0f0a03 100%); }
+.project-bg--weave      { background: linear-gradient(135deg, #0a0803 0%, #20180a 56%, #0c0903 100%); }
+.project-bg--dor        { background: linear-gradient(180deg, #0b0803 0%, #231a08 60%, #0b0803 100%); }
+.project-bg--carpet     { background: linear-gradient(135deg, #0a0702 0%, #241b08 50%, #0c0902 100%); }
+.project-bg--dye        { background: linear-gradient(90deg,  #0d0903 0%, #2e2309 50%, #0d0903 100%); }
 
 .project-card-overlay {
   position: absolute;
@@ -1557,19 +1586,14 @@ a:not(.hero-social-link):not(.nav-link) {
 }
 
 .project-category {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #f0c85c;
   margin-bottom: 0.45rem;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.project-card:hover .project-category {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .project-name {
@@ -2094,19 +2118,7 @@ a:not(.hero-social-link):not(.nav-link) {
   transform: none !important;
 }
 
-/* ── More of Me nav link (home page only) ─────────────────────────────── */
-
-.nav-link-more {
-  color: $lime !important;
-  border: 1px solid rgba(217, 170, 46, 0.28) !important;
-  background: rgba(217, 170, 46, 0.08) !important;
-  border-radius: 999px !important;
-}
-
-.nav-link-more:hover {
-  background: rgba(217, 170, 46, 0.2) !important;
-  color: $lime-bright !important;
-}
+/* More of Me nav link — intentionally same style as other links */
 
 /* -------------------------------------------------------------------------- */
 /* Project detail pages — Prerana-inspired design (pj-*)                       */
@@ -2492,6 +2504,84 @@ a:not(.hero-social-link):not(.nav-link) {
   letter-spacing: 0.04em;
 }
 
+/* Concept text (multiple paragraphs inside concept block) */
+.pj-concept-text {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.6rem;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+/* Key Components swatch grid (like Prerana's swatches) */
+.pj-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.pj-swatch {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(217, 170, 46, 0.28);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.pj-swatch-visual {
+  aspect-ratio: 1.6 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: rgba(217, 170, 46, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pj-swatch-body {
+  padding: 0.8rem 1rem;
+}
+
+.pj-swatch-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-bottom: 0.2rem;
+}
+
+.pj-swatch-detail {
+  font-size: 0.75rem;
+  color: var(--global-text-color-light);
+  line-height: 1.5;
+}
+
+/* Pull quote (Prerana's signature closing element) */
+.pj-pull-quote {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-style: italic;
+  color: var(--global-text-color);
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  margin-block: 2.5rem;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  quotes: none;
+
+  &::before, &::after { content: none; }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .pj-two-col {
@@ -2501,6 +2591,10 @@ a:not(.hero-social-link):not(.nav-link) {
   .pj-hero {
     padding-top: 4rem;
     padding-bottom: 2.5rem;
+  }
+
+  .pj-swatches {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
