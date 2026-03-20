@@ -16,28 +16,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "dropdown-bookshelf",
-              title: "Bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/books/";
-              },
-            },{id: "dropdown-pen-art",
-              title: "Pen Art",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/pen-art/";
-              },
-            },{id: "dropdown-digital-art",
-              title: "Digital Art",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/digital-art/";
-              },
-            },{id: "post-a-post-with-plotly-js",
+        },{id: "nav-more-of-me",
+          title: "More of me",
+          description: "Beyond research - books, sketchbooks, and personal creative work.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/more-of-me/";
+          },
+        },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -394,29 +380,29 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-talk-to-segment",
-          title: 'Talk To Segment',
-          description: "TLDR: Combines GroundingDINO + SAM with Stable Diffusion Inpainting to surgically edit arbitrary image regions using natural language — no masks needed.",
+          section: "News",},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_image_editing/";
-            },},{id: "projects-remember-to-play",
-          title: 'Remember To Play',
-          description: "TLDR: Demonstrates that augmenting Q-networks with LSTM memory (DRQN) yields significant performance gains over vanilla DQN in partially observable Atari environments.",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_drqn_rl/";
-            },},{id: "projects-impulseforge",
-          title: 'ImpulseForge',
-          description: "TLDR: A custom physics engine implementing impulse-based collision and friction modeling, cross-validated against MuJoCo&#39;s built-in solver for accuracy and realism.",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_rigidbody/";
-            },},{id: "projects-eyewitness",
-          title: 'EyeWitness',
-          description: "TLDR: Explores Vision Transformer architectures for robust cross-camera person re-identification, with attention mechanisms that capture global appearance cues invariant to viewpoint and occlusion.",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_treid/";
-            },},{id: "projects-tristrand",
-          title: 'TriStrand',
-          description: "TLDR: Memory-efficient 3D multiple sequence alignment using divide-and-conquer Needleman-Wunsch, accelerated with Numba JIT for production-grade throughput on large DNA sequences.",
+            },},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_compbio/";
             },},{id: "teachings-data-science-fundamentals",
