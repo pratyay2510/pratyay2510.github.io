@@ -87,6 +87,28 @@ full_width: true
       </a>
 
     </div>
+
+    <!-- Full-width Travel card below the three columns -->
+    <a class="mm-card mm-card--travel reveal-up" href="{{ '/travel/' | relative_url }}" style="--delay:0.24s">
+      <img
+        class="mm-card-img"
+        src="{{ '/assets/img/travel/travel-cover-placeholder.jpg' | relative_url }}"
+        alt="Travel — Places I have explored"
+        loading="lazy"
+        onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a0804 0%,#1e1608 40%,#2a1e0a 100%)'"
+      >
+      <div class="mm-card-overlay mm-card-overlay--travel"></div>
+      <div class="mm-card-content">
+        <div class="mm-card-text-group">
+          <div class="mm-card-num">04</div>
+          <div class="mm-card-category">Wanderlust</div>
+          <h3 class="mm-card-name">Travel</h3>
+          <p class="mm-card-tagline">From Kolkata to California — photographs, stories, and fragments from the places I have wandered through.</p>
+        </div>
+        <div class="mm-card-arrow" aria-hidden="true">→</div>
+      </div>
+    </a>
+
   </main>
 
   <footer class="pj-footer">
