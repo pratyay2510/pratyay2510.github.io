@@ -380,29 +380,29 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-",
-          title: '',
-          description: "",
+          section: "News",},{id: "projects-talk-to-segment",
+          title: 'Talk To Segment',
+          description: "Edit only what you mean: segment by text, rewrite by prompt, keep everything else intact.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_image_editing/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-remember-to-play",
+          title: 'Remember To Play',
+          description: "When memory enters the Q-network, the agent stops guessing and starts planning.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_drqn_rl/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-impulseforge",
+          title: 'ImpulseForge',
+          description: "Physics that feels honest: impulse-level collision logic, friction, and MuJoCo cross-checks in one loop.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_rigidbody/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-eyewitness",
+          title: 'EyeWitness',
+          description: "Cross-camera identity matching with transformer attention that remembers the whole person, not just local patches.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_treid/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-tristrand",
+          title: 'TriStrand',
+          description: "Three DNA strands, one aligned story: 3D dynamic programming at near-C speed with Python ergonomics.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_compbio/";
             },},{id: "teachings-data-science-fundamentals",
