@@ -32,9 +32,15 @@ full_width: true
   <main class="mm-body">
     <div class="mm-grid">
 
+      <!-- Bookshelf card — A Thousand Splendid Suns cover -->
       <a class="mm-card reveal-up" href="{{ '/books/' | relative_url }}" style="--delay:0.06s">
-        <div class="mm-card-bg mm-card-bg--books"></div>
-        <div class="mm-card-overlay"></div>
+        <img
+          class="mm-card-img"
+          src="{{ '/assets/img/book_covers/thousand_splendid_suns.jpg' | relative_url }}"
+          alt="A Thousand Splendid Suns — Khaled Hosseini"
+          loading="lazy"
+        >
+        <div class="mm-card-overlay mm-card-overlay--books"></div>
         <div class="mm-card-content">
           <div class="mm-card-num">01</div>
           <div class="mm-card-category">Reading</div>
@@ -44,9 +50,15 @@ full_width: true
         </div>
       </a>
 
+      <!-- Digital Art card — "More color blocking. I love this piece so much." -->
       <a class="mm-card reveal-up" href="{{ '/digital-art/' | relative_url }}" style="--delay:0.12s">
-        <div class="mm-card-bg mm-card-bg--digital"></div>
-        <div class="mm-card-overlay"></div>
+        <img
+          class="mm-card-img"
+          src="{{ '/assets/img/art/digital/piece-5.png' | relative_url }}"
+          alt="Color blocking digital art"
+          loading="lazy"
+        >
+        <div class="mm-card-overlay mm-card-overlay--digital"></div>
         <div class="mm-card-content">
           <div class="mm-card-num">02</div>
           <div class="mm-card-category">Digital Art</div>
@@ -56,9 +68,15 @@ full_width: true
         </div>
       </a>
 
+      <!-- Pen Art card — "Stippling. Only time heals certain wounds" -->
       <a class="mm-card reveal-up" href="{{ '/pen-art/' | relative_url }}" style="--delay:0.18s">
-        <div class="mm-card-bg mm-card-bg--pen"></div>
-        <div class="mm-card-overlay"></div>
+        <img
+          class="mm-card-img"
+          src="{{ '/assets/img/art/pen/piece-9.jpg' | relative_url }}"
+          alt="Stippling — Only time heals certain wounds"
+          loading="lazy"
+        >
+        <div class="mm-card-overlay mm-card-overlay--pen"></div>
         <div class="mm-card-content">
           <div class="mm-card-num">03</div>
           <div class="mm-card-category">Pen &amp; Ink</div>

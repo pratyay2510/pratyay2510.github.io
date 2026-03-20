@@ -2673,85 +2673,103 @@ a:not(.hero-social-link):not(.nav-link) {
   &:hover {
     transform: translateY(-6px);
     border-color: rgba(217, 170, 46, 0.3);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     text-decoration: none;
   }
 }
 
-/* CSS-art backgrounds for each card */
-.mm-card-bg {
+/* Thumbnail image — fills the card as a background photo */
+.mm-card-img {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
   z-index: 0;
-  transition: transform 0.42s ease;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  display: block;
 }
 
-.mm-card:hover .mm-card-bg {
-  transform: scale(1.06);
+.mm-card:hover .mm-card-img {
+  transform: scale(1.07);
 }
 
-.mm-card-bg--books {
-  background:
-    radial-gradient(ellipse at 30% 30%, rgba(217, 170, 46, 0.35) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 80%, rgba(180, 130, 20, 0.15) 0%, transparent 50%),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 22px,
-      rgba(217, 170, 46, 0.04) 22px,
-      rgba(217, 170, 46, 0.04) 24px
-    ),
-    linear-gradient(160deg, #0e0d05 0%, #1a1608 60%, #0a0a05 100%);
-}
-
-.mm-card-bg--digital {
-  background:
-    radial-gradient(ellipse at 60% 20%, rgba(180, 100, 217, 0.25) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 70%, rgba(217, 170, 46, 0.18) 0%, transparent 50%),
-    repeating-conic-gradient(
-      from 0deg at 50% 50%,
-      rgba(217, 170, 46, 0.02) 0deg,
-      transparent 5deg,
-      rgba(180, 100, 217, 0.02) 10deg,
-      transparent 15deg
-    ),
-    linear-gradient(160deg, #0a050e 0%, #110a18 60%, #0a0a0a 100%);
-}
-
-.mm-card-bg--pen {
-  background:
-    radial-gradient(ellipse at 40% 60%, rgba(217, 170, 46, 0.2) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 20%, rgba(150, 180, 217, 0.15) 0%, transparent 50%),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 8px,
-      rgba(217, 170, 46, 0.03) 8px,
-      rgba(217, 170, 46, 0.03) 9px
-    ),
-    linear-gradient(160deg, #050a0e 0%, #0a1018 60%, #0a0a0a 100%);
-}
-
+/* Gradient overlays — tinted per card to match the accent palette */
 .mm-card-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.96) 0%,
-    rgba(10, 10, 10, 0.55) 50%,
-    rgba(10, 10, 10, 0.2) 100%
-  );
   transition: background 0.35s ease;
 }
 
-.mm-card:hover .mm-card-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(10, 10, 10, 0.98) 0%,
-    rgba(217, 170, 46, 0.22) 60%,
-    rgba(217, 170, 46, 0.08) 100%
-  );
+/* Bookshelf — warm gold tint */
+.mm-card-overlay--books {
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 8, 3, 0.97) 0%,
+      rgba(10, 8, 3, 0.75) 40%,
+      rgba(217, 170, 46, 0.12) 80%,
+      rgba(217, 170, 46, 0.06) 100%
+    );
+}
+
+.mm-card:hover .mm-card-overlay--books {
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 8, 3, 0.98) 0%,
+      rgba(10, 8, 3, 0.7) 38%,
+      rgba(217, 170, 46, 0.28) 72%,
+      rgba(217, 170, 46, 0.14) 100%
+    );
+}
+
+/* Digital Art — purple/magenta tint */
+.mm-card-overlay--digital {
+  background:
+    linear-gradient(
+      to top,
+      rgba(8, 3, 12, 0.97) 0%,
+      rgba(8, 3, 12, 0.72) 40%,
+      rgba(160, 60, 220, 0.15) 80%,
+      rgba(217, 170, 46, 0.06) 100%
+    );
+}
+
+.mm-card:hover .mm-card-overlay--digital {
+  background:
+    linear-gradient(
+      to top,
+      rgba(8, 3, 12, 0.98) 0%,
+      rgba(8, 3, 12, 0.65) 38%,
+      rgba(160, 60, 220, 0.32) 72%,
+      rgba(217, 170, 46, 0.12) 100%
+    );
+}
+
+/* Pen Art — cool blue-grey tint */
+.mm-card-overlay--pen {
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 6, 12, 0.97) 0%,
+      rgba(3, 6, 12, 0.72) 40%,
+      rgba(80, 140, 200, 0.14) 80%,
+      rgba(217, 170, 46, 0.06) 100%
+    );
+}
+
+.mm-card:hover .mm-card-overlay--pen {
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 6, 12, 0.98) 0%,
+      rgba(3, 6, 12, 0.65) 38%,
+      rgba(80, 140, 200, 0.28) 72%,
+      rgba(217, 170, 46, 0.12) 100%
+    );
 }
 
 .mm-card-content {
