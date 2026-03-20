@@ -419,6 +419,75 @@ layout: default
       </div>
     </div>
 
+    <!-- ── Contact Form ─────────────────────────────────────────────────── -->
+    <!--
+      SETUP: Go to https://formspree.io → create a free account → New Form → copy the form ID.
+      Replace "YOUR_FORMSPREE_ID" below with it (e.g. "xpzvwgpk").
+      Formspree will forward every submission to pdutt005@ucr.edu.
+    -->
+    <div id="contact" class="home-contact-section reveal-up" style="--delay:0s">
+      <div class="contact-inner">
+        <div class="section-header">
+          <div class="section-label">Contact</div>
+          <h3 class="section-title">Get in Touch</h3>
+          <div class="section-rule"></div>
+        </div>
+        <p class="contact-subtitle">
+          Have a question, collaboration idea, or just want to say hello?<br>
+          Fill in the form and I'll get back to you.
+        </p>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/mnjgwejr"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Portfolio contact from form">
+          <!-- honeypot anti-spam -->
+          <input type="text" name="_gotcha" style="display:none">
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label class="cf-label" for="cf-name">Your Name <span class="cf-req">*</span></label>
+              <input class="cf-input" id="cf-name" type="text" name="name" placeholder="Full name" required>
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-email">Email Address <span class="cf-req">*</span></label>
+              <input class="cf-input" id="cf-email" type="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+
+          <div class="cf-row">
+            <div class="cf-field">
+              <label class="cf-label" for="cf-affiliation">Affiliation / Organization</label>
+              <input class="cf-input" id="cf-affiliation" type="text" name="affiliation" placeholder="University, company, or personal">
+            </div>
+            <div class="cf-field">
+              <label class="cf-label" for="cf-topic">Topic <span class="cf-req">*</span></label>
+              <select class="cf-input cf-select" id="cf-topic" name="topic" required>
+                <option value="" disabled selected>— Select a topic —</option>
+                <option>Research Collaboration</option>
+                <option>Internship / Job Opportunity</option>
+                <option>Project Feedback</option>
+                <option>General Enquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cf-field cf-field--full">
+            <label class="cf-label" for="cf-message">Message <span class="cf-req">*</span></label>
+            <textarea class="cf-input cf-textarea" id="cf-message" name="message" rows="5" placeholder="Tell me what's on your mind…" required></textarea>
+          </div>
+
+          <button class="cf-submit" type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
     <!-- ── Signature / Contact ───────────────────────────────────────────── -->
     <div class="home-footer-section" data-aos="fade-up">
       <h2 class="home-footer-name">{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}</h2>
