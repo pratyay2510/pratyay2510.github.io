@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-more-of-me",
           title: "More of me",
-          description: "Beyond research - books, sketchbooks, and personal creative work.",
+          description: "Beyond research — books, sketchbooks, and personal creative work.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/more-of-me/";
