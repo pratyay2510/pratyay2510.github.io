@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Los Angeles — Travel
-permalink: /travel/los-angeles/
+permalink: /travel/usa/los-angeles/
 description: Field notes from Los Angeles — Pacific sunsets, seventy miles from Riverside.
 nav: false
 full_width: true
@@ -11,11 +11,11 @@ full_width: true
 
   <nav class="pj-nav">
     <div class="pj-nav-inner">
-      <a href="{{ '/travel/' | relative_url }}" class="pj-back">
+      <a href="{{ '/travel/usa/' | relative_url }}" class="pj-back">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-        Travel
+        United States
       </a>
-      <div class="pj-nav-label">Los Angeles, USA</div>
+      <div class="pj-nav-label">Los Angeles, California</div>
     </div>
   </nav>
 

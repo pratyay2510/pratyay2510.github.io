@@ -36,154 +36,246 @@ full_width: true
     </div>
   </div>
 
-  <!-- ── Scrollable Gallery ────────────────────────────────────────────── -->
+  <!-- ── Carousel Gallery ─────────────────────────────────────────────── -->
   <section class="tr-gallery-section">
     <div class="tr-gallery-label">From the archive</div>
-    <div class="tr-gallery-scroll" id="gallery-scroll">
+
+    <!--
+      ══ HOW TO ADD YOUR GALLERY IMAGES ══════════════════════════════════
+      Place your travel photos in:  assets/img/travel/gallery/
+      Naming: gallery-01.jpg, gallery-02.jpg, … (JPG or WEBP recommended)
+      Portrait orientation (3:4) looks best — min 800×1067px.
+      Update the src and caption text in each .tr-carousel-slide below.
+      ════════════════════════════════════════════════════════════════════
+    -->
+
+    <div class="tr-carousel" id="travel-carousel">
+      <!-- Viewport clips the track -->
+      <div class="tr-carousel-viewport">
+        <div class="tr-carousel-track" id="carousel-track">
+
+          <div class="tr-carousel-slide">
+            <img
+              src="{{ '/assets/img/travel/gallery/gallery-01.jpg' | relative_url }}"
+              alt="Travel photograph 1"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#0e0c06 0%,#2a1f08 100%)';this.style.display='none'"
+            >
+            <div class="tr-carousel-caption">Somewhere beautiful</div>
+          </div>
+
+          <div class="tr-carousel-slide">
+            <img
+              src="{{ '/assets/img/travel/gallery/gallery-02.jpg' | relative_url }}"
+              alt="Travel photograph 2"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#060c0e 0%,#082028 100%)';this.style.display='none'"
+            >
+            <div class="tr-carousel-caption">Golden hour, somewhere</div>
+          </div>
+
+          <div class="tr-carousel-slide">
+            <img
+              src="{{ '/assets/img/travel/gallery/gallery-03.jpg' | relative_url }}"
+              alt="Travel photograph 3"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0606 0%,#1e0808 100%)';this.style.display='none'"
+            >
+            <div class="tr-carousel-caption">City lights</div>
+          </div>
+
+          <div class="tr-carousel-slide">
+            <img
+              src="{{ '/assets/img/travel/gallery/gallery-04.jpg' | relative_url }}"
+              alt="Travel photograph 4"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#060a06 0%,#0c1e0a 100%)';this.style.display='none'"
+            >
+            <div class="tr-carousel-caption">Through the lens</div>
+          </div>
+
+          <div class="tr-carousel-slide">
+            <img
+              src="{{ '/assets/img/travel/gallery/gallery-05.jpg' | relative_url }}"
+              alt="Travel photograph 5"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#221804 100%)';this.style.display='none'"
+            >
+            <div class="tr-carousel-caption">A moment in time</div>
+          </div>
+
+          <div class="tr-carousel-slide">
+            <img
+              src="{{ '/assets/img/travel/gallery/gallery-06.jpg' | relative_url }}"
+              alt="Travel photograph 6"
+              loading="lazy"
+              onerror="this.parentElement.style.background='linear-gradient(160deg,#08060c 0%,#14081e 100%)';this.style.display='none'"
+            >
+            <div class="tr-carousel-caption">Far from home</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom UI: dots (left) + arrows (right) -->
+      <div class="tr-carousel-ui">
+        <div class="tr-carousel-dots" id="carousel-dots" aria-label="Gallery progress"></div>
+        <div class="tr-carousel-arrows">
+          <button class="tr-carousel-arrow" id="carousel-prev" aria-label="Previous photo">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+          </button>
+          <button class="tr-carousel-arrow" id="carousel-next" aria-label="Next photo">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Home & Heart ─────────────────────────────────────────────────── -->
+  <section class="tr-hometowns">
+    <div class="tr-section-header reveal-up">
+      <div class="tr-section-label">Home &amp; Heart</div>
+      <h2 class="tr-section-title">The cities that shaped me</h2>
+    </div>
+
+    <div class="tr-home-cards">
 
       <!--
-        ══ HOW TO ADD YOUR GALLERY IMAGES ══════════════════════════════════
-        Place your travel photos in:  assets/img/travel/gallery/
-        Naming: gallery-01.jpg, gallery-02.jpg, … (JPG or WEBP recommended)
-        Minimum resolution: 800×1067px (portrait 3:4 works best here).
-        Replace each src below with your actual filename.
-        ════════════════════════════════════════════════════════════════════
+        IMAGE SLOT: assets/img/travel/destinations/kolkata-cover.jpg
+        A photograph of Kolkata — recommended: Victoria Memorial, Howrah Bridge, or the trams.
       -->
-
-      <div class="tr-gallery-item">
+      <a class="tr-home-card reveal-up" href="{{ '/travel/kolkata/' | relative_url }}" style="--delay:0.06s">
         <img
-          src="{{ '/assets/img/travel/gallery/gallery-01.jpg' | relative_url }}"
-          alt="Travel photograph 1"
+          src="{{ '/assets/img/travel/destinations/kolkata-cover.jpg' | relative_url }}"
+          alt="Kolkata — The city of joy"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0e0c06 0%,#2a1f08 100%)';this.style.display='none'"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)'"
         >
-        <div class="tr-gallery-caption">Somewhere beautiful</div>
-      </div>
+        <div class="tr-home-card-overlay"></div>
+        <div class="tr-home-card-arrow" aria-hidden="true">→</div>
+        <div class="tr-home-card-content">
+          <span class="tr-home-card-badge">Hometown</span>
+          <h3 class="tr-home-card-title">Kolkata</h3>
+          <p class="tr-home-card-sub">The city that made me — and never quite lets me forget.</p>
+        </div>
+      </a>
 
-      <div class="tr-gallery-item">
+      <!--
+        IMAGE SLOT: assets/img/travel/riverside/cover.jpg
+        A photo of Riverside — UCR Bell Tower, Box Springs Mountain, or downtown orange groves.
+      -->
+      <a class="tr-home-card reveal-up" href="{{ '/travel/riverside/' | relative_url }}" style="--delay:0.12s">
         <img
-          src="{{ '/assets/img/travel/gallery/gallery-02.jpg' | relative_url }}"
-          alt="Travel photograph 2"
+          src="{{ '/assets/img/travel/riverside/cover.jpg' | relative_url }}"
+          alt="Riverside, California"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#060c0e 0%,#082028 100%)';this.style.display='none'"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060810 0%,#0c1428 60%,#080e1e 100%)'"
         >
-        <div class="tr-gallery-caption">Golden hour, somewhere</div>
-      </div>
-
-      <div class="tr-gallery-item">
-        <img
-          src="{{ '/assets/img/travel/gallery/gallery-03.jpg' | relative_url }}"
-          alt="Travel photograph 3"
-          loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0606 0%,#1e0808 100%)';this.style.display='none'"
-        >
-        <div class="tr-gallery-caption">City lights</div>
-      </div>
-
-      <div class="tr-gallery-item">
-        <img
-          src="{{ '/assets/img/travel/gallery/gallery-04.jpg' | relative_url }}"
-          alt="Travel photograph 4"
-          loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#060a06 0%,#0c1e0a 100%)';this.style.display='none'"
-        >
-        <div class="tr-gallery-caption">Through the lens</div>
-      </div>
-
-      <div class="tr-gallery-item">
-        <img
-          src="{{ '/assets/img/travel/gallery/gallery-05.jpg' | relative_url }}"
-          alt="Travel photograph 5"
-          loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#221804 100%)';this.style.display='none'"
-        >
-        <div class="tr-gallery-caption">A moment in time</div>
-      </div>
-
-      <div class="tr-gallery-item">
-        <img
-          src="{{ '/assets/img/travel/gallery/gallery-06.jpg' | relative_url }}"
-          alt="Travel photograph 6"
-          loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#08060c 0%,#14081e 100%)';this.style.display='none'"
-        >
-        <div class="tr-gallery-caption">Far from home</div>
-      </div>
+        <div class="tr-home-card-overlay"></div>
+        <div class="tr-home-card-arrow" aria-hidden="true">→</div>
+        <div class="tr-home-card-content">
+          <span class="tr-home-card-badge">Current Home</span>
+          <h3 class="tr-home-card-title">Riverside</h3>
+          <p class="tr-home-card-sub">Where the San Bernardino foothills meet the Inland Empire. PhD life, desert sunsets, and a city that grew on me.</p>
+        </div>
+      </a>
 
     </div>
   </section>
 
-  <!-- ── Destinations ──────────────────────────────────────────────────── -->
+  <!-- ── Countries explored ────────────────────────────────────────────── -->
   <section class="tr-destinations">
     <div class="tr-section-header reveal-up">
-      <div class="tr-section-label">Destinations</div>
+      <div class="tr-section-label">Countries</div>
       <h2 class="tr-section-title">Places on the map</h2>
     </div>
 
-    <div class="tr-dest-grid">
+    <div class="tr-dest-grid tr-dest-grid--countries">
 
-      <!-- Kolkata -->
-      <a class="tr-dest-card reveal-up" href="{{ '/travel/kolkata/' | relative_url }}" style="--delay:0.06s">
+      <!--
+        IMAGE SLOT: assets/img/travel/destinations/india-cover.jpg
+        A wide shot of India — Rajasthan desert, Himalayan peak, or the Ganges at dusk.
+      -->
+      <a class="tr-dest-card reveal-up" href="{{ '/travel/india/' | relative_url }}" style="--delay:0.06s">
         <img
           class="tr-dest-img"
-          src="{{ '/assets/img/travel/destinations/kolkata-cover.jpg' | relative_url }}"
-          alt="Kolkata, India"
+          src="{{ '/assets/img/travel/destinations/india-cover.jpg' | relative_url }}"
+          alt="India"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)'"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100a02 0%,#221402 60%,#180c02 100%)'"
         >
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
-          <div class="tr-dest-tag">India</div>
-          <h3 class="tr-dest-name">Kolkata</h3>
-          <p class="tr-dest-sub">The city of joy — and where it all began.</p>
-        </div>
-        <div class="tr-dest-arrow" aria-hidden="true">→</div>
-      </a>
-
-      <!-- Halifax / Canada -->
-      <a class="tr-dest-card reveal-up" href="{{ '/travel/halifax/' | relative_url }}" style="--delay:0.12s">
-        <img
-          class="tr-dest-img"
-          src="{{ '/assets/img/travel/destinations/halifax-cover.jpg' | relative_url }}"
-          alt="Halifax, Nova Scotia, Canada"
-          loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061220 60%,#040a14 100%)'"
-        >
-        <div class="tr-dest-overlay"></div>
-        <div class="tr-dest-content">
-          <div class="tr-dest-tag">Canada</div>
-          <h3 class="tr-dest-name">Halifax</h3>
-          <p class="tr-dest-sub">Harbour fog and summer research at Dalhousie.</p>
-        </div>
-        <div class="tr-dest-arrow" aria-hidden="true">→</div>
-      </a>
-
-      <!-- Los Angeles -->
-      <a class="tr-dest-card reveal-up" href="{{ '/travel/los-angeles/' | relative_url }}" style="--delay:0.18s">
-        <img
-          class="tr-dest-img"
-          src="{{ '/assets/img/travel/destinations/la-cover.jpg' | relative_url }}"
-          alt="Los Angeles, California"
-          loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0a0a04 0%,#1a1804 60%,#100e04 100%)'"
-        >
-        <div class="tr-dest-overlay"></div>
-        <div class="tr-dest-content">
-          <div class="tr-dest-tag">USA</div>
-          <h3 class="tr-dest-name">Los Angeles</h3>
-          <p class="tr-dest-sub">Sunsets on the Pacific — seventy miles from Riverside.</p>
+          <div class="tr-dest-tag">South Asia</div>
+          <h3 class="tr-dest-name">India</h3>
+          <p class="tr-dest-sub">Rajasthan, Kashmir, the Himalayas, Goa, and everything in between.</p>
         </div>
         <div class="tr-dest-arrow" aria-hidden="true">→</div>
       </a>
 
       <!--
-        ══ ADD MORE DESTINATIONS HERE ═══════════════════════════════════════
-        Copy the block above and update:
-          - href:  /travel/[city-name]/  (create a matching _pages/travel_[city].md)
-          - src:   assets/img/travel/destinations/[city]-cover.jpg
-          - Tag, Name, Subtitle
-        ═════════════════════════════════════════════════════════════════════
+        IMAGE SLOT: assets/img/travel/destinations/canada-cover.jpg
+        Halifax waterfront, CN Tower, or Niagara Falls.
       -->
+      <a class="tr-dest-card reveal-up" href="{{ '/travel/canada/' | relative_url }}" style="--delay:0.12s">
+        <img
+          class="tr-dest-img"
+          src="{{ '/assets/img/travel/destinations/canada-cover.jpg' | relative_url }}"
+          alt="Canada"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061828 60%,#040e1e 100%)'"
+        >
+        <div class="tr-dest-overlay"></div>
+        <div class="tr-dest-content">
+          <div class="tr-dest-tag">North America</div>
+          <h3 class="tr-dest-name">Canada</h3>
+          <p class="tr-dest-sub">Halifax, Toronto, and Niagara — research and exploration on the Atlantic coast.</p>
+        </div>
+        <div class="tr-dest-arrow" aria-hidden="true">→</div>
+      </a>
+
+      <!--
+        IMAGE SLOT: assets/img/travel/destinations/usa-cover.jpg
+        Golden Gate, national park, or California coast.
+      -->
+      <a class="tr-dest-card reveal-up" href="{{ '/travel/usa/' | relative_url }}" style="--delay:0.18s">
+        <img
+          class="tr-dest-img"
+          src="{{ '/assets/img/travel/destinations/usa-cover.jpg' | relative_url }}"
+          alt="United States"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#080a10 0%,#141c2a 60%,#0c1220 100%)'"
+        >
+        <div class="tr-dest-overlay"></div>
+        <div class="tr-dest-content">
+          <div class="tr-dest-tag">North America</div>
+          <h3 class="tr-dest-name">United States</h3>
+          <p class="tr-dest-sub">California, New York, Nevada, national parks — a continent of contrasts.</p>
+        </div>
+        <div class="tr-dest-arrow" aria-hidden="true">→</div>
+      </a>
+
+      <!--
+        IMAGE SLOT: assets/img/travel/destinations/malaysia-cover.jpg
+        Petronas Twin Towers, street food, or the rainforest.
+      -->
+      <a class="tr-dest-card reveal-up" href="{{ '/travel/malaysia/' | relative_url }}" style="--delay:0.24s">
+        <img
+          class="tr-dest-img"
+          src="{{ '/assets/img/travel/destinations/malaysia-cover.jpg' | relative_url }}"
+          alt="Malaysia"
+          loading="lazy"
+          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#081808 60%,#060e06 100%)'"
+        >
+        <div class="tr-dest-overlay"></div>
+        <div class="tr-dest-content">
+          <div class="tr-dest-tag">Southeast Asia</div>
+          <h3 class="tr-dest-name">Malaysia</h3>
+          <p class="tr-dest-sub">Kuala Lumpur — where the towers pierce the clouds and every street corner smells of something extraordinary.</p>
+        </div>
+        <div class="tr-dest-arrow" aria-hidden="true">→</div>
+      </a>
 
     </div>
   </section>
@@ -202,12 +294,104 @@ full_width: true
 
 <script>
   (function () {
-    /* Intersection-observer reveals */
+    /* ── Intersection-observer reveals ───────────────────────────── */
     document.querySelectorAll('.reveal-up').forEach(function (el) {
       var obs = new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting) { el.classList.add('revealed'); obs.disconnect(); }
-      }, { threshold: 0.08 });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
       obs.observe(el);
     });
+
+    /* ── Carousel ────────────────────────────────────────────────── */
+    var track      = document.getElementById('carousel-track');
+    var viewport   = track && track.parentElement;
+    var dotsWrap   = document.getElementById('carousel-dots');
+    var prevBtn    = document.getElementById('carousel-prev');
+    var nextBtn    = document.getElementById('carousel-next');
+
+    if (!track || !viewport) return;
+
+    var slides     = Array.from(track.querySelectorAll('.tr-carousel-slide'));
+    var total      = slides.length;
+    var current    = 0;
+    var autoDelay  = 3500;   /* ms between auto-advances */
+    var autoTimer  = null;
+    var isAnimating = false;
+    var GAP        = 16;     /* px, must match CSS gap */
+
+    /* ── helpers ──────────────────────────────────────────────── */
+    function visibleCount() {
+      var w = window.innerWidth;
+      if (w < 640)  return 1;
+      if (w < 1024) return 2;
+      return 3;
+    }
+
+    function slideWidth() {
+      var n   = visibleCount();
+      var vw  = viewport.offsetWidth;
+      return (vw - GAP * (n - 1)) / n;
+    }
+
+    function maxIndex() {
+      return Math.max(0, total - visibleCount());
+    }
+
+    /* ── dots ──────────────────────────────────────────────────── */
+    slides.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className    = 'tr-carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+      dot.addEventListener('click', function () { goTo(i); });
+      dotsWrap.appendChild(dot);
+    });
+
+    function updateDots() {
+      var dots = dotsWrap.querySelectorAll('.tr-carousel-dot');
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    }
+
+    /* ── movement ──────────────────────────────────────────────── */
+    function goTo(idx) {
+      if (isAnimating) return;
+      current = Math.min(Math.max(idx, 0), maxIndex());
+      var offset = current * (slideWidth() + GAP);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      updateDots();
+      resetAuto();
+    }
+
+    function next() { goTo(current >= maxIndex() ? 0 : current + 1); }
+    function prev() { goTo(current <= 0 ? maxIndex() : current - 1); }
+
+    /* ── auto-play ─────────────────────────────────────────────── */
+    function startAuto() { autoTimer = setInterval(next, autoDelay); }
+    function stopAuto()  { clearInterval(autoTimer); }
+    function resetAuto() { stopAuto(); startAuto(); }
+
+    /* ── events ────────────────────────────────────────────────── */
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    /* pause when mouse is inside the carousel */
+    viewport.addEventListener('mouseenter', stopAuto);
+    viewport.addEventListener('mouseleave', startAuto);
+
+    /* touch / swipe support */
+    var touchStartX = 0;
+    viewport.addEventListener('touchstart', function (e) {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    viewport.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+    });
+
+    /* recalculate on resize */
+    window.addEventListener('resize', function () { goTo(current); });
+
+    /* ── start ─────────────────────────────────────────────────── */
+    goTo(0);
+    startAuto();
   })();
 </script>

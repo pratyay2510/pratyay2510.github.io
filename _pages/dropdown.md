@@ -89,17 +89,17 @@ full_width: true
     </div>
 
     <!-- Full-width Travel card below the three columns -->
-    <a class="mm-card mm-card--travel reveal-up" href="{{ '/travel/' | relative_url }}" style="--delay:0.24s">
+    <a class="mm-card mm-card--travel reveal-up" href="{{ '/travel/' | relative_url }}" style="--delay:0.18s">
       <img
         class="mm-card-img"
         src="{{ '/assets/img/travel/travel-cover-placeholder.jpg' | relative_url }}"
         alt="Travel — Places I have explored"
         loading="lazy"
-        onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a0804 0%,#1e1608 40%,#2a1e0a 100%)'"
+        onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a0804 0%,#221608 42%,#2e1e0a 100%)'"
       >
       <div class="mm-card-overlay mm-card-overlay--travel"></div>
       <div class="mm-card-content">
-        <div class="mm-card-text-group">
+        <div class="mm-card-travel-text">
           <div class="mm-card-num">04</div>
           <div class="mm-card-category">Wanderlust</div>
           <h3 class="mm-card-name">Travel</h3>
@@ -126,9 +126,12 @@ full_width: true
 <script>
   (function () {
     document.querySelectorAll('.reveal-up').forEach(function (el) {
+      /* threshold:0 fires as soon as any pixel enters the viewport,
+         rootMargin bottom offset lets the travel card trigger before
+         the user has fully scrolled to it. */
       var obs = new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting) { el.classList.add('revealed'); obs.disconnect(); }
-      }, { threshold: 0.1 });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
       obs.observe(el);
     });
   })();

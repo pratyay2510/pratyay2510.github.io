@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Halifax — Travel
-permalink: /travel/halifax/
+permalink: /travel/canada/halifax/
 description: Field notes from Halifax, Nova Scotia — harbour fog and summer research at Dalhousie University.
 nav: false
 full_width: true
@@ -11,11 +11,11 @@ full_width: true
 
   <nav class="pj-nav">
     <div class="pj-nav-inner">
-      <a href="{{ '/travel/' | relative_url }}" class="pj-back">
+      <a href="{{ '/travel/canada/' | relative_url }}" class="pj-back">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-        Travel
+        Canada
       </a>
-      <div class="pj-nav-label">Halifax, Canada</div>
+      <div class="pj-nav-label">Halifax, Nova Scotia</div>
     </div>
   </nav>
 
@@ -154,9 +154,9 @@ full_width: true
 
   <footer class="pj-footer">
     <div class="pj-footer-inner">
-      <a href="{{ '/travel/' | relative_url }}" class="pj-footer-back">
+      <a href="{{ '/travel/canada/' | relative_url }}" class="pj-footer-back">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-        Back to Travel
+        Back to Canada
       </a>
       <div class="pj-footer-name">Halifax, Nova Scotia</div>
     </div>
