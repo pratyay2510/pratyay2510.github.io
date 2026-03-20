@@ -23,6 +23,8 @@
     <!-- Content -->
     {% if page.permalink == '/' %}
       <div role="main" class="home-main">{{ content }}</div>
+    {% elsif page.layout == 'project-premium' or page.full_width %}
+      <div role="main" class="full-width-main">{{ content }}</div>
     {% else %}
       <div class="container mt-5" role="main">
         {% if page.toc and page.toc.sidebar %}
