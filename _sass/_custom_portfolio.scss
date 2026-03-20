@@ -21,6 +21,11 @@ html[data-theme="light"] {
   --global-footer-bg-color: #050505;
   --global-footer-text-color: #a0a0a0;
   --global-footer-link-color: #{$lime};
+
+  /* ── Typography families ── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sub:     'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
 }
 
 /* Smooth scroll, prevent horizontal overflow at the root */
@@ -1103,6 +1108,7 @@ a:not(.hero-social-link):not(.nav-link) {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  font-family: var(--font-body);
   font-size: 0.78rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -1123,6 +1129,7 @@ a:not(.hero-social-link):not(.nav-link) {
 
 .hero-name-first {
   display: block;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4.2vw, 4rem);
   font-weight: 400;
   font-style: italic;
@@ -1131,14 +1138,18 @@ a:not(.hero-social-link):not(.nav-link) {
 
 .hero-name-last {
   display: block;
+  font-family: var(--font-display);
   font-size: clamp(2.3rem, 4.8vw, 4.4rem);
   font-weight: 900;
   color: #fff;
+  line-height: 0.92;
 }
 
 .hero-title-tag {
   margin-top: 0.9rem;
+  font-family: var(--font-body);
   font-size: 0.82rem;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--global-theme-color);
@@ -1152,10 +1163,17 @@ a:not(.hero-social-link):not(.nav-link) {
 }
 
 .hero-bio {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.75;
   color: var(--global-text-color-light);
   max-width: 52ch;
+
+  p {
+    margin-bottom: 0.75rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
 }
 
 .hero-links {
@@ -1172,10 +1190,14 @@ a:not(.hero-social-link):not(.nav-link) {
   padding: 0.55rem 1.1rem;
   border: 1px solid rgba(217, 170, 46, 0.4);
   border-radius: 999px;
+  font-family: var(--font-body);
   font-size: 0.8rem;
+  font-weight: 500;
   color: var(--global-text-color-light);
   transition: all 0.2s ease;
   text-decoration: none;
+
+  i, svg { font-size: 14px; width: 14px; height: 14px; flex-shrink: 0; }
 }
 
 .hero-link:hover {
@@ -1242,6 +1264,7 @@ a:not(.hero-social-link):not(.nav-link) {
 }
 
 .stat-num {
+  font-family: var(--font-display);
   font-size: clamp(1.3rem, 2.1vw, 1.8rem);
   font-weight: 700;
   color: #f5e5bd;
@@ -1267,13 +1290,59 @@ a:not(.hero-social-link):not(.nav-link) {
   padding-top: 1rem;
 }
 
-.about-quote {
-  margin-top: 1.2rem;
-  padding-left: 1.2rem;
+/* Hero blockquote — Cormorant Garamond italic with gold left-border accent */
+.hero-quote {
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
   border-left: 2px solid var(--global-theme-color);
+  font-family: var(--font-sub);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   font-style: italic;
-  font-size: 1.15rem;
+  font-weight: 400;
   color: #f3deb0;
+  line-height: 1.55;
+}
+
+/* Keep .about-quote as alias for any other pages */
+.about-quote {
+  @extend .hero-quote;
+}
+
+/* ── Scroll hint ─────────────────────────────────────────────────────── */
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  animation: float 3s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 2;
+
+  span {
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(200, 180, 130, 0.55);
+    white-space: nowrap;
+  }
+}
+
+.scroll-line {
+  width: 1px;
+  height: 2.8rem;
+  background: linear-gradient(to bottom, rgba(217, 170, 46, 0.6), transparent);
+  border-radius: 999px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(-10px); }
 }
 
 .section-header {
@@ -1931,7 +2000,7 @@ a:not(.hero-social-link):not(.nav-link) {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Hero about inline                                                           */
+/* Hero about inline (legacy — no longer rendered in hero, kept for safety)   */
 /* -------------------------------------------------------------------------- */
 
 .hero-about-inline {
@@ -1944,17 +2013,11 @@ a:not(.hero-social-link):not(.nav-link) {
 
 .hero-about-copy {
   color: var(--global-text-color-light);
+  font-family: var(--font-body);
   font-size: 0.95rem;
   line-height: 1.75;
-}
 
-.hero-about-copy p:last-child {
-  margin-bottom: 0;
-}
-
-.hero-about-inline .about-quote {
-  margin: 1rem 0 0;
-  font-size: 1.05rem;
+  p:last-child { margin-bottom: 0; }
 }
 
 /* -------------------------------------------------------------------------- */
