@@ -3470,12 +3470,14 @@ a:not(.hero-social-link):not(.nav-link) {
 /* -------------------------------------------------------------------------- */
 
 .mm-card--travel {
+  display: block;
   min-height: 240px;
   margin-top: 1.25rem;
 }
 
 /* Higher-specificity overrides: force travel card content visible regardless of hover state */
 .mm-card.mm-card--travel .mm-card-content {
+  display: flex;
   padding: 2rem 2.2rem;
   flex-direction: row;
   align-items: flex-end;
