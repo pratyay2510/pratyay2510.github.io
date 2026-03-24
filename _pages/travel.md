@@ -106,7 +106,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-01.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/travel-photos/gallery-01.jpg' | relative_url }}"
               alt="Travel photograph 1"
               loading="lazy"
             >
@@ -115,7 +115,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-02.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/travel-photos/gallery-02.jpg' | relative_url }}"
               alt="Travel photograph 2"
               loading="lazy"
             >
@@ -124,7 +124,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-03.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/travel-photos/gallery-03.jpg' | relative_url }}"
               alt="Travel photograph 3"
               loading="lazy"
             >
@@ -133,7 +133,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-04.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/travel-photos/gallery-04.jpg' | relative_url }}"
               alt="Travel photograph 4"
               loading="lazy"
             >
@@ -142,7 +142,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-05.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/travel-photos/gallery-05.jpg' | relative_url }}"
               alt="Travel photograph 5"
               loading="lazy"
             >
@@ -151,7 +151,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-06.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/travel-photos/gallery-06.jpg' | relative_url }}"
               alt="Travel photograph 6"
               loading="lazy"
             >
