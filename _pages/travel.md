@@ -56,12 +56,12 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-01.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/gallery/gallery-01.JPG' | relative_url }}"
               alt="Travel photograph 1"
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#0e0c06 0%,#2a1f08 100%)';this.style.display='none'"
             >
-            <div class="tr-carousel-caption">Somewhere beautiful</div>
+            <div class="tr-carousel-caption">The Half Dome at Yosemite NP</div>
           </div>
 
           <div class="tr-carousel-slide">
@@ -71,17 +71,17 @@ full_width: true
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#060c0e 0%,#082028 100%)';this.style.display='none'"
             >
-            <div class="tr-carousel-caption">Golden hour, somewhere</div>
+            <div class="tr-carousel-caption">New York skyline from The Edge</div>
           </div>
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-03.jpg' | relative_url }}"
+              src="{{ '/assets/img/travel/gallery/gallery-03.JPG' | relative_url }}"
               alt="Travel photograph 3"
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0606 0%,#1e0808 100%)';this.style.display='none'"
             >
-            <div class="tr-carousel-caption">City lights</div>
+            <div class="tr-carousel-caption">Halifax Cathedral during the golden hour on a random Tuesday</div>
           </div>
 
           <div class="tr-carousel-slide">
@@ -91,7 +91,7 @@ full_width: true
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#060a06 0%,#0c1e0a 100%)';this.style.display='none'"
             >
-            <div class="tr-carousel-caption">Through the lens</div>
+            <div class="tr-carousel-caption">Sycamore Canyon, Riverside</div>
           </div>
 
           <div class="tr-carousel-slide">
@@ -101,7 +101,7 @@ full_width: true
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#221804 100%)';this.style.display='none'"
             >
-            <div class="tr-carousel-caption">A moment in time</div>
+            <div class="tr-carousel-caption">The Golden Gate Bridge with Karl the Fog</div>
           </div>
 
           <div class="tr-carousel-slide">
@@ -111,7 +111,7 @@ full_width: true
               loading="lazy"
               onerror="this.parentElement.style.background='linear-gradient(160deg,#08060c 0%,#14081e 100%)';this.style.display='none'"
             >
-            <div class="tr-carousel-caption">Far from home</div>
+            <div class="tr-carousel-caption">Princep Ghat, Kolkata</div>
           </div>
 
         </div>
