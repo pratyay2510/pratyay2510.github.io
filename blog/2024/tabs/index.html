@@ -118,6 +118,8 @@
 
     function patchImageElement(img) {
       if (!(img instanceof HTMLImageElement)) return;
+      /* After a failed WebP load we fall back to the original; do not patch again or we loop forever. */
+      if (img.dataset.webpFallbackDone === '1') return;
       if (img.dataset.webpPatched === '1') return;
 
       var originalSrc = img.getAttribute('src');
@@ -164,11 +166,15 @@
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         if (mutation.type === 'attributes' && mutation.target instanceof HTMLImageElement) {
-          mutation.target.dataset.webpPatched = '';
-          mutation.target.dataset.webpFallbackDone = '';
-          mutation.target.dataset.originalSrc = '';
-          mutation.target.dataset.webpSrc = '';
-          patchImageElement(mutation.target);
+          var imgNode = mutation.target;
+          /* Do not reset/re-patch when we just restored the original JPG after WebP 404 — that caused an infinite WebP→fail→JPG→WebP loop. */
+          if (imgNode.dataset.webpFallbackDone === '1') return;
+
+          imgNode.dataset.webpPatched = '';
+          imgNode.dataset.webpFallbackDone = '';
+          imgNode.dataset.originalSrc = '';
+          imgNode.dataset.webpSrc = '';
+          patchImageElement(imgNode);
           return;
         }
 
@@ -336,7 +342,7 @@ Content 2
 
 <p>With this you can generate visualizations like:</p>
 
-<ul id="log" class="tab" data-tab="03e3dd80-3c6f-438b-b2ff-040a1cfbae57" data-name="log">
+<ul id="log" class="tab" data-tab="f6891394-dcec-4a12-9424-30e47fe96e04" data-name="log">
   
       <li class="active" id="log-php">
           <a href="#">php </a>
@@ -351,7 +357,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="03e3dd80-3c6f-438b-b2ff-040a1cfbae57" data-name="log">
+<ul class="tab-content" id="f6891394-dcec-4a12-9424-30e47fe96e04" data-name="log">
   
       <li class="active">
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
@@ -375,7 +381,7 @@ Content 2
 
 <h2 id="another-example">Another example</h2>
 
-<ul id="data-struct" class="tab" data-tab="b634dc4a-f8ee-4f28-871a-8c3cb41417dc" data-name="data-struct">
+<ul id="data-struct" class="tab" data-tab="9625f394-3e57-4ac5-9bff-e86c1e087ce3" data-name="data-struct">
   
       <li class="active" id="data-struct-yaml">
           <a href="#">yaml </a>
@@ -386,7 +392,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="b634dc4a-f8ee-4f28-871a-8c3cb41417dc" data-name="data-struct">
+<ul class="tab-content" id="9625f394-3e57-4ac5-9bff-e86c1e087ce3" data-name="data-struct">
   
       <li class="active">
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
@@ -408,7 +414,7 @@ Content 2
 
 <h2 id="tabs-for-something-else">Tabs for something else</h2>
 
-<ul id="something-else" class="tab" data-tab="7cef7b96-506f-41ab-b740-94e1b8ff8853" data-name="something-else">
+<ul id="something-else" class="tab" data-tab="c198965a-5e46-4611-8776-04e06decda3b" data-name="something-else">
   
       <li class="active" id="something-else-text">
           <a href="#">text </a>
@@ -423,7 +429,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="7cef7b96-506f-41ab-b740-94e1b8ff8853" data-name="something-else">
+<ul class="tab-content" id="c198965a-5e46-4611-8776-04e06decda3b" data-name="something-else">
   
       <li class="active">
 <p>Regular text</p>

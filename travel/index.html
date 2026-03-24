@@ -118,6 +118,8 @@
 
     function patchImageElement(img) {
       if (!(img instanceof HTMLImageElement)) return;
+      /* After a failed WebP load we fall back to the original; do not patch again or we loop forever. */
+      if (img.dataset.webpFallbackDone === '1') return;
       if (img.dataset.webpPatched === '1') return;
 
       var originalSrc = img.getAttribute('src');
@@ -164,11 +166,15 @@
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         if (mutation.type === 'attributes' && mutation.target instanceof HTMLImageElement) {
-          mutation.target.dataset.webpPatched = '';
-          mutation.target.dataset.webpFallbackDone = '';
-          mutation.target.dataset.originalSrc = '';
-          mutation.target.dataset.webpSrc = '';
-          patchImageElement(mutation.target);
+          var imgNode = mutation.target;
+          /* Do not reset/re-patch when we just restored the original JPG after WebP 404 — that caused an infinite WebP→fail→JPG→WebP loop. */
+          if (imgNode.dataset.webpFallbackDone === '1') return;
+
+          imgNode.dataset.webpPatched = '';
+          imgNode.dataset.webpFallbackDone = '';
+          imgNode.dataset.originalSrc = '';
+          imgNode.dataset.webpSrc = '';
+          patchImageElement(imgNode);
           return;
         }
 
@@ -355,32 +361,32 @@
         <div class="tr-carousel-track" id="carousel-track">
 
           <div class="tr-carousel-slide">
-            <img src="/assets/img/travel/travel-photos/gallery-01.jpg" alt="Travel photograph 1" loading="lazy">
+            <img src="/assets/img/travel/travel-photos/gallery-01.jpg" alt="Travel photograph 1" loading="eager">
             <div class="tr-carousel-caption">The Half Dome at Yosemite NP</div>
           </div>
 
           <div class="tr-carousel-slide">
-            <img src="/assets/img/travel/travel-photos/gallery-02.jpg" alt="Travel photograph 2" loading="lazy">
+            <img src="/assets/img/travel/travel-photos/gallery-02.jpg" alt="Travel photograph 2" loading="eager">
             <div class="tr-carousel-caption">New York skyline from The Edge</div>
           </div>
 
           <div class="tr-carousel-slide">
-            <img src="/assets/img/travel/travel-photos/gallery-03.jpg" alt="Travel photograph 3" loading="lazy">
+            <img src="/assets/img/travel/travel-photos/gallery-03.jpg" alt="Travel photograph 3" loading="eager">
             <div class="tr-carousel-caption">Halifax Cathedral during the golden hour on a random Tuesday</div>
           </div>
 
           <div class="tr-carousel-slide">
-            <img src="/assets/img/travel/travel-photos/gallery-04.jpg" alt="Travel photograph 4" loading="lazy">
+            <img src="/assets/img/travel/travel-photos/gallery-04.jpg" alt="Travel photograph 4" loading="eager">
             <div class="tr-carousel-caption">Sycamore Canyon, Riverside</div>
           </div>
 
           <div class="tr-carousel-slide">
-            <img src="/assets/img/travel/travel-photos/gallery-05.jpg" alt="Travel photograph 5" loading="lazy">
+            <img src="/assets/img/travel/travel-photos/gallery-05.jpg" alt="Travel photograph 5" loading="eager">
             <div class="tr-carousel-caption">The Golden Gate Bridge with Karl the Fog</div>
           </div>
 
           <div class="tr-carousel-slide">
-            <img src="/assets/img/travel/travel-photos/gallery-06.jpg" alt="Travel photograph 6" loading="lazy">
+            <img src="/assets/img/travel/travel-photos/gallery-06.jpg" alt="Travel photograph 6" loading="eager">
             <div class="tr-carousel-caption">Princep Ghat, Kolkata</div>
           </div>
 
