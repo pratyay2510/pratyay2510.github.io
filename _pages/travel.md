@@ -7,6 +7,56 @@ nav: false
 full_width: true
 ---
 
+<!--
+  Script for handling image load errors (case sensitivity/extensions)
+  Must be defined before images load to catch immediate 404s.
+-->
+<script>
+  window.travelCarouselImageFallback = function (imgEl) {
+    if (!imgEl || !imgEl.parentElement) return;
+
+    var src = imgEl.getAttribute('src') || '';
+    var dataKey = 'travelFallbackCandidates';
+    var idxKey = 'travelFallbackIndex';
+
+    if (!imgEl.dataset[dataKey]) {
+      var match = src.match(/^(.*)\.(jpg|jpeg|webp|JPG|JPEG|WEBP)$/);
+      if (!match) {
+        imgEl.parentElement.style.background = 'linear-gradient(160deg,#0a0c10 0%,#101822 100%)';
+        imgEl.style.display = 'none';
+        return;
+      }
+
+      var base = match[1];
+      var candidates = [base + '.jpg', base + '.JPG', base + '.jpeg', base + '.JPEG', base + '.webp', base + '.WEBP'];
+      var unique = [];
+
+      candidates.forEach(function (candidate) {
+        if (unique.indexOf(candidate) === -1) unique.push(candidate);
+      });
+
+      imgEl.dataset[dataKey] = JSON.stringify(unique);
+      imgEl.dataset[idxKey] = String(Math.max(0, unique.indexOf(src)));
+    }
+
+    var options = JSON.parse(imgEl.dataset[dataKey]);
+    var nextIdx = parseInt(imgEl.dataset[idxKey] || '0', 10) + 1;
+
+    while (nextIdx < options.length && options[nextIdx] === (imgEl.getAttribute('src') || '')) {
+      nextIdx += 1;
+    }
+
+    if (nextIdx < options.length) {
+      imgEl.dataset[idxKey] = String(nextIdx);
+      imgEl.src = options[nextIdx];
+      return;
+    }
+
+    imgEl.parentElement.style.background = 'linear-gradient(160deg,#0a0c10 0%,#101822 100%)';
+    imgEl.style.display = 'none';
+  };
+</script>
+
 <div class="tr-page page-float-in">
 
   <nav class="pj-nav">
@@ -294,49 +344,6 @@ full_width: true
 
 <script>
   (function () {
-    window.travelCarouselImageFallback = function (imgEl) {
-      if (!imgEl || !imgEl.parentElement) return;
-
-      var src = imgEl.getAttribute('src') || '';
-      var dataKey = 'travelFallbackCandidates';
-      var idxKey = 'travelFallbackIndex';
-
-      if (!imgEl.dataset[dataKey]) {
-        var match = src.match(/^(.*)\.(jpg|jpeg|webp|JPG|JPEG|WEBP)$/);
-        if (!match) {
-          imgEl.parentElement.style.background = 'linear-gradient(160deg,#0a0c10 0%,#101822 100%)';
-          imgEl.style.display = 'none';
-          return;
-        }
-
-        var base = match[1];
-        var candidates = [base + '.jpg', base + '.JPG', base + '.jpeg', base + '.JPEG', base + '.webp', base + '.WEBP'];
-        var unique = [];
-
-        candidates.forEach(function (candidate) {
-          if (unique.indexOf(candidate) === -1) unique.push(candidate);
-        });
-
-        imgEl.dataset[dataKey] = JSON.stringify(unique);
-        imgEl.dataset[idxKey] = String(Math.max(0, unique.indexOf(src)));
-      }
-
-      var options = JSON.parse(imgEl.dataset[dataKey]);
-      var nextIdx = parseInt(imgEl.dataset[idxKey] || '0', 10) + 1;
-
-      while (nextIdx < options.length && options[nextIdx] === (imgEl.getAttribute('src') || '')) {
-        nextIdx += 1;
-      }
-
-      if (nextIdx < options.length) {
-        imgEl.dataset[idxKey] = String(nextIdx);
-        imgEl.src = options[nextIdx];
-        return;
-      }
-
-      imgEl.parentElement.style.background = 'linear-gradient(160deg,#0a0c10 0%,#101822 100%)';
-      imgEl.style.display = 'none';
-    };
 
     /* ── Intersection-observer reveals ───────────────────────────── */
     document.querySelectorAll('.reveal-up').forEach(function (el) {
