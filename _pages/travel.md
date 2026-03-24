@@ -109,7 +109,6 @@ full_width: true
               src="{{ '/assets/img/travel/gallery/gallery-01.JPG' | relative_url }}"
               alt="Travel photograph 1"
               loading="lazy"
-              onerror="window.travelCarouselImageFallback && window.travelCarouselImageFallback(this)"
             >
             <div class="tr-carousel-caption">The Half Dome at Yosemite NP</div>
           </div>
@@ -119,7 +118,6 @@ full_width: true
               src="{{ '/assets/img/travel/gallery/gallery-02.jpg' | relative_url }}"
               alt="Travel photograph 2"
               loading="lazy"
-              onerror="window.travelCarouselImageFallback && window.travelCarouselImageFallback(this)"
             >
             <div class="tr-carousel-caption">New York skyline from The Edge</div>
           </div>
@@ -129,7 +127,6 @@ full_width: true
               src="{{ '/assets/img/travel/gallery/gallery-03.JPG' | relative_url }}"
               alt="Travel photograph 3"
               loading="lazy"
-              onerror="window.travelCarouselImageFallback && window.travelCarouselImageFallback(this)"
             >
             <div class="tr-carousel-caption">Halifax Cathedral during the golden hour on a random Tuesday</div>
           </div>
@@ -139,7 +136,6 @@ full_width: true
               src="{{ '/assets/img/travel/gallery/gallery-04.jpg' | relative_url }}"
               alt="Travel photograph 4"
               loading="lazy"
-              onerror="window.travelCarouselImageFallback && window.travelCarouselImageFallback(this)"
             >
             <div class="tr-carousel-caption">Sycamore Canyon, Riverside</div>
           </div>
@@ -149,7 +145,6 @@ full_width: true
               src="{{ '/assets/img/travel/gallery/gallery-05.jpg' | relative_url }}"
               alt="Travel photograph 5"
               loading="lazy"
-              onerror="window.travelCarouselImageFallback && window.travelCarouselImageFallback(this)"
             >
             <div class="tr-carousel-caption">The Golden Gate Bridge with Karl the Fog</div>
           </div>
@@ -159,7 +154,6 @@ full_width: true
               src="{{ '/assets/img/travel/gallery/gallery-06.jpg' | relative_url }}"
               alt="Travel photograph 6"
               loading="lazy"
-              onerror="window.travelCarouselImageFallback && window.travelCarouselImageFallback(this)"
             >
             <div class="tr-carousel-caption">Princep Ghat, Kolkata</div>
           </div>
