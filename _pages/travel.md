@@ -106,7 +106,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-01.JPG' | relative_url }}"
+              src="{{ '/assets/img/travel/gallery/gallery-01.jpg' | relative_url }}"
               alt="Travel photograph 1"
               loading="lazy"
             >
@@ -124,7 +124,7 @@ full_width: true
 
           <div class="tr-carousel-slide">
             <img
-              src="{{ '/assets/img/travel/gallery/gallery-03.JPG' | relative_url }}"
+              src="{{ '/assets/img/travel/gallery/gallery-03.jpg' | relative_url }}"
               alt="Travel photograph 3"
               loading="lazy"
             >
