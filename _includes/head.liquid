@@ -147,6 +147,8 @@
 
     function patchImageElement(img) {
       if (!(img instanceof HTMLImageElement)) return;
+      /* After a failed WebP load we fall back to the original; do not patch again or we loop forever. */
+      if (img.dataset.webpFallbackDone === '1') return;
       if (img.dataset.webpPatched === '1') return;
 
       var originalSrc = img.getAttribute('src');
@@ -193,11 +195,15 @@
     var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         if (mutation.type === 'attributes' && mutation.target instanceof HTMLImageElement) {
-          mutation.target.dataset.webpPatched = '';
-          mutation.target.dataset.webpFallbackDone = '';
-          mutation.target.dataset.originalSrc = '';
-          mutation.target.dataset.webpSrc = '';
-          patchImageElement(mutation.target);
+          var imgNode = mutation.target;
+          /* Do not reset/re-patch when we just restored the original JPG after WebP 404 — that caused an infinite WebP→fail→JPG→WebP loop. */
+          if (imgNode.dataset.webpFallbackDone === '1') return;
+
+          imgNode.dataset.webpPatched = '';
+          imgNode.dataset.webpFallbackDone = '';
+          imgNode.dataset.originalSrc = '';
+          imgNode.dataset.webpSrc = '';
+          patchImageElement(imgNode);
           return;
         }
 

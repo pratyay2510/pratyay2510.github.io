@@ -108,7 +108,7 @@ full_width: true
             <img
               src="{{ '/assets/img/travel/travel-photos/gallery-01.jpg' | relative_url }}"
               alt="Travel photograph 1"
-              loading="lazy"
+              loading="eager"
             >
             <div class="tr-carousel-caption">The Half Dome at Yosemite NP</div>
           </div>
@@ -117,7 +117,7 @@ full_width: true
             <img
               src="{{ '/assets/img/travel/travel-photos/gallery-02.jpg' | relative_url }}"
               alt="Travel photograph 2"
-              loading="lazy"
+              loading="eager"
             >
             <div class="tr-carousel-caption">New York skyline from The Edge</div>
           </div>
@@ -126,7 +126,7 @@ full_width: true
             <img
               src="{{ '/assets/img/travel/travel-photos/gallery-03.jpg' | relative_url }}"
               alt="Travel photograph 3"
-              loading="lazy"
+              loading="eager"
             >
             <div class="tr-carousel-caption">Halifax Cathedral during the golden hour on a random Tuesday</div>
           </div>
@@ -135,7 +135,7 @@ full_width: true
             <img
               src="{{ '/assets/img/travel/travel-photos/gallery-04.jpg' | relative_url }}"
               alt="Travel photograph 4"
-              loading="lazy"
+              loading="eager"
             >
             <div class="tr-carousel-caption">Sycamore Canyon, Riverside</div>
           </div>
@@ -144,7 +144,7 @@ full_width: true
             <img
               src="{{ '/assets/img/travel/travel-photos/gallery-05.jpg' | relative_url }}"
               alt="Travel photograph 5"
-              loading="lazy"
+              loading="eager"
             >
             <div class="tr-carousel-caption">The Golden Gate Bridge with Karl the Fog</div>
           </div>
@@ -153,7 +153,7 @@ full_width: true
             <img
               src="{{ '/assets/img/travel/travel-photos/gallery-06.jpg' | relative_url }}"
               alt="Travel photograph 6"
-              loading="lazy"
+              loading="eager"
             >
             <div class="tr-carousel-caption">Princep Ghat, Kolkata</div>
           </div>
