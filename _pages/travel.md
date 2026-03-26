@@ -191,7 +191,7 @@ full_width: true
       -->
       <a class="tr-home-card reveal-up" href="{{ '/travel/kolkata/' | relative_url }}" style="--delay:0.06s">
         <img
-          src="{{ '/assets/img/travel/destinations/kolkata-cover.jpg' | relative_url }}"
+          src="{{ '/assets/img/travel/kolkata/kolkata-cover.jpg' | relative_url }}"
           alt="Kolkata — The city of joy"
           loading="lazy"
           onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)'"
