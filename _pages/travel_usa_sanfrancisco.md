@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/usa/san-francisco/cover.jpg
+    IMAGE SLOT: assets/img/travel/usa/san-francisco-cover.jpg
     Recommended: Golden Gate Bridge at dawn or in fog, the bay
     from Marin Headlands, or the city from Twin Peaks. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/usa/san-francisco/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/usa/san-francisco-cover.jpg' | relative_url }}"
       alt="San Francisco — the Golden Gate and the bay"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0e1220 60%,#080c18 100%)'"
     >

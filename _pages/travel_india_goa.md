@@ -20,14 +20,14 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/india/goa/cover.jpg
+    IMAGE SLOT: assets/img/travel/india/goa-cover.jpg
     Recommended: Palolem or Anjuna beach at golden hour, the
     Portuguese church facades in Old Goa, or a coconut-lined road.
     Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/india/goa/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/india/goa-cover.jpg' | relative_url }}"
       alt="Goa — beaches and Portuguese legacy"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040c0a 0%,#081c16 60%,#061410 100%)'"
     >

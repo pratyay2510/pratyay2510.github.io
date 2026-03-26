@@ -22,12 +22,12 @@ full_width: true
   <!-- ── Hero image ──────────────────────────────────────────────────── -->
   <!--
     IMAGE SLOT: Replace the src below with your Halifax hero photo.
-    File location: assets/img/travel/destinations/halifax-cover.jpg
+    File location: assets/img/travel/canada/halifax-cover.jpg
     Recommended: landscape, min 1400×800px, JPG or WEBP.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/destinations/halifax-cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/canada/halifax-cover.jpg' | relative_url }}"
       alt="Halifax harbour"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061a28 60%,#040c18 100%)'"
     >

@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/usa/national-parks/cover.jpg
+    IMAGE SLOT: assets/img/travel/usa/national-parks-cover.jpg
     Recommended: Yosemite Valley from Tunnel View, Joshua Tree
     boulders at sunrise, or Zion Canyon. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/usa/national-parks/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/usa/national-parks-cover.jpg' | relative_url }}"
       alt="US National Parks — the protected wilderness"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#030a04 0%,#091806 60%,#051204 100%)'"
     >

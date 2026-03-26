@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/usa/san-diego/cover.jpg
+    IMAGE SLOT: assets/img/travel/usa/san-diego-cover.jpg
     Recommended: Coronado Bridge and bay, Balboa Park museums,
     or La Jolla Cove with the Pacific behind it. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/usa/san-diego/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/usa/san-diego-cover.jpg' | relative_url }}"
       alt="San Diego — the bay and the Pacific"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#081622 60%,#060e1a 100%)'"
     >

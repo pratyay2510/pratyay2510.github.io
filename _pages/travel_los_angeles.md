@@ -22,12 +22,12 @@ full_width: true
   <!-- ── Hero image ──────────────────────────────────────────────────── -->
   <!--
     IMAGE SLOT: Replace the src below with your Los Angeles hero photo.
-    File location: assets/img/travel/destinations/la-cover.jpg
+    File location: assets/img/travel/usa/los-angeles-cover.jpg
     Recommended: landscape, min 1400×800px, JPG or WEBP.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/destinations/la-cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/usa/los-angeles-cover.jpg' | relative_url }}"
       alt="Los Angeles skyline at sunset"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0a0a04 0%,#1e1c04 60%,#0e0c04 100%)'"
     >

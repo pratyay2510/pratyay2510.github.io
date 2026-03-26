@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/usa/santa-barbara/cover.jpg
+    IMAGE SLOT: assets/img/travel/usa/santa-barbara-cover.jpg
     Recommended: State Street / Mission Santa Barbara / the wharf
     with the Santa Ynez mountains behind. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/usa/santa-barbara/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/usa/santa-barbara-cover.jpg' | relative_url }}"
       alt="Santa Barbara — Spanish Colonial and Pacific coast"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0c0808 0%,#1e1408 60%,#140e06 100%)'"
     >

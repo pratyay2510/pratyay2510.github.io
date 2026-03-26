@@ -20,14 +20,14 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/canada/toronto/cover.jpg
+    IMAGE SLOT: assets/img/travel/canada/toronto-cover.jpg
     Recommended: CN Tower from below or across Lake Ontario,
     the colorful houses of Kensington Market, or the waterfront boardwalk.
     Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/canada/toronto/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/canada/toronto-cover.jpg' | relative_url }}"
       alt="Toronto, Ontario"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#080810 0%,#14142a 60%,#0e0e1e 100%)'"
     >

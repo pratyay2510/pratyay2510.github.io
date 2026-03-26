@@ -20,14 +20,14 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/malaysia/cover.jpg
+    IMAGE SLOT: assets/img/travel/destinations/malaysia-cover.jpg
     Recommended: Petronas Twin Towers at night, KLCC Park with the
     towers reflected in the lake, or Jalan Alor hawker street scene.
     Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/malaysia/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/destinations/malaysia-cover.jpg' | relative_url }}"
       alt="Malaysia — Kuala Lumpur and the Petronas Towers"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#0c1c08 60%,#081408 100%)'"
     >

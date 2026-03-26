@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/usa/niagara/cover.jpg
+    IMAGE SLOT: assets/img/travel/usa/niagara-cover.jpg
     Recommended: American Falls from Goat Island, the Cave of the
     Winds spray deck, or the Niagara River from above. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/usa/niagara/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/usa/niagara-cover.jpg' | relative_url }}"
       alt="Niagara Falls, New York — American perspective"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a0a 0%,#081a18 60%,#061414 100%)'"
     >

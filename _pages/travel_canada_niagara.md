@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/canada/niagara/cover.jpg
+    IMAGE SLOT: assets/img/travel/canada/niagara-cover.jpg
     Recommended: Horseshoe Falls from the Canadian side, ideally
     with the mist cloud rising. Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/canada/niagara/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/canada/niagara-cover.jpg' | relative_url }}"
       alt="Niagara Falls, Ontario — Horseshoe Falls"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a10 0%,#081828 60%,#04101e 100%)'"
     >

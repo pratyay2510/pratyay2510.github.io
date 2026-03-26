@@ -20,14 +20,14 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/usa/new-york/cover.jpg
+    IMAGE SLOT: assets/img/travel/usa/new-york-cover.jpg
     Recommended: Manhattan skyline from Brooklyn Bridge Park,
     Central Park from above, or the Brooklyn Bridge at dusk.
     Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/usa/new-york/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/usa/new-york-cover.jpg' | relative_url }}"
       alt="New York City — the skyline and the bridges"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#080808 0%,#141414 60%,#0e0e0e 100%)'"
     >

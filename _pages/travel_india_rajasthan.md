@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/india/rajasthan/cover.jpg
+    IMAGE SLOT: assets/img/travel/india/rajasthan-cover.jpg
     Recommended: Jaisalmer fort at golden hour, Jodhpur's blue houses
     from above, or the Hawa Mahal façade. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/india/rajasthan/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/india/rajasthan-cover.jpg' | relative_url }}"
       alt="Rajasthan, India"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#180e02 0%,#341c04 60%,#201004 100%)'"
     >

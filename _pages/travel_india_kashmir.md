@@ -20,14 +20,14 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/india/kashmir/cover.jpg
+    IMAGE SLOT: assets/img/travel/india/kashmir-cover.jpg
     Recommended: Dal Lake at dawn with the Zabarwan Range reflected,
     a Mughal garden in bloom, or snow-capped peaks over a valley.
     Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/india/kashmir/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/india/kashmir-cover.jpg' | relative_url }}"
       alt="Kashmir — Dal Lake and the Himalayas"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a16 0%,#081828 60%,#060e1e 100%)'"
     >

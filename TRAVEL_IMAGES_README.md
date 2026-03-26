@@ -115,9 +115,42 @@ Put these in:
 
 ## 4.3 Destination detail pages
 
-Most destination pages use:
-- one hero image: `cover.jpg`
-- five gallery images: `photo-01.jpg` to `photo-05.jpg`
+Destination detail pages use **the same cover image as their card thumbnail** (so the thumbnail “blends into” the hero section).
+
+- **Hero image**: `[place]-cover.jpg` (same file used on the hub card)
+- **In-page photo grid**: `photo-01.jpg` to `photo-05.jpg` (location depends on the destination page)
+
+### Kolkata (single destination)
+- Hero: `assets/img/travel/destinations/kolkata-cover.jpg`
+- Grid photos: `assets/img/travel/kolkata/photo-01.jpg` … `photo-05.jpg`
+
+### Riverside (single destination)
+- Hero: `assets/img/travel/riverside/cover.jpg` (Riverside is the only page still using `cover.jpg` as its hero)
+- Grid photos: `assets/img/travel/riverside/photo-01.jpg` … `photo-05.jpg`
+
+### Canada destinations
+- Halifax hero: `assets/img/travel/canada/halifax-cover.jpg`
+- Toronto hero: `assets/img/travel/canada/toronto-cover.jpg`
+- Niagara (Canada) hero: `assets/img/travel/canada/niagara-cover.jpg`
+
+### USA destinations
+- Los Angeles hero: `assets/img/travel/usa/los-angeles-cover.jpg`
+- San Francisco hero: `assets/img/travel/usa/san-francisco-cover.jpg`
+- San Diego hero: `assets/img/travel/usa/san-diego-cover.jpg`
+- Santa Barbara hero: `assets/img/travel/usa/santa-barbara-cover.jpg`
+- Solvang hero: `assets/img/travel/usa/solvang-cover.jpg`
+- New York hero: `assets/img/travel/usa/new-york-cover.jpg`
+- Las Vegas hero: `assets/img/travel/usa/las-vegas-cover.jpg`
+- Niagara (USA) hero: `assets/img/travel/usa/niagara-cover.jpg`
+- National Parks hero: `assets/img/travel/usa/national-parks-cover.jpg`
+
+### India destinations
+- Rajasthan hero: `assets/img/travel/india/rajasthan-cover.jpg`
+- Kashmir hero: `assets/img/travel/india/kashmir-cover.jpg`
+- Himachal hero: `assets/img/travel/india/himachal-cover.jpg`
+- North Bengal hero: `assets/img/travel/india/north-bengal-cover.jpg`
+- Goa hero: `assets/img/travel/india/goa-cover.jpg`
+- Delhi hero: `assets/img/travel/india/delhi-cover.jpg`
 
 ### Kolkata (`/travel/kolkata/`) — `_pages/travel_kolkata.md`
 Folder: `assets/img/travel/kolkata/`

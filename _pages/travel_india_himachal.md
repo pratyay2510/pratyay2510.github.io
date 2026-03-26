@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/india/himachal/cover.jpg
+    IMAGE SLOT: assets/img/travel/india/himachal-cover.jpg
     Recommended: Rohtang Pass snow field, Manali pine valley,
     or the Beas River with mountains behind. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/india/himachal/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/india/himachal-cover.jpg' | relative_url }}"
       alt="Himachal Pradesh — the Himalayan foothills"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#0a1620 60%,#060e18 100%)'"
     >

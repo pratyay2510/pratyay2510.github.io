@@ -20,14 +20,14 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/india/north-bengal/cover.jpg
+    IMAGE SLOT: assets/img/travel/india/north-bengal-cover.jpg
     Recommended: Darjeeling tea gardens at sunrise, the toy train
     winding through hills, or Tiger Hill with Kanchenjunga behind.
     Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/india/north-bengal/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/india/north-bengal-cover.jpg' | relative_url }}"
       alt="North Bengal — Darjeeling and the Himalayan foothills"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)'"
     >

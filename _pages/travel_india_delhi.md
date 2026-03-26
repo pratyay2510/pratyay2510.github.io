@@ -20,13 +20,13 @@ full_width: true
   </nav>
 
   <!--
-    IMAGE SLOT: assets/img/travel/india/delhi/cover.jpg
+    IMAGE SLOT: assets/img/travel/india/delhi-cover.jpg
     Recommended: Humayun's Tomb at sunset, India Gate in the early
     morning, or the red sandstone of the Jama Masjid. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
     <img
-      src="{{ '/assets/img/travel/india/delhi/cover.jpg' | relative_url }}"
+      src="{{ '/assets/img/travel/india/delhi-cover.jpg' | relative_url }}"
       alt="Delhi — India Gate and the old city"
       onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#201a06 60%,#180e04 100%)'"
     >
