@@ -89,7 +89,7 @@ full_width: true
           loading="lazy"
           onerror="this.parentElement.style.background='linear-gradient(160deg,#060810 0%,#0c1428 100%)';this.style.display='none'"
         >
-        <figcaption>Add caption here</figcaption>
+        <figcaption>UCR campus on a particularly pretty day</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
         <img
@@ -98,7 +98,7 @@ full_width: true
           loading="lazy"
           onerror="this.parentElement.style.background='linear-gradient(160deg,#080a14 0%,#101e32 100%)';this.style.display='none'"
         >
-        <figcaption>Add caption here</figcaption>
+        <figcaption>Sycamore Canyon: The best place to catch a mesmerizing sunset in Riverside</figcaption>
       </figure>
     </div>
 
