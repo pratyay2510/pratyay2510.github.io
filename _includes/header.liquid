@@ -23,36 +23,36 @@
       </button>
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        {% assign home_link = '/' | relative_url %}
         {% if page.permalink == '/' %}
-          <ul class="navbar-nav flex-nowrap home-nav-links">
-            <li class="nav-item"><a class="nav-link section-link" href="#hero">About</a></li>
-            <li class="nav-item"><a class="nav-link section-link" href="#experience">Experience</a></li>
-            <li class="nav-item"><a class="nav-link section-link" href="#education">Education</a></li>
-            <li class="nav-item"><a class="nav-link section-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link section-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link section-link" href="#contact">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ '/teaching/' | relative_url }}">Teaching</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ '/more-of-me/' | relative_url }}">More of Me</a></li>
-          </ul>
+          {% assign hero_link = '#hero' %}
+          {% assign experience_link = '#experience' %}
+          {% assign education_link = '#education' %}
+          {% assign publications_link = '#publications' %}
+          {% assign skills_link = '#skills' %}
+          {% assign projects_link = '#projects' %}
+          {% assign contact_link = '#contact' %}
         {% else %}
-          <ul class="navbar-nav flex-nowrap">
-            <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-              <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
-            </li>
-            <li class="nav-item {% if page.permalink == '/publications/' %}active{% endif %}">
-              <a class="nav-link" href="{{ '/publications/' | relative_url }}">Publications</a>
-            </li>
-            <li class="nav-item {% if page.permalink == '/projects/' %}active{% endif %}">
-              <a class="nav-link" href="{{ '/projects/' | relative_url }}">Projects</a>
-            </li>
-            <li class="nav-item {% if page.permalink == '/teaching/' %}active{% endif %}">
-              <a class="nav-link" href="{{ '/teaching/' | relative_url }}">Teaching</a>
-            </li>
-            <li class="nav-item {% if page.permalink == '/more-of-me/' %}active{% endif %}">
-              <a class="nav-link" href="{{ '/more-of-me/' | relative_url }}">More of me</a>
-            </li>
-          </ul>
+          {% assign hero_link = '/#hero' | relative_url %}
+          {% assign experience_link = '/#experience' | relative_url %}
+          {% assign education_link = '/#education' | relative_url %}
+          {% assign publications_link = '/#publications' | relative_url %}
+          {% assign skills_link = '/#skills' | relative_url %}
+          {% assign projects_link = '/#projects' | relative_url %}
+          {% assign contact_link = '/#contact' | relative_url %}
         {% endif %}
+
+        <ul class="navbar-nav flex-nowrap home-nav-links">
+          <li class="nav-item"><a class="nav-link section-link" href="{{ hero_link }}">About</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="{{ experience_link }}">Experience</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="{{ education_link }}">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="{{ publications_link }}">Publications</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="{{ skills_link }}">Skills</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="{{ projects_link }}">Projects</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="{{ contact_link }}">Contact</a></li>
+          <li class="nav-item {% if page.permalink == '/teaching/' %}active{% endif %}"><a class="nav-link" href="{{ '/teaching/' | relative_url }}">Teaching</a></li>
+          <li class="nav-item {% if page.permalink == '/more-of-me/' %}active{% endif %}"><a class="nav-link" href="{{ '/more-of-me/' | relative_url }}">More of Me</a></li>
+        </ul>
       </div>
     </div>
   </nav>

@@ -382,7 +382,8 @@ body {
   color: var(--global-text-color-light);
   line-height: 1.18;
   white-space: nowrap;
-  padding-top: 6px;
+  padding-top: 0;
+  margin-top: 16px;
   letter-spacing: 0.01em;
 }
 
@@ -396,7 +397,7 @@ body {
 .timeline-item:nth-child(odd) .timeline-year {
   text-align: right;
   justify-self: stretch;
-  padding-right: 94px;
+  padding-right: 116px;
   padding-left: 12px;
 }
 
@@ -1824,44 +1825,36 @@ a:not(.hero-social-link):not(.nav-link) {
 /* Talk To Segment — blue/purple (Vision · Language · Diffusion) */
 .project-bg--p1 {
   background:
-    radial-gradient(ellipse at 30% 35%, rgba(80, 130, 255, 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse at 82% 72%, rgba(160, 80, 255, 0.3) 0%, transparent 55%),
-    linear-gradient(160deg, #04060e 0%, #0c1028 56%, #060412 100%);
+    linear-gradient(145deg, rgba(8, 6, 3, 0.42) 0%, rgba(8, 6, 3, 0.66) 100%),
+    url("/assets/img/projects/featured-work-1.svg") center / cover no-repeat;
 }
 
 /* Remember To Play — red/orange (Reinforcement Learning) */
 .project-bg--p2 {
   background:
-    radial-gradient(ellipse at 68% 28%, rgba(220, 80, 50, 0.62) 0%, transparent 58%),
-    radial-gradient(ellipse at 22% 78%, rgba(220, 140, 50, 0.28) 0%, transparent 50%),
-    repeating-linear-gradient(-30deg, transparent 0px, transparent 14px, rgba(220, 80, 50, 0.04) 14px, rgba(220, 80, 50, 0.04) 15px),
-    linear-gradient(136deg, #0e0402 0%, #281008 62%, #100504 100%);
+    linear-gradient(145deg, rgba(8, 6, 3, 0.4) 0%, rgba(8, 6, 3, 0.64) 100%),
+    url("/assets/img/projects/featured-work-2.svg") center / cover no-repeat;
 }
 
 /* ImpulseForge — cyan/teal (Physics · Simulation) */
 .project-bg--p3 {
   background:
-    radial-gradient(ellipse at 50% 28%, rgba(50, 200, 200, 0.52) 0%, transparent 55%),
-    radial-gradient(ellipse at 85% 78%, rgba(50, 220, 120, 0.22) 0%, transparent 55%),
-    repeating-linear-gradient(45deg, transparent 0px, transparent 12px, rgba(50, 200, 200, 0.05) 12px, rgba(50, 200, 200, 0.05) 13px),
-    linear-gradient(160deg, #030d0e 0%, #081820 56%, #030a0c 100%);
+    linear-gradient(145deg, rgba(8, 6, 3, 0.38) 0%, rgba(8, 6, 3, 0.62) 100%),
+    url("/assets/img/projects/featured-work-3.svg") center / cover no-repeat;
 }
 
 /* EyeWitness — green/teal (Computer Vision · Person Re-ID) */
 .project-bg--p4 {
   background:
-    radial-gradient(ellipse at 38% 38%, rgba(50, 200, 120, 0.58) 0%, transparent 55%),
-    radial-gradient(ellipse at 80% 82%, rgba(50, 180, 220, 0.24) 0%, transparent 50%),
-    linear-gradient(160deg, #030e07 0%, #081a10 56%, #040c07 100%);
+    linear-gradient(145deg, rgba(8, 6, 3, 0.36) 0%, rgba(8, 6, 3, 0.62) 100%),
+    url("/assets/img/projects/featured-work-4.svg") center / cover no-repeat;
 }
 
 /* TriStrand — purple/magenta (Computational Biology) */
 .project-bg--p5 {
   background:
-    radial-gradient(ellipse at 55% 32%, rgba(160, 60, 220, 0.58) 0%, transparent 55%),
-    radial-gradient(ellipse at 18% 80%, rgba(220, 60, 160, 0.3) 0%, transparent 50%),
-    repeating-conic-gradient(from 0deg at 50% 50%, rgba(160, 60, 220, 0.03) 0deg, transparent 3deg, transparent 20deg),
-    linear-gradient(160deg, #070310 0%, #12081e 56%, #08040c 100%);
+    linear-gradient(145deg, rgba(8, 6, 3, 0.4) 0%, rgba(8, 6, 3, 0.64) 100%),
+    url("/assets/img/projects/featured-work-5.svg") center / cover no-repeat;
 }
 
 /* Keep legacy names for any remaining references */
@@ -3848,7 +3841,7 @@ a:not(.hero-social-link):not(.nav-link) {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.28);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -3861,7 +3854,7 @@ a:not(.hero-social-link):not(.nav-link) {
   }
 
   &:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.48);
   }
 }
 

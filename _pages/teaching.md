@@ -150,7 +150,7 @@ full_width: true
       >
         <div class="tc-list-img">
           <img
-            src="{{ '/assets/img/teaching/teaching-cs258-rl.png' | relative_url }}"
+            src="{{ '/assets/img/teaching/teaching-cs170-ai.svg' | relative_url }}"
             alt="CS 170: Introduction to Artificial Intelligence"
             loading="lazy"
           >

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">CS 170 AI Illustration</title>
+  <desc id="desc">Abstract artificial intelligence themed visual with neural graph and flowing data layers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.5" stop-color="#11253f"/>
+      <stop offset="1" stop-color="#090f19"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#65d4ff" stop-opacity="0.0"/>
+      <stop offset="0.45" stop-color="#65d4ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#f4c95d" stop-opacity="0.1"/>
+    </linearGradient>
+    <radialGradient id="node" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#7cc9ff" stop-opacity="0.25"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <g opacity="0.2" fill="#f4c95d">
+    <circle cx="190" cy="90" r="2"/>
+    <circle cx="280" cy="160" r="2"/>
+    <circle cx="1160" cy="130" r="2"/>
+    <circle cx="1020" cy="600" r="2"/>
+    <circle cx="260" cy="610" r="2"/>
+  </g>
+
+  <g opacity="0.7" stroke="url(#trace)" stroke-width="2.5" fill="none">
+    <path d="M90 560 C 220 510, 370 560, 510 480 S 820 320, 1190 220"/>
+    <path d="M140 220 C 320 170, 470 250, 670 200 S 930 120, 1160 180"/>
+    <path d="M110 410 C 260 350, 410 430, 640 370 S 940 280, 1200 330"/>
+  </g>
+
+  <g stroke="#7cc9ff" stroke-opacity="0.45" stroke-width="1.8">
+    <line x1="220" y1="470" x2="420" y2="350"/>
+    <line x1="420" y1="350" x2="620" y2="420"/>
+    <line x1="620" y1="420" x2="860" y2="290"/>
+    <line x1="860" y1="290" x2="1040" y2="360"/>
+    <line x1="420" y1="350" x2="640" y2="220"/>
+    <line x1="640" y1="220" x2="860" y2="290"/>
+  </g>
+
+  <g>
+    <circle cx="220" cy="470" r="16" fill="url(#node)"/>
+    <circle cx="420" cy="350" r="18" fill="url(#node)"/>
+    <circle cx="620" cy="420" r="16" fill="url(#node)"/>
+    <circle cx="640" cy="220" r="17" fill="url(#node)"/>
+    <circle cx="860" cy="290" r="20" fill="url(#node)"/>
+    <circle cx="1040" cy="360" r="15" fill="url(#node)"/>
+  </g>
+
+  <g opacity="0.65" fill="#f4c95d" font-family="'DM Sans', sans-serif" font-weight="700">
+    <text x="130" y="130" font-size="46">CS 170</text>
+    <text x="130" y="176" font-size="30" opacity="0.9">INTRO TO ARTIFICIAL INTELLIGENCE</text>
+  </g>
+</svg>

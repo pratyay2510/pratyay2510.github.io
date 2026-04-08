@@ -103,15 +103,10 @@
   </script>
 {% endif %}
 
-{% if page.url contains '/travel' %}
-  <script>
-    (function () {
-    /* NOTE:
-       Travel pages currently ship JPGs (no generated WebP variants).
-       Rewriting travel images to .webp can leave them blank in some clients,
-       so we deliberately exclude travel images from WebP patching. */
+<script>
+  (function () {
     var imageRootPath = '/assets/img/';
-    var excludedPathPrefixes = ['/assets/img/travel/', '/assets/img/book_covers/', '/assets/img/art/'];
+    var excludedPathPrefixes = [];
     var convertableExtPattern = /\.(?:jpe?g|png|heic|avif|bmp|tiff?)(\?.*)?$/i;
     var skipExtPattern = /\.(?:svg|gif|webp)(\?.*)?$/i;
 
@@ -230,9 +225,8 @@
       attributes: true,
       attributeFilter: ['src'],
     });
-    })();
-  </script>
-{% endif %}
+  })();
+</script>
 
 {% if page.map %}
   <!-- GeoJSON support via Leaflet -->
