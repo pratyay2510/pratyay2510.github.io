@@ -310,9 +310,9 @@ body {
 
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .timeline::before {
@@ -329,69 +329,36 @@ body {
 
 .timeline-item {
   position: relative;
-  padding-bottom: 2.5rem;
-  display: flex;
-  margin-bottom: 2rem;
-}
-
-/* Left side items (even - 0, 2, 4...) */
-.timeline-item:nth-child(even) {
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.timeline-item:nth-child(even) .timeline-year {
-  position: relative;
-  text-align: right;
-  order: 1;
-  margin-right: 3rem;
-  width: auto;
-  top: auto;
-  left: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 130px minmax(0, 1fr);
+  align-items: start;
+  column-gap: 0;
+  padding-bottom: 2.25rem;
+  min-height: 170px;
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-  order: 2;
-  max-width: 350px;
-  padding-left: 0;
-  padding-right: 3rem;
+  grid-column: 1;
+  margin-right: 2.5rem;
 }
 
 .timeline-item:nth-child(even)::before {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 7px;
-}
-
-/* Right side items (odd - 1, 3, 5...) */
-.timeline-item:nth-child(odd) {
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.timeline-item:nth-child(odd) .timeline-year {
-  position: relative;
-  text-align: left;
-  order: 1;
-  margin-left: 3rem;
-  width: auto;
-  top: auto;
-  left: auto;
+  top: 16px;
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-  order: 2;
-  max-width: 350px;
-  padding-left: 3rem;
-  padding-right: 0;
+  grid-column: 3;
+  margin-left: 2.5rem;
 }
 
 .timeline-item:nth-child(odd)::before {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 7px;
+  top: 16px;
 }
 
 .timeline-item::before {
@@ -406,15 +373,43 @@ body {
 }
 
 .timeline-year {
+  grid-column: 2;
+  position: relative;
+  z-index: 2;
   font-size: 0.8rem;
   color: var(--global-text-color-light);
   line-height: 1.4;
   white-space: nowrap;
-  padding-top: 2px;
+  padding-top: 7px;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+  text-align: right;
+  justify-self: stretch;
+  padding-right: 40px;
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+  text-align: left;
+  justify-self: stretch;
+  padding-left: 40px;
 }
 
 .timeline-content {
-  flex: 1;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  border-color: var(--global-theme-color);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-title {
@@ -439,46 +434,39 @@ body {
 
 @media (max-width: 768px) {
   .timeline {
-    padding: 0 1rem;
+    padding: 0;
   }
 
   .timeline::before {
-    left: 50%;
+    left: 24px;
+    transform: none;
   }
 
-  /* Stack items vertically on mobile */
   .timeline-item {
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    padding-left: 60px;
+    display: block;
+    min-height: 0;
+    padding: 0 0 1.6rem 0;
   }
 
   .timeline-item::before {
     position: absolute;
-    left: -45px;
-    top: 7px;
+    left: 18px;
+    top: 16px;
     transform: none;
   }
 
   .timeline-item:nth-child(even) .timeline-year,
   .timeline-item:nth-child(odd) .timeline-year {
-    position: absolute;
-    left: -60px;
-    top: 2px;
-    text-align: right;
-    width: 48px;
-    order: unset;
-    margin: 0;
-    font-size: 0.72rem;
+    display: block;
+    text-align: left;
+    padding: 0 0 0.4rem 3rem;
+    font-size: 0.75rem;
   }
 
   .timeline-item:nth-child(even) .timeline-content,
   .timeline-item:nth-child(odd) .timeline-content {
-    padding-left: 1rem;
-    padding-right: 0;
-    margin-right: 0;
-    order: unset;
-    max-width: 100%;
+    margin: 0 0 0 3rem;
+    padding: 0.9rem 1rem;
   }
 }
 
