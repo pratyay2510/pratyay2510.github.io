@@ -447,7 +447,7 @@ body {
   -webkit-line-clamp: unset;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .timeline {
     padding: 0;
   }
@@ -480,8 +480,11 @@ body {
   .timeline-item:nth-child(odd) .timeline-year {
     display: block;
     text-align: left;
-    padding: 0 0 0.45rem 3rem;
+    margin-left: 3.75rem;
+    width: calc(100% - 3.75rem);
+    padding: 0 0 0.45rem 0;
     font-size: 0.79rem;
+    white-space: nowrap;
   }
 
   .timeline-item:nth-child(even) .timeline-content,
