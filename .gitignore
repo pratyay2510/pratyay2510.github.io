@@ -13,3 +13,9 @@ assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
 node_modules/
 vendor
+.bundle-cache/
+.bundle/config
+*.log
+LOCAL_BUILD_README.md
+bin/local_build.ps1
+bin/local_build.sh
