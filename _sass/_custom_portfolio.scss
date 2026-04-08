@@ -330,7 +330,7 @@ body {
 .timeline-item {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 130px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 170px minmax(0, 1fr);
   align-items: start;
   column-gap: 0;
   padding-bottom: 2.25rem;
@@ -339,7 +339,7 @@ body {
 
 .timeline-item:nth-child(even) .timeline-content {
   grid-column: 1;
-  margin-right: 2.5rem;
+  margin-right: 3.25rem;
 }
 
 .timeline-item:nth-child(even)::before {
@@ -351,7 +351,7 @@ body {
 
 .timeline-item:nth-child(odd) .timeline-content {
   grid-column: 3;
-  margin-left: 2.5rem;
+  margin-left: 3.25rem;
 }
 
 .timeline-item:nth-child(odd)::before {
@@ -376,23 +376,28 @@ body {
   grid-column: 2;
   position: relative;
   z-index: 2;
-  font-size: 0.8rem;
+  display: block;
+  width: 100%;
+  font-size: 0.78rem;
   color: var(--global-text-color-light);
-  line-height: 1.4;
-  white-space: nowrap;
-  padding-top: 7px;
+  line-height: 1.22;
+  white-space: normal;
+  padding-top: 6px;
+  letter-spacing: 0.01em;
 }
 
 .timeline-item:nth-child(even) .timeline-year {
-  text-align: right;
+  text-align: left;
   justify-self: stretch;
-  padding-right: 40px;
+  padding-left: 76px;
+  padding-right: 12px;
 }
 
 .timeline-item:nth-child(odd) .timeline-year {
-  text-align: left;
+  text-align: right;
   justify-self: stretch;
-  padding-left: 40px;
+  padding-right: 76px;
+  padding-left: 12px;
 }
 
 .timeline-content {
@@ -459,7 +464,7 @@ body {
   .timeline-item:nth-child(odd) .timeline-year {
     display: block;
     text-align: left;
-    padding: 0 0 0.4rem 3rem;
+    padding: 0 0 0.45rem 3rem;
     font-size: 0.75rem;
   }
 
