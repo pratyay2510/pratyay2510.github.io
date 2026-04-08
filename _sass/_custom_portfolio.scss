@@ -861,7 +861,7 @@ body {
 
 .pub-img-wrap {
   flex-shrink: 0;
-  width: 310px;
+  width: 400px;
   background: rgba(217, 170, 46, 0.06);
   display: flex;
   align-items: center;
@@ -883,7 +883,7 @@ body {
 .pub-content {
   flex: 1;
   min-width: 0;
-  padding: 0.9rem 1rem;
+  padding: 0.8rem 0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
