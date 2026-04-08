@@ -74,7 +74,130 @@
 
 
 
+<script>
+  (function () {
+    var imageRootPath = '/assets/img/';
+    var excludedPathPrefixes = [];
+    var convertableExtPattern = /\.(?:jpe?g|png|heic|avif|bmp|tiff?)(\?.*)?$/i;
+    var skipExtPattern = /\.(?:svg|gif|webp)(\?.*)?$/i;
 
+    function isSameOriginUrl(urlString) {
+      try {
+        var parsed = new URL(urlString, window.location.origin);
+        return parsed.origin === window.location.origin;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function isEligibleSource(src) {
+      if (!src || src.startsWith('data:') || src.startsWith('blob:')) return false;
+      if (!isSameOriginUrl(src)) return false;
+
+      var parsed;
+      try {
+        parsed = new URL(src, window.location.origin);
+      } catch (error) {
+        return false;
+      }
+
+      if (excludedPathPrefixes.some(function (prefix) { return parsed.pathname.startsWith(prefix); })) return false;
+      if (!parsed.pathname.startsWith(imageRootPath)) return false;
+      if (skipExtPattern.test(parsed.pathname)) return false;
+
+      return convertableExtPattern.test(parsed.pathname);
+    }
+
+    function toWebpSource(src) {
+      try {
+        var parsed = new URL(src, window.location.origin);
+        parsed.pathname = parsed.pathname.replace(/\.[^.\/]+$/, '.webp');
+        return parsed.pathname + parsed.search + parsed.hash;
+      } catch (error) {
+        return src.replace(/\.[^.\/?]+(?=([?#]|$))/i, '.webp');
+      }
+    }
+
+    function patchImageElement(img) {
+      if (!(img instanceof HTMLImageElement)) return;
+      /* After a failed WebP load we fall back to the original; do not patch again or we loop forever. */
+      if (img.dataset.webpFallbackDone === '1') return;
+      if (img.dataset.webpPatched === '1') return;
+
+      var originalSrc = img.getAttribute('src');
+      if (!isEligibleSource(originalSrc)) return;
+
+      var webpSrc = toWebpSource(originalSrc);
+      if (!webpSrc || webpSrc === originalSrc) return;
+
+      img.dataset.originalSrc = originalSrc;
+      img.dataset.webpSrc = webpSrc;
+      img.dataset.webpPatched = '1';
+      img.src = webpSrc;
+    }
+
+    document.addEventListener(
+      'error',
+      function (event) {
+        var img = event.target;
+        if (!(img instanceof HTMLImageElement)) return;
+        if (img.dataset.webpPatched !== '1') return;
+        if (img.dataset.webpFallbackDone === '1') return;
+
+        var originalSrc = img.dataset.originalSrc;
+        if (!originalSrc) return;
+
+        img.dataset.webpFallbackDone = '1';
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        img.src = originalSrc;
+      },
+      true,
+    );
+
+    function patchExistingImages() {
+      document.querySelectorAll('img[src]').forEach(patchImageElement);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', patchExistingImages, { once: true });
+    } else {
+      patchExistingImages();
+    }
+
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.type === 'attributes' && mutation.target instanceof HTMLImageElement) {
+          var imgNode = mutation.target;
+          /* Do not reset/re-patch when we just restored the original JPG after WebP 404 — that caused an infinite WebP→fail→JPG→WebP loop. */
+          if (imgNode.dataset.webpFallbackDone === '1') return;
+
+          imgNode.dataset.webpPatched = '';
+          imgNode.dataset.webpFallbackDone = '';
+          imgNode.dataset.originalSrc = '';
+          imgNode.dataset.webpSrc = '';
+          patchImageElement(imgNode);
+          return;
+        }
+
+        mutation.addedNodes.forEach(function (node) {
+          if (node instanceof HTMLImageElement) {
+            patchImageElement(node);
+          } else if (node instanceof Element) {
+            node.querySelectorAll('img[src]').forEach(patchImageElement);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['src'],
+    });
+  })();
+</script>
 
 
 
@@ -105,24 +228,19 @@
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         
-          <ul class="navbar-nav flex-nowrap">
-            <li class="nav-item ">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/publications/">Publications</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/projects/">Projects</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/teaching/">Teaching</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/more-of-me/">More of me</a>
-            </li>
-          </ul>
         
+
+        <ul class="navbar-nav flex-nowrap home-nav-links">
+          <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#contact">Contact</a></li>
+          <li class="nav-item "><a class="nav-link" href="/teaching/">Teaching</a></li>
+          <li class="nav-item active"><a class="nav-link" href="/more-of-me/">More of Me</a></li>
+        </ul>
       </div>
     </div>
   </nav>

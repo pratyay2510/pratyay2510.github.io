@@ -74,15 +74,10 @@
 
 
 
-
-  <script>
-    (function () {
-    /* NOTE:
-       Travel pages currently ship JPGs (no generated WebP variants).
-       Rewriting travel images to .webp can leave them blank in some clients,
-       so we deliberately exclude travel images from WebP patching. */
+<script>
+  (function () {
     var imageRootPath = '/assets/img/';
-    var excludedPathPrefixes = ['/assets/img/travel/', '/assets/img/book_covers/', '/assets/img/art/'];
+    var excludedPathPrefixes = [];
     var convertableExtPattern = /\.(?:jpe?g|png|heic|avif|bmp|tiff?)(\?.*)?$/i;
     var skipExtPattern = /\.(?:svg|gif|webp)(\?.*)?$/i;
 
@@ -201,9 +196,8 @@
       attributes: true,
       attributeFilter: ['src'],
     });
-    })();
-  </script>
-
+  })();
+</script>
 
 
 
@@ -234,24 +228,19 @@
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         
-          <ul class="navbar-nav flex-nowrap">
-            <li class="nav-item ">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/publications/">Publications</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/projects/">Projects</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/teaching/">Teaching</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/more-of-me/">More of me</a>
-            </li>
-          </ul>
         
+
+        <ul class="navbar-nav flex-nowrap home-nav-links">
+          <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#contact">Contact</a></li>
+          <li class="nav-item "><a class="nav-link" href="/teaching/">Teaching</a></li>
+          <li class="nav-item "><a class="nav-link" href="/more-of-me/">More of Me</a></li>
+        </ul>
       </div>
     </div>
   </nav>
