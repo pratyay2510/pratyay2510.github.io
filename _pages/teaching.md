@@ -142,10 +142,37 @@ full_width: true
 
       <a
         class="tc-list-item reveal-up"
+        href="https://www1.cs.ucr.edu/undergraduate/course-descriptions#CS170"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="--delay:0.31s"
+        aria-label="CS 170: Introduction to Artificial Intelligence — UCR CS Course Page"
+      >
+        <div class="tc-list-img">
+          <img
+            src="{{ '/assets/img/teaching/teaching-cs258-rl.png' | relative_url }}"
+            alt="CS 170: Introduction to Artificial Intelligence"
+            loading="lazy"
+          >
+        </div>
+        <div class="tc-list-body">
+          <div class="tc-list-code">CS 170</div>
+          <div class="tc-list-role">Teaching Assistant &nbsp;·&nbsp; Undergraduate</div>
+          <h3 class="tc-list-name">Introduction to Artificial Intelligence</h3>
+          <p class="tc-list-desc">Introduction to foundational AI methods with emphasis on principled problem solving: uninformed and informed search, adversarial game reasoning, Markov decision processes, reinforcement learning, constraint satisfaction, and modern AI systems.</p>
+          <span class="tc-list-link-hint">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59L7.76 14.83l1.41 1.41L19 5.41V9h2V3h-7z"/></svg>
+            View Course at UCR
+          </span>
+        </div>
+      </a>
+
+      <a
+        class="tc-list-item reveal-up"
         href="https://www1.cs.ucr.edu/undergraduate/course-descriptions#CS105"
         target="_blank"
         rel="noopener noreferrer"
-        style="--delay:0.26s"
+        style="--delay:0.36s"
         aria-label="CS 105: Data Analysis Methods — UCR CS Course Page"
       >
         <div class="tc-list-img">
