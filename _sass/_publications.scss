@@ -43,9 +43,11 @@
         display: inline-block;
         width: 100%;
         max-width: 200px;
+        height: auto;
         aspect-ratio: 16 / 9;
         object-fit: contain;
         background-color: var(--global-bg-color);
+        border-radius: 0.25rem;
       }
 
       .abbr {
