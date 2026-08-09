@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/canada/halifax-cover.jpg' | relative_url }}"
       alt="Halifax harbour"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061a28 60%,#040c18 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#040810 0%,#061a28 60%,#040c18 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -89,7 +90,8 @@ full_width: true
           src="{{ '/assets/img/travel/halifax/photo-01.jpg' | relative_url }}"
           alt="Halifax photograph 1"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#081220 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#040810 0%,#081220 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -98,7 +100,8 @@ full_width: true
           src="{{ '/assets/img/travel/halifax/photo-02.jpg' | relative_url }}"
           alt="Halifax photograph 2"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#050b12 0%,#0a1828 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#050b12 0%,#0a1828 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -121,7 +124,8 @@ full_width: true
           src="{{ '/assets/img/travel/halifax/photo-03.jpg' | relative_url }}"
           alt="Halifax photograph 3"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#040a12 0%,#0a1822 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#040a12 0%,#0a1822 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -130,7 +134,8 @@ full_width: true
           src="{{ '/assets/img/travel/halifax/photo-04.jpg' | relative_url }}"
           alt="Halifax photograph 4"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#060c14 0%,#0c1e2a 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#060c14 0%,#0c1e2a 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -139,7 +144,8 @@ full_width: true
           src="{{ '/assets/img/travel/halifax/photo-05.jpg' | relative_url }}"
           alt="Halifax photograph 5"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#08121c 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#04080e 0%,#08121c 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>

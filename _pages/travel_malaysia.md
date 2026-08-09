@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/destinations/malaysia-cover.jpg' | relative_url }}"
       alt="Malaysia — Kuala Lumpur and the Petronas Towers"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#0c1c08 60%,#081408 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#040a04 0%,#0c1c08 60%,#081408 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -80,11 +81,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/malaysia/photo-01.jpg' | relative_url }}" alt="Petronas Twin Towers" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#0c1c08 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/malaysia/photo-01.jpg' | relative_url }}" alt="Petronas Twin Towers" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a04 0%,#0c1c08 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/malaysia/photo-02.jpg' | relative_url }}" alt="KL hawker centre" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060c06 0%,#101e0e 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/malaysia/photo-02.jpg' | relative_url }}" alt="KL hawker centre" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c06 0%,#101e0e 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -100,15 +103,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/malaysia/photo-03.jpg' | relative_url }}" alt="KLCC Park" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#0e1e0a 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/malaysia/photo-03.jpg' | relative_url }}" alt="KLCC Park" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a04 0%,#0e1e0a 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/malaysia/photo-04.jpg' | relative_url }}" alt="Batu Caves" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060c06 0%,#101a0c 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/malaysia/photo-04.jpg' | relative_url }}" alt="Batu Caves" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c06 0%,#101a0c 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/malaysia/photo-05.jpg' | relative_url }}" alt="Kuala Lumpur street" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080c06 0%,#141e0a 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/malaysia/photo-05.jpg' | relative_url }}" alt="Kuala Lumpur street" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080c06 0%,#141e0a 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

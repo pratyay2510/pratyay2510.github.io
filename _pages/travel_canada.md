@@ -59,7 +59,8 @@ full_width: true
           src="{{ '/assets/img/travel/canada/halifax-cover.jpg' | relative_url }}"
           alt="Halifax, Nova Scotia"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061a28 60%,#040c18 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#040810 0%,#061a28 60%,#040c18 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -75,7 +76,8 @@ full_width: true
           src="{{ '/assets/img/travel/canada/toronto-cover.jpg' | relative_url }}"
           alt="Toronto, Ontario"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#08080e 0%,#141420 60%,#0e0e18 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#08080e 0%,#141420 60%,#0e0e18 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -91,7 +93,8 @@ full_width: true
           src="{{ '/assets/img/travel/canada/niagara-cover.jpg' | relative_url }}"
           alt="Niagara Falls, Canada"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a10 0%,#081422 60%,#060c18 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#040a10 0%,#081422 60%,#060c18 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">

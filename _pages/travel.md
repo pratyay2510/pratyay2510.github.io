@@ -194,7 +194,8 @@ full_width: true
           src="{{ '/assets/img/travel/destinations/kolkata-cover.jpg' | relative_url }}"
           alt="Kolkata — The city of joy"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-home-card-overlay"></div>
         <div class="tr-home-card-arrow" aria-hidden="true">→</div>
@@ -214,7 +215,8 @@ full_width: true
           src="{{ '/assets/img/travel/riverside/cover.jpg' | relative_url }}"
           alt="Riverside, California"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060810 0%,#0c1428 60%,#080e1e 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#060810 0%,#0c1428 60%,#080e1e 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-home-card-overlay"></div>
         <div class="tr-home-card-arrow" aria-hidden="true">→</div>
@@ -247,7 +249,8 @@ full_width: true
           src="{{ '/assets/img/travel/destinations/india-cover.jpg' | relative_url }}"
           alt="India"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100a02 0%,#221402 60%,#180c02 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#100a02 0%,#221402 60%,#180c02 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
@@ -268,7 +271,8 @@ full_width: true
           src="{{ '/assets/img/travel/destinations/canada-cover.jpg' | relative_url }}"
           alt="Canada"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061828 60%,#040e1e 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#040810 0%,#061828 60%,#040e1e 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
@@ -289,7 +293,8 @@ full_width: true
           src="{{ '/assets/img/travel/destinations/usa-cover.jpg' | relative_url }}"
           alt="United States"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#080a10 0%,#141c2a 60%,#0c1220 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#080a10 0%,#141c2a 60%,#0c1220 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
@@ -310,7 +315,8 @@ full_width: true
           src="{{ '/assets/img/travel/destinations/malaysia-cover.jpg' | relative_url }}"
           alt="Malaysia"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#081808 60%,#060e06 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#040a04 0%,#081808 60%,#060e06 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">

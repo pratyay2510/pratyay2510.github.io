@@ -28,7 +28,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/india/himachal-cover.jpg' | relative_url }}"
       alt="Himachal Pradesh — the Himalayan foothills"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#0a1620 60%,#060e18 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1620 60%,#060e18 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -79,11 +80,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-01.jpg' | relative_url }}" alt="Manali" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#0a1828 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/himachal/photo-01.jpg' | relative_url }}" alt="Manali" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#0a1828 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-02.jpg' | relative_url }}" alt="Himachal mountains" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#050a14 0%,#0c1c2a 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/himachal/photo-02.jpg' | relative_url }}" alt="Himachal mountains" loading="lazy" data-fallback-bg="linear-gradient(160deg,#050a14 0%,#0c1c2a 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -99,15 +102,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-03.jpg' | relative_url }}" alt="Rohtang Pass" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#081420 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/himachal/photo-03.jpg' | relative_url }}" alt="Rohtang Pass" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#081420 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-04.jpg' | relative_url }}" alt="Solang Valley" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060a10 0%,#0e1822 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/himachal/photo-04.jpg' | relative_url }}" alt="Solang Valley" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060a10 0%,#0e1822 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-05.jpg' | relative_url }}" alt="Himachal landscape" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#050810 0%,#0c1628 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/himachal/photo-05.jpg' | relative_url }}" alt="Himachal landscape" loading="lazy" data-fallback-bg="linear-gradient(160deg,#050810 0%,#0c1628 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

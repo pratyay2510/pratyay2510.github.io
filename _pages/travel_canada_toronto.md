@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/canada/toronto-cover.jpg' | relative_url }}"
       alt="Toronto, Ontario"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#080810 0%,#14142a 60%,#0e0e1e 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#080810 0%,#14142a 60%,#0e0e1e 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -80,11 +81,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/canada/toronto/photo-01.jpg' | relative_url }}" alt="Toronto skyline" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#08080e 0%,#141428 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/toronto/photo-01.jpg' | relative_url }}" alt="Toronto skyline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#08080e 0%,#141428 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/canada/toronto/photo-02.jpg' | relative_url }}" alt="Kensington Market" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0a10 0%,#18182e 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/toronto/photo-02.jpg' | relative_url }}" alt="Kensington Market" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0a10 0%,#18182e 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -100,15 +103,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/toronto/photo-03.jpg' | relative_url }}" alt="Distillery District" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080a10 0%,#12142a 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/toronto/photo-03.jpg' | relative_url }}" alt="Distillery District" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080a10 0%,#12142a 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/toronto/photo-04.jpg' | relative_url }}" alt="Lake Ontario waterfront" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080e 0%,#0e1022 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/toronto/photo-04.jpg' | relative_url }}" alt="Lake Ontario waterfront" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0e1022 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/toronto/photo-05.jpg' | relative_url }}" alt="Toronto Islands" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0c1020 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/toronto/photo-05.jpg' | relative_url }}" alt="Toronto Islands" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0c1020 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

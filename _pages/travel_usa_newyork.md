@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/usa/new-york-cover.jpg' | relative_url }}"
       alt="New York City — the skyline and the bridges"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#080808 0%,#141414 60%,#0e0e0e 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#080808 0%,#141414 60%,#0e0e0e 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -80,11 +81,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-01.jpg' | relative_url }}" alt="New York skyline" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080808 0%,#181818 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/new-york/photo-01.jpg' | relative_url }}" alt="New York skyline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080808 0%,#181818 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-02.jpg' | relative_url }}" alt="Brooklyn Bridge" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0a0a 0%,#1c1c1c 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/new-york/photo-02.jpg' | relative_url }}" alt="Brooklyn Bridge" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0a0a 0%,#1c1c1c 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -100,15 +103,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-03.jpg' | relative_url }}" alt="Central Park" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080a08 0%,#141a12 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/new-york/photo-03.jpg' | relative_url }}" alt="Central Park" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080a08 0%,#141a12 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-04.jpg' | relative_url }}" alt="New York street" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080808 0%,#141414 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/new-york/photo-04.jpg' | relative_url }}" alt="New York street" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080808 0%,#141414 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-05.jpg' | relative_url }}" alt="Brooklyn view" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060606 0%,#121212 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/new-york/photo-05.jpg' | relative_url }}" alt="Brooklyn view" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060606 0%,#121212 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

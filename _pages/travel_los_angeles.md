@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/usa/los-angeles-cover.jpg' | relative_url }}"
       alt="Los Angeles skyline at sunset"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0a0a04 0%,#1e1c04 60%,#0e0c04 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#0a0a04 0%,#1e1c04 60%,#0e0c04 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -89,7 +90,8 @@ full_width: true
           src="{{ '/assets/img/travel/la/photo-01.jpg' | relative_url }}"
           alt="Los Angeles photograph 1"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0c04 0%,#201e06 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#0c0c04 0%,#201e06 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -98,7 +100,8 @@ full_width: true
           src="{{ '/assets/img/travel/la/photo-02.jpg' | relative_url }}"
           alt="Los Angeles photograph 2"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0a06 0%,#1c1a08 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#0a0a06 0%,#1c1a08 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -121,7 +124,8 @@ full_width: true
           src="{{ '/assets/img/travel/la/photo-03.jpg' | relative_url }}"
           alt="Los Angeles photograph 3"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0e0e04 0%,#221e06 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#0e0e04 0%,#221e06 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -130,7 +134,8 @@ full_width: true
           src="{{ '/assets/img/travel/la/photo-04.jpg' | relative_url }}"
           alt="Los Angeles photograph 4"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0c06 0%,#1c1a08 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#0c0c06 0%,#1c1a08 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -139,7 +144,8 @@ full_width: true
           src="{{ '/assets/img/travel/la/photo-05.jpg' | relative_url }}"
           alt="Los Angeles photograph 5"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0a04 0%,#181608 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#0a0a04 0%,#181608 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>

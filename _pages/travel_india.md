@@ -61,7 +61,8 @@ full_width: true
           src="{{ '/assets/img/travel/india/rajasthan-cover.jpg' | relative_url }}"
           alt="Rajasthan, India"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -77,7 +78,8 @@ full_width: true
           src="{{ '/assets/img/travel/india/kashmir-cover.jpg' | relative_url }}"
           alt="Kashmir"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a14 0%,#081628 60%,#060c1e 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#040a14 0%,#081628 60%,#060c1e 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -93,7 +95,8 @@ full_width: true
           src="{{ '/assets/img/travel/india/himachal-cover.jpg' | relative_url }}"
           alt="Himachal Pradesh"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -109,7 +112,8 @@ full_width: true
           src="{{ '/assets/img/travel/india/north-bengal-cover.jpg' | relative_url }}"
           alt="North Bengal — Darjeeling"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -125,7 +129,8 @@ full_width: true
           src="{{ '/assets/img/travel/india/goa-cover.jpg' | relative_url }}"
           alt="Goa, India"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040c0a 0%,#081a16 60%,#061410 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#040c0a 0%,#081a16 60%,#061410 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -141,7 +146,8 @@ full_width: true
           src="{{ '/assets/img/travel/india/delhi-cover.jpg' | relative_url }}"
           alt="Delhi, India"
           loading="lazy"
-          onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#201808 60%,#160e04 100%)'"
+          data-fallback-bg="linear-gradient(160deg,#0c0a04 0%,#201808 60%,#160e04 100%)"
+          onerror="imageExtFallback(this)"
         >
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">

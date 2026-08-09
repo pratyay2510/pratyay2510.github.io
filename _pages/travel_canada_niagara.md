@@ -28,7 +28,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/canada/niagara-cover.jpg' | relative_url }}"
       alt="Niagara Falls, Ontario — Horseshoe Falls"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a10 0%,#081828 60%,#04101e 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#040a10 0%,#081828 60%,#04101e 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -79,11 +80,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-01.jpg' | relative_url }}" alt="Niagara Horseshoe Falls" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040a10 0%,#081828 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/niagara/photo-01.jpg' | relative_url }}" alt="Niagara Horseshoe Falls" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a10 0%,#081828 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-02.jpg' | relative_url }}" alt="Niagara mist" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060c14 0%,#0c1e2c 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/niagara/photo-02.jpg' | relative_url }}" alt="Niagara mist" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c14 0%,#0c1e2c 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -99,15 +102,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-03.jpg' | relative_url }}" alt="Niagara-on-the-Lake" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#08142a 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/niagara/photo-03.jpg' | relative_url }}" alt="Niagara-on-the-Lake" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#08142a 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-04.jpg' | relative_url }}" alt="Niagara wine region" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060a12 0%,#0e1828 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/niagara/photo-04.jpg' | relative_url }}" alt="Niagara wine region" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060a12 0%,#0e1828 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-05.jpg' | relative_url }}" alt="Niagara river" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#0c1424 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/canada/niagara/photo-05.jpg' | relative_url }}" alt="Niagara river" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0c1424 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

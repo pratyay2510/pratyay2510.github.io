@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/india/north-bengal-cover.jpg' | relative_url }}"
       alt="North Bengal — Darjeeling and the Himalayan foothills"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -80,11 +81,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-01.jpg' | relative_url }}" alt="Darjeeling tea gardens" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060e06 0%,#0e1c0c 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/north-bengal/photo-01.jpg' | relative_url }}" alt="Darjeeling tea gardens" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060e06 0%,#0e1c0c 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-02.jpg' | relative_url }}" alt="Darjeeling Himalayan Railway" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#081008 0%,#101c0e 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/north-bengal/photo-02.jpg' | relative_url }}" alt="Darjeeling Himalayan Railway" loading="lazy" data-fallback-bg="linear-gradient(160deg,#081008 0%,#101c0e 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -100,15 +103,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-03.jpg' | relative_url }}" alt="Tiger Hill sunrise" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060c04 0%,#0e1808 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/north-bengal/photo-03.jpg' | relative_url }}" alt="Tiger Hill sunrise" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c04 0%,#0e1808 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-04.jpg' | relative_url }}" alt="Kanchenjunga" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080c06 0%,#121a0a 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/north-bengal/photo-04.jpg' | relative_url }}" alt="Kanchenjunga" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080c06 0%,#121a0a 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-05.jpg' | relative_url }}" alt="North Bengal hills" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080a 0%,#101408 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/north-bengal/photo-05.jpg' | relative_url }}" alt="North Bengal hills" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080a 0%,#101408 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

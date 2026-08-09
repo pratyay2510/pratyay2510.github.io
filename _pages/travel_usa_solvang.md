@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/usa/solvang-cover.jpg' | relative_url }}"
       alt="Solvang — the Danish village in California"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0a0804 0%,#1c1408 60%,#140e04 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#0a0804 0%,#1c1408 60%,#140e04 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -80,11 +81,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-01.jpg' | relative_url }}" alt="Solvang windmills" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0804 0%,#1c1408 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/solvang/photo-01.jpg' | relative_url }}" alt="Solvang windmills" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0804 0%,#1c1408 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-02.jpg' | relative_url }}" alt="Santa Ynez Valley" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080804 0%,#181408 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/solvang/photo-02.jpg' | relative_url }}" alt="Santa Ynez Valley" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080804 0%,#181408 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -100,15 +103,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-03.jpg' | relative_url }}" alt="Solvang street" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0a06 0%,#1e1808 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/solvang/photo-03.jpg' | relative_url }}" alt="Solvang street" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0a06 0%,#1e1808 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-04.jpg' | relative_url }}" alt="Valley vineyards" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080804 0%,#161206 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/solvang/photo-04.jpg' | relative_url }}" alt="Valley vineyards" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080804 0%,#161206 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-05.jpg' | relative_url }}" alt="Danish pastries" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0804 0%,#1a1408 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/solvang/photo-05.jpg' | relative_url }}" alt="Danish pastries" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0804 0%,#1a1408 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

@@ -28,7 +28,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/usa/national-parks-cover.jpg' | relative_url }}"
       alt="US National Parks — the protected wilderness"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#030a04 0%,#091806 60%,#051204 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#030a04 0%,#091806 60%,#051204 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -79,7 +80,8 @@ full_width: true
           photo-02.jpg — Boulder formations / Skull Rock area
         -->
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/joshua-tree/photo-01.jpg' | relative_url }}" alt="Joshua Tree NP" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#120c02 0%,#241804 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/joshua-tree/photo-01.jpg' | relative_url }}" alt="Joshua Tree NP" loading="lazy" data-fallback-bg="linear-gradient(160deg,#120c02 0%,#241804 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">California &nbsp;·&nbsp; 790,636 acres</div>
@@ -88,7 +90,8 @@ full_width: true
           </div>
         </div>
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/joshua-tree/photo-02.jpg' | relative_url }}" alt="Joshua Tree boulders" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0e0a02 0%,#1e1404 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/joshua-tree/photo-02.jpg' | relative_url }}" alt="Joshua Tree boulders" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0e0a02 0%,#1e1404 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">Hidden Valley &amp; Cholla Garden</div>
@@ -125,7 +128,8 @@ full_width: true
           photo-02.jpg — Condor in flight / talus caves
         -->
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/pinnacles/photo-01.jpg' | relative_url }}" alt="Pinnacles NP formations" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100c04 0%,#201804 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/pinnacles/photo-01.jpg' | relative_url }}" alt="Pinnacles NP formations" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100c04 0%,#201804 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">California &nbsp;·&nbsp; Volcanic remnants</div>
@@ -134,7 +138,8 @@ full_width: true
           </div>
         </div>
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/pinnacles/photo-02.jpg' | relative_url }}" alt="California Condor" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0c0c04 0%,#181804 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/pinnacles/photo-02.jpg' | relative_url }}" alt="California Condor" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0c04 0%,#181804 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">Condor recovery programme</div>
@@ -171,7 +176,8 @@ full_width: true
           photo-02.jpg — El Capitan / Half Dome / Yosemite Falls
         -->
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/yosemite/photo-01.jpg' | relative_url }}" alt="Yosemite Valley" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#0a1808 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/yosemite/photo-01.jpg' | relative_url }}" alt="Yosemite Valley" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a04 0%,#0a1808 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">California &nbsp;·&nbsp; Sierra Nevada</div>
@@ -180,7 +186,8 @@ full_width: true
           </div>
         </div>
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/yosemite/photo-02.jpg' | relative_url }}" alt="El Capitan" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060a06 0%,#0e180a 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/yosemite/photo-02.jpg' | relative_url }}" alt="El Capitan" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060a06 0%,#0e180a 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">El Capitan &nbsp;·&nbsp; 3,000 ft of granite</div>
@@ -217,7 +224,8 @@ full_width: true
           photo-02.jpg — Scenic drive overlook or canyon view
         -->
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/red-rock/photo-01.jpg' | relative_url }}" alt="Red Rock Canyon Calico Hills" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#180a02 0%,#2e1204 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/red-rock/photo-01.jpg' | relative_url }}" alt="Red Rock Canyon Calico Hills" loading="lazy" data-fallback-bg="linear-gradient(160deg,#180a02 0%,#2e1204 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">Nevada &nbsp;·&nbsp; Calico Hills</div>
@@ -226,7 +234,8 @@ full_width: true
           </div>
         </div>
         <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/red-rock/photo-02.jpg' | relative_url }}" alt="Red Rock scenic drive" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#140802 0%,#281204 100%)'">
+          <img src="{{ '/assets/img/travel/usa/national-parks/red-rock/photo-02.jpg' | relative_url }}" alt="Red Rock scenic drive" loading="lazy" data-fallback-bg="linear-gradient(160deg,#140802 0%,#281204 100%)"
+ onerror="imageExtFallback(this)">
           <div class="tr-park-card-overlay"></div>
           <div class="tr-park-card-content">
             <div class="tr-park-card-state">13-mile scenic loop</div>

@@ -28,7 +28,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/india/delhi-cover.jpg' | relative_url }}"
       alt="Delhi — India Gate and the old city"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#201a06 60%,#180e04 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#0c0a04 0%,#201a06 60%,#180e04 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -79,11 +80,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/delhi/photo-01.jpg' | relative_url }}" alt="Old Delhi" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#1e1604 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/delhi/photo-01.jpg' | relative_url }}" alt="Old Delhi" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0a04 0%,#1e1604 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/delhi/photo-02.jpg' | relative_url }}" alt="Humayun's Tomb" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#100c04 0%,#221806 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/delhi/photo-02.jpg' | relative_url }}" alt="Humayun's Tomb" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100c04 0%,#221806 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -99,15 +102,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/delhi/photo-03.jpg' | relative_url }}" alt="Delhi street" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0e0a04 0%,#1c1606 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/delhi/photo-03.jpg' | relative_url }}" alt="Delhi street" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0e0a04 0%,#1c1606 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/delhi/photo-04.jpg' | relative_url }}" alt="India Gate" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0802 0%,#201204 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/delhi/photo-04.jpg' | relative_url }}" alt="India Gate" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0802 0%,#201204 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/delhi/photo-05.jpg' | relative_url }}" alt="Delhi monument" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0804 0%,#1a1004 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/delhi/photo-05.jpg' | relative_url }}" alt="Delhi monument" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0804 0%,#1a1004 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

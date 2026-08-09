@@ -28,7 +28,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/usa/san-francisco-cover.jpg' | relative_url }}"
       alt="San Francisco — the Golden Gate and the bay"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0e1220 60%,#080c18 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e1220 60%,#080c18 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -79,11 +80,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-01.jpg' | relative_url }}" alt="Golden Gate Bridge" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0e1224 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-01.jpg' | relative_url }}" alt="Golden Gate Bridge" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e1224 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-02.jpg' | relative_url }}" alt="San Francisco skyline" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#08080c 0%,#101420 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-02.jpg' | relative_url }}" alt="San Francisco skyline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#08080c 0%,#101420 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -99,15 +102,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-03.jpg' | relative_url }}" alt="Mission District" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080e 0%,#0e1222 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-03.jpg' | relative_url }}" alt="Mission District" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0e1222 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-04.jpg' | relative_url }}" alt="Fisherman's Wharf" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#0c1428 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-04.jpg' | relative_url }}" alt="Fisherman's Wharf" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#0c1428 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-05.jpg' | relative_url }}" alt="Marin Headlands view" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0e141e 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-05.jpg' | relative_url }}" alt="Marin Headlands view" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e141e 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

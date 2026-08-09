@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/india/goa-cover.jpg' | relative_url }}"
       alt="Goa — beaches and Portuguese legacy"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040c0a 0%,#081c16 60%,#061410 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#040c0a 0%,#081c16 60%,#061410 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -80,11 +81,13 @@ full_width: true
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/goa/photo-01.jpg' | relative_url }}" alt="Goa beach" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040c0a 0%,#081a14 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/goa/photo-01.jpg' | relative_url }}" alt="Goa beach" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040c0a 0%,#081a14 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/goa/photo-02.jpg' | relative_url }}" alt="Old Goa church" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060e0a 0%,#0c1a12 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/goa/photo-02.jpg' | relative_url }}" alt="Old Goa church" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060e0a 0%,#0c1a12 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -100,15 +103,18 @@ full_width: true
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/goa/photo-03.jpg' | relative_url }}" alt="Goa sunset" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#04100c 0%,#081e14 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/goa/photo-03.jpg' | relative_url }}" alt="Goa sunset" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04100c 0%,#081e14 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/goa/photo-04.jpg' | relative_url }}" alt="Portuguese heritage" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060c0a 0%,#0a1810 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/goa/photo-04.jpg' | relative_url }}" alt="Portuguese heritage" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c0a 0%,#0a1810 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/goa/photo-05.jpg' | relative_url }}" alt="Goa fishing boats" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040e08 0%,#081808 100%)';this.style.display='none'">
+        <img src="{{ '/assets/img/travel/india/goa/photo-05.jpg' | relative_url }}" alt="Goa fishing boats" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040e08 0%,#081808 100%)"
+ onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

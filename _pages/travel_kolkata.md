@@ -29,7 +29,8 @@ full_width: true
     <img
       src="{{ '/assets/img/travel/destinations/kolkata-cover.jpg' | relative_url }}"
       alt="Kolkata skyline"
-      onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)'"
+      data-fallback-bg="linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)"
+      onerror="imageExtFallback(this)"
     >
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
@@ -80,26 +81,31 @@ full_width: true
     <!-- Photo grid: 2 col -->
     <!--
       IMAGE SLOTS: Add your Kolkata photos to assets/img/travel/kolkata/
-      Name them: photo-01.jpg, photo-02.jpg, etc.
+      Name them photo-01, photo-02, etc. The extension does not have to match
+      the src below — .jpg, .jpeg, .png and .webp are all resolved automatically
+      by assets/js/image-ext-fallback.js, so photo-01.jpeg and photo-02.jpg can
+      sit side by side.
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
         <img
           src="{{ '/assets/img/travel/kolkata/photo-01.jpg' | relative_url }}"
-          alt="Kolkata photograph 1"
+          alt="The Writers' Building, Kolkata"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#140a04 0%,#2a1006 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#140a04 0%,#2a1006 100%)"
+          onerror="imageExtFallback(this)"
         >
-        <figcaption>Add caption here</figcaption>
+        <figcaption>Writers' Building</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
         <img
           src="{{ '/assets/img/travel/kolkata/photo-02.jpg' | relative_url }}"
-          alt="Kolkata photograph 2"
+          alt="Durga Puja celebrations in Kolkata"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0808 0%,#201008 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#0c0808 0%,#201008 100%)"
+          onerror="imageExtFallback(this)"
         >
-        <figcaption>Add caption here</figcaption>
+        <figcaption>Durga Puja</figcaption>
       </figure>
     </div>
 
@@ -120,7 +126,8 @@ full_width: true
           src="{{ '/assets/img/travel/kolkata/photo-03.jpg' | relative_url }}"
           alt="Kolkata photograph 3"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#100c04 0%,#22180a 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#100c04 0%,#22180a 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -129,7 +136,8 @@ full_width: true
           src="{{ '/assets/img/travel/kolkata/photo-04.jpg' | relative_url }}"
           alt="Kolkata photograph 4"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0c10 0%,#101822 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#0a0c10 0%,#101822 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
@@ -138,7 +146,8 @@ full_width: true
           src="{{ '/assets/img/travel/kolkata/photo-05.jpg' | relative_url }}"
           alt="Kolkata photograph 5"
           loading="lazy"
-          onerror="this.parentElement.style.background='linear-gradient(160deg,#080a08 0%,#10180e 100%)';this.style.display='none'"
+          data-fallback-bg="linear-gradient(160deg,#080a08 0%,#10180e 100%)"
+          onerror="imageExtFallback(this)"
         >
         <figcaption>Add caption here</figcaption>
       </figure>
