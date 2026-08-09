@@ -118,32 +118,32 @@ full_width: true
       <figure class="tr-dest-photo tr-dest-photo--landscape">
         <img
           src="{{ '/assets/img/travel/riverside/photo-03.jpg' | relative_url }}"
-          alt="Riverside photograph 3"
+          alt="View from the lab, UC Riverside"
           loading="lazy"
           data-fallback-bg="linear-gradient(160deg,#070810 0%,#0e142a 100%)"
           onerror="imageExtFallback(this)"
         >
-        <figcaption>Add caption here</figcaption>
+        <figcaption>View from the lab</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
         <img
           src="{{ '/assets/img/travel/riverside/photo-04.jpg' | relative_url }}"
-          alt="Riverside photograph 4"
+          alt="The mountains around Riverside"
           loading="lazy"
           data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0c1222 100%)"
           onerror="imageExtFallback(this)"
         >
-        <figcaption>Add caption here</figcaption>
+        <figcaption>The mountains echo sometimes</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
         <img
           src="{{ '/assets/img/travel/riverside/photo-05.jpg' | relative_url }}"
-          alt="Riverside photograph 5"
+          alt="Palm tree grove in front of Glen Mor ground, UC Riverside"
           loading="lazy"
           data-fallback-bg="linear-gradient(160deg,#080a0e 0%,#12162a 100%)"
           onerror="imageExtFallback(this)"
         >
-        <figcaption>Add caption here</figcaption>
+        <figcaption>UCR palm tree grove in front of Glen Mor ground</figcaption>
       </figure>
     </div>
 

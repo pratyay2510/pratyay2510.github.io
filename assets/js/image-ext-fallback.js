@@ -19,9 +19,29 @@
  *
  * Loaded non-deferred from head.liquid so the global exists before any <img>
  * in the document body is parsed.
+ *
+ * NOTE on .heic — it is tried last because browser support is thin: Safari
+ * renders it, Chrome and Firefox do not. A .heic straight off an iPhone will
+ * therefore load for some visitors and hit the placeholder for the rest. It is
+ * in the list so an untouched camera file still works where it can, but for
+ * anything you want everyone to see, convert first:
+ *   sips -s format jpeg photo-01.heic --out photo-01.jpg      (macOS, built in)
  */
 (function () {
-  var EXTENSIONS = ["jpg", "jpeg", "png", "webp", "svg", "JPG", "JPEG", "PNG", "WEBP", "SVG"];
+  var EXTENSIONS = [
+    "jpg",
+    "jpeg",
+    "png",
+    "webp",
+    "svg",
+    "heic",
+    "JPG",
+    "JPEG",
+    "PNG",
+    "WEBP",
+    "SVG",
+    "HEIC",
+  ];
 
   function splitExtension(src) {
     /* Split off ?query / #hash first so cache-busted URLs still work. */
