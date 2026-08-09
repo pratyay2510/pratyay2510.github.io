@@ -42,6 +42,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -107,8 +110,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="#projects">Projects</a></li>
@@ -357,6 +360,85 @@
     </div>
   </section>
 
+    <!-- ── Experience ───────────────────────────────────────────────────── -->
+    <!--
+      LOGO SLOTS: drop square-ish logos (transparent background, min 256×256)
+      into assets/img/logos/ named after the institution:
+        llnl · ucr · dalhousie · vcu
+      The extension does not have to match the src below — .png, .webp, .jpg,
+      .jpeg and .svg are all resolved automatically by
+      assets/js/image-ext-fallback.js. If no file is found at all, the card
+      falls back to a monogram badge.
+    -->
+    <div id="experience" class="timeline-section exp-section" data-aos="fade-up">
+      <h3>Experience</h3>
+      <div class="exp-timeline">
+        <div class="exp-item" data-aos="fade-right" data-aos-delay="100">
+          <span class="exp-dot" aria-hidden="true"></span>
+          <span class="exp-year">Jun – Aug 2026</span>
+          <div class="exp-card">
+            <div class="exp-card-main">
+              <p class="exp-title">Data Science Summer Institute (DSSI) Intern</p>
+              <p class="exp-org">Lawrence Livermore National Laboratory</p>
+              <p class="exp-desc">Researching inference-time intervention strategies for large language models — steering internal activations at decode time to elicit more truthful, better-calibrated answers while making the model's reasoning more interpretable.</p>
+            </div>
+            <div class="exp-logo-wrap">
+              <img class="exp-logo" src="/assets/img/logos/llnl.png" alt="Lawrence Livermore National Laboratory logo" loading="lazy" data-fallback-next="flex" onerror="imageExtFallback(this)">
+              <span class="exp-logo-fallback" aria-hidden="true">LLNL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item" data-aos="fade-right" data-aos-delay="200">
+          <span class="exp-dot" aria-hidden="true"></span>
+          <span class="exp-year">2023 – Present</span>
+          <div class="exp-card">
+            <div class="exp-card-main">
+              <p class="exp-title">Research Assistant</p>
+              <p class="exp-org">University of California, Riverside</p>
+              <p class="exp-desc">Conducting research under Dr. Bir Bhanu on event-based vision with anisotropic heat diffusion, virtual cloth try-off using Stable Diffusion, and latent diffusion-guided feature inpainting for occluded person re-identification.</p>
+            </div>
+            <div class="exp-logo-wrap">
+              <img class="exp-logo" src="/assets/img/logos/ucr.png" alt="University of California, Riverside logo" loading="lazy" data-fallback-next="flex" onerror="imageExtFallback(this)">
+              <span class="exp-logo-fallback" aria-hidden="true">UCR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item" data-aos="fade-right" data-aos-delay="300">
+          <span class="exp-dot" aria-hidden="true"></span>
+          <span class="exp-year">Jun – Aug 2022</span>
+          <div class="exp-card">
+            <div class="exp-card-main">
+              <p class="exp-title">Research Intern</p>
+              <p class="exp-org">Dalhousie University, Canada</p>
+              <p class="exp-desc">Built a predictive modeling pipeline on Lichess chess data and trained a PPO-based RL agent capable of defeating amateur players below a target FIDE rating, under Dr. Yannick Marchand.</p>
+            </div>
+            <div class="exp-logo-wrap">
+              <img class="exp-logo" src="/assets/img/logos/dalhousie.png" alt="Dalhousie University logo" loading="lazy" data-fallback-next="flex" onerror="imageExtFallback(this)">
+              <span class="exp-logo-fallback" aria-hidden="true">DAL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item" data-aos="fade-right" data-aos-delay="400">
+          <span class="exp-dot" aria-hidden="true"></span>
+          <span class="exp-year">Jun 2020 – Nov 2021</span>
+          <div class="exp-card">
+            <div class="exp-card-main">
+              <p class="exp-title">Research Intern</p>
+              <p class="exp-org">Virginia Commonwealth University, USA</p>
+              <p class="exp-desc">Optimized multi-vaccine distribution strategies using linear programming and clustering; work resulted in publications at IEEE BIBM 2021 and IEEE/ACM TCBB 2022, under Dr. Preetam Ghosh.</p>
+            </div>
+            <div class="exp-logo-wrap">
+              <img class="exp-logo" src="/assets/img/logos/vcu.png" alt="Virginia Commonwealth University logo" loading="lazy" data-fallback-next="flex" onerror="imageExtFallback(this)">
+              <span class="exp-logo-fallback" aria-hidden="true">VCU</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Publications ─────────────────────────────────────────────────── -->
     <div id="publications" class="pub-section" data-aos="fade-up">
       <h3>Publications</h3>
@@ -437,37 +519,6 @@
           </div>
         </a>
 
-      </div>
-    </div>
-
-    <!-- ── Experience ───────────────────────────────────────────────────── -->
-    <div id="experience" class="timeline-section" data-aos="fade-up">
-      <h3>Experience</h3>
-      <div class="timeline">
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
-          <span class="timeline-year">2023 - Present</span>
-          <div class="timeline-content">
-            <p class="timeline-title">Research Assistant</p>
-            <p class="timeline-org">University of California, Riverside</p>
-            <p class="timeline-desc">Conducting research under Dr. Bir Bhanu on event-based vision with anisotropic heat diffusion, virtual cloth try-off using Stable Diffusion, and latent diffusion-guided feature inpainting for occluded person re-identification.</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
-          <span class="timeline-year">Jun - Aug 2022</span>
-          <div class="timeline-content">
-            <p class="timeline-title">Research Intern</p>
-            <p class="timeline-org">Dalhousie University, Canada</p>
-            <p class="timeline-desc">Built a predictive modeling pipeline on Lichess chess data and trained a PPO-based RL agent capable of defeating amateur players below a target FIDE rating, under Dr. Yannick Marchand.</p>
-          </div>
-        </div>
-        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
-          <span class="timeline-year">Jun 2020 - Nov 2021</span>
-          <div class="timeline-content">
-            <p class="timeline-title">Research Intern</p>
-            <p class="timeline-org">Virginia Commonwealth University, USA</p>
-            <p class="timeline-desc">Optimized multi-vaccine distribution strategies using linear programming and clustering; work resulted in publications at IEEE BIBM 2021 and IEEE/ACM TCBB 2022, under Dr. Preetam Ghosh.</p>
-          </div>
-        </div>
       </div>
     </div>
 

@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -154,7 +157,7 @@
     from above, or the Hawa Mahal façade. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
-    <img src="/assets/img/travel/india/rajasthan-cover.jpg" alt="Rajasthan, India" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#180e02 0%,#341c04 60%,#201004 100%)'">
+    <img src="/assets/img/travel/india/rajasthan-cover.jpg" alt="Rajasthan, India" data-fallback-bg="linear-gradient(160deg,#180e02 0%,#341c04 60%,#201004 100%)" onerror="imageExtFallback(this)">
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
       <div class="tr-dest-hero-tag">India  ·  Rajasthan</div>
@@ -204,11 +207,11 @@
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/india/rajasthan/photo-01.jpg" alt="Jaipur" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#180e02 0%,#301804 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/india/rajasthan/photo-01.jpg" alt="Jaipur" loading="lazy" data-fallback-bg="linear-gradient(160deg,#180e02 0%,#301804 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/india/rajasthan/photo-02.jpg" alt="Amber Fort" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#140a02 0%,#281402 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/india/rajasthan/photo-02.jpg" alt="Amber Fort" loading="lazy" data-fallback-bg="linear-gradient(160deg,#140a02 0%,#281402 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -224,15 +227,15 @@
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/india/rajasthan/photo-03.jpg" alt="Jodhpur blue houses" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#140c02 0%,#221402 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/india/rajasthan/photo-03.jpg" alt="Jodhpur blue houses" loading="lazy" data-fallback-bg="linear-gradient(160deg,#140c02 0%,#221402 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/india/rajasthan/photo-04.jpg" alt="Mehrangarh Fort" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#100a02 0%,#1e1202 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/india/rajasthan/photo-04.jpg" alt="Mehrangarh Fort" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100a02 0%,#1e1202 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/india/rajasthan/photo-05.jpg" alt="Rajasthan landscape" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0e0802 0%,#1c1002 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/india/rajasthan/photo-05.jpg" alt="Rajasthan landscape" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0e0802 0%,#1c1002 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

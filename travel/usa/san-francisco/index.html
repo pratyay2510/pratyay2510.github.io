@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -154,7 +157,7 @@
     from Marin Headlands, or the city from Twin Peaks. Min 1400×800px.
   -->
   <div class="tr-dest-hero">
-    <img src="/assets/img/travel/usa/san-francisco-cover.jpg" alt="San Francisco — the Golden Gate and the bay" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0e1220 60%,#080c18 100%)'">
+    <img src="/assets/img/travel/usa/san-francisco-cover.jpg" alt="San Francisco — the Golden Gate and the bay" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e1220 60%,#080c18 100%)" onerror="imageExtFallback(this)">
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
       <div class="tr-dest-hero-tag">California  ·  Bay Area</div>
@@ -204,11 +207,11 @@
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/usa/san-francisco/photo-01.jpg" alt="Golden Gate Bridge" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0e1224 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/san-francisco/photo-01.jpg" alt="Golden Gate Bridge" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e1224 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/usa/san-francisco/photo-02.jpg" alt="San Francisco skyline" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#08080c 0%,#101420 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/san-francisco/photo-02.jpg" alt="San Francisco skyline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#08080c 0%,#101420 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -224,15 +227,15 @@
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/usa/san-francisco/photo-03.jpg" alt="Mission District" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080e 0%,#0e1222 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/san-francisco/photo-03.jpg" alt="Mission District" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0e1222 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/usa/san-francisco/photo-04.jpg" alt="Fisherman's Wharf" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#0c1428 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/san-francisco/photo-04.jpg" alt="Fisherman's Wharf" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#0c1428 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/usa/san-francisco/photo-05.jpg" alt="Marin Headlands view" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#06080c 0%,#0e141e 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/san-francisco/photo-05.jpg" alt="Marin Headlands view" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e141e 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

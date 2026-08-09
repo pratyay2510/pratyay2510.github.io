@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -155,7 +158,7 @@
     Min 1400×800px, landscape.
   -->
   <div class="tr-dest-hero">
-    <img src="/assets/img/travel/usa/las-vegas-cover.jpg" alt="Las Vegas — The Strip at night" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060408 0%,#140c16 60%,#0c0812 100%)'">
+    <img src="/assets/img/travel/usa/las-vegas-cover.jpg" alt="Las Vegas — The Strip at night" data-fallback-bg="linear-gradient(160deg,#060408 0%,#140c16 60%,#0c0812 100%)" onerror="imageExtFallback(this)">
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
       <div class="tr-dest-hero-tag">Nevada  ·  Mojave Desert</div>
@@ -205,11 +208,11 @@
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/usa/las-vegas/photo-01.jpg" alt="Las Vegas Strip" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060408 0%,#120c16 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/las-vegas/photo-01.jpg" alt="Las Vegas Strip" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060408 0%,#120c16 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/usa/las-vegas/photo-02.jpg" alt="Bellagio fountains" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#08040a 0%,#160c18 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/las-vegas/photo-02.jpg" alt="Bellagio fountains" loading="lazy" data-fallback-bg="linear-gradient(160deg,#08040a 0%,#160c18 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -225,15 +228,15 @@
 
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/usa/las-vegas/photo-03.jpg" alt="Las Vegas by day" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060408 0%,#120e14 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/las-vegas/photo-03.jpg" alt="Las Vegas by day" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060408 0%,#120e14 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/usa/las-vegas/photo-04.jpg" alt="Red Rock Canyon" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#1e1006 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/las-vegas/photo-04.jpg" alt="Red Rock Canyon" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100804 0%,#1e1006 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/usa/las-vegas/photo-05.jpg" alt="Nevada desert" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0606 0%,#160e08 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/usa/las-vegas/photo-05.jpg" alt="Nevada desert" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0606 0%,#160e08 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

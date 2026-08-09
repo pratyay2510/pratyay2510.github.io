@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -186,7 +189,7 @@
 
       <!-- Rajasthan — featured wide card -->
       <a class="tr-hub-place tr-hub-place--featured reveal-up" href="/travel/india/rajasthan/" style="--delay:0.06s">
-        <img src="/assets/img/travel/india/rajasthan-cover.jpg" alt="Rajasthan, India" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)'">
+        <img src="/assets/img/travel/india/rajasthan-cover.jpg" alt="Rajasthan, India" loading="lazy" data-fallback-bg="linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
           <div class="tr-hub-place-tag">Rajasthan</div>
@@ -197,7 +200,7 @@
 
       <!-- Kashmir -->
       <a class="tr-hub-place reveal-up" href="/travel/india/kashmir/" style="--delay:0.08s">
-        <img src="/assets/img/travel/india/kashmir-cover.jpg" alt="Kashmir" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a14 0%,#081628 60%,#060c1e 100%)'">
+        <img src="/assets/img/travel/india/kashmir-cover.jpg" alt="Kashmir" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a14 0%,#081628 60%,#060c1e 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
           <div class="tr-hub-place-tag">Jammu &amp; Kashmir</div>
@@ -208,7 +211,7 @@
 
       <!-- Himachal -->
       <a class="tr-hub-place reveal-up" href="/travel/india/himachal/" style="--delay:0.10s">
-        <img src="/assets/img/travel/india/himachal-cover.jpg" alt="Himachal Pradesh" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)'">
+        <img src="/assets/img/travel/india/himachal-cover.jpg" alt="Himachal Pradesh" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
           <div class="tr-hub-place-tag">Himachal Pradesh</div>
@@ -219,7 +222,7 @@
 
       <!-- North Bengal -->
       <a class="tr-hub-place reveal-up" href="/travel/india/north-bengal/" style="--delay:0.12s">
-        <img src="/assets/img/travel/india/north-bengal-cover.jpg" alt="North Bengal — Darjeeling" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)'">
+        <img src="/assets/img/travel/india/north-bengal-cover.jpg" alt="North Bengal — Darjeeling" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
           <div class="tr-hub-place-tag">West Bengal</div>
@@ -230,7 +233,7 @@
 
       <!-- Goa -->
       <a class="tr-hub-place reveal-up" href="/travel/india/goa/" style="--delay:0.14s">
-        <img src="/assets/img/travel/india/goa-cover.jpg" alt="Goa, India" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040c0a 0%,#081a16 60%,#061410 100%)'">
+        <img src="/assets/img/travel/india/goa-cover.jpg" alt="Goa, India" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040c0a 0%,#081a16 60%,#061410 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
           <div class="tr-hub-place-tag">Goa</div>
@@ -241,7 +244,7 @@
 
       <!-- Delhi -->
       <a class="tr-hub-place reveal-up" href="/travel/india/delhi/" style="--delay:0.16s">
-        <img src="/assets/img/travel/india/delhi-cover.jpg" alt="Delhi, India" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#0c0a04 0%,#201808 60%,#160e04 100%)'">
+        <img src="/assets/img/travel/india/delhi-cover.jpg" alt="Delhi, India" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0a04 0%,#201808 60%,#160e04 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
           <div class="tr-hub-place-tag">Delhi</div>

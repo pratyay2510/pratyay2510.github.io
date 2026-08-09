@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -155,7 +158,7 @@
     Recommended: landscape, min 1400×800px, JPG or WEBP.
   -->
   <div class="tr-dest-hero">
-    <img src="/assets/img/travel/canada/halifax-cover.jpg" alt="Halifax harbour" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061a28 60%,#040c18 100%)'">
+    <img src="/assets/img/travel/canada/halifax-cover.jpg" alt="Halifax harbour" data-fallback-bg="linear-gradient(160deg,#040810 0%,#061a28 60%,#040c18 100%)" onerror="imageExtFallback(this)">
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
       <div class="tr-dest-hero-tag">Canada  ·  Nova Scotia</div>
@@ -210,11 +213,11 @@
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--asymmetric reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/halifax/photo-01.jpg" alt="Halifax photograph 1" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#081220 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/halifax/photo-01.jpg" alt="Halifax photograph 1" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#081220 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--square">
-        <img src="/assets/img/travel/halifax/photo-02.jpg" alt="Halifax photograph 2" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#050b12 0%,#0a1828 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/halifax/photo-02.jpg" alt="Halifax photograph 2" loading="lazy" data-fallback-bg="linear-gradient(160deg,#050b12 0%,#0a1828 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>
@@ -232,15 +235,15 @@
     <!-- 3-col photo grid -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--square">
-        <img src="/assets/img/travel/halifax/photo-03.jpg" alt="Halifax photograph 3" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#040a12 0%,#0a1822 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/halifax/photo-03.jpg" alt="Halifax photograph 3" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a12 0%,#0a1822 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--square">
-        <img src="/assets/img/travel/halifax/photo-04.jpg" alt="Halifax photograph 4" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#060c14 0%,#0c1e2a 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/halifax/photo-04.jpg" alt="Halifax photograph 4" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c14 0%,#0c1e2a 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--square">
-        <img src="/assets/img/travel/halifax/photo-05.jpg" alt="Halifax photograph 5" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#04080e 0%,#08121c 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/halifax/photo-05.jpg" alt="Halifax photograph 5" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#08121c 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

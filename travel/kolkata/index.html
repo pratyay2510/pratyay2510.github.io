@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -155,7 +158,7 @@
     Recommended: landscape, min 1400×800px, JPG or WEBP.
   -->
   <div class="tr-dest-hero">
-    <img src="/assets/img/travel/destinations/kolkata-cover.jpg" alt="Kolkata skyline" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)'">
+    <img src="/assets/img/travel/destinations/kolkata-cover.jpg" alt="Kolkata skyline" data-fallback-bg="linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)" onerror="imageExtFallback(this)">
     <div class="tr-dest-hero-overlay"></div>
     <div class="tr-dest-hero-text">
       <div class="tr-dest-hero-tag">India  ·  West Bengal</div>
@@ -205,16 +208,19 @@
     <!-- Photo grid: 2 col -->
     <!--
       IMAGE SLOTS: Add your Kolkata photos to assets/img/travel/kolkata/
-      Name them: photo-01.jpg, photo-02.jpg, etc.
+      Name them photo-01, photo-02, etc. The extension does not have to match
+      the src below — .jpg, .jpeg, .png and .webp are all resolved automatically
+      by assets/js/image-ext-fallback.js, so photo-01.jpeg and photo-02.jpg can
+      sit side by side.
     -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/kolkata/photo-01.jpg" alt="Kolkata photograph 1" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#140a04 0%,#2a1006 100%)';this.style.display='none'">
-        <figcaption>Add caption here</figcaption>
+        <img src="/assets/img/travel/kolkata/photo-01.jpg" alt="The Writers' Building, Kolkata" loading="lazy" data-fallback-bg="linear-gradient(160deg,#140a04 0%,#2a1006 100%)" onerror="imageExtFallback(this)">
+        <figcaption>Writers' Building</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/kolkata/photo-02.jpg" alt="Kolkata photograph 2" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0c0808 0%,#201008 100%)';this.style.display='none'">
-        <figcaption>Add caption here</figcaption>
+        <img src="/assets/img/travel/kolkata/photo-02.jpg" alt="Durga Puja celebrations in Kolkata" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0808 0%,#201008 100%)" onerror="imageExtFallback(this)">
+        <figcaption>Durga Puja</figcaption>
       </figure>
     </div>
 
@@ -231,15 +237,15 @@
     <!-- Photo grid: 3 col -->
     <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/kolkata/photo-03.jpg" alt="Kolkata photograph 3" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#100c04 0%,#22180a 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/kolkata/photo-03.jpg" alt="Kolkata photograph 3" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100c04 0%,#22180a 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/kolkata/photo-04.jpg" alt="Kolkata photograph 4" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#0a0c10 0%,#101822 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/kolkata/photo-04.jpg" alt="Kolkata photograph 4" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0c10 0%,#101822 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
       <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/kolkata/photo-05.jpg" alt="Kolkata photograph 5" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(160deg,#080a08 0%,#10180e 100%)';this.style.display='none'">
+        <img src="/assets/img/travel/kolkata/photo-05.jpg" alt="Kolkata photograph 5" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080a08 0%,#10180e 100%)" onerror="imageExtFallback(this)">
         <figcaption>Add caption here</figcaption>
       </figure>
     </div>

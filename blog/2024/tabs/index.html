@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -215,7 +218,7 @@ Content 2
 
 <p>With this you can generate visualizations like:</p>
 
-<ul id="log" class="tab" data-tab="3442764e-280b-48e7-8b45-d11f34c40c19" data-name="log">
+<ul id="log" class="tab" data-tab="0e094c07-4139-4cdf-b468-25e67d9695d2" data-name="log">
   
       <li class="active" id="log-php">
           <a href="#">php </a>
@@ -230,7 +233,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="3442764e-280b-48e7-8b45-d11f34c40c19" data-name="log">
+<ul class="tab-content" id="0e094c07-4139-4cdf-b468-25e67d9695d2" data-name="log">
   
       <li class="active">
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
@@ -254,7 +257,7 @@ Content 2
 
 <h2 id="another-example">Another example</h2>
 
-<ul id="data-struct" class="tab" data-tab="48494589-0453-42d2-b395-194fd1ef046d" data-name="data-struct">
+<ul id="data-struct" class="tab" data-tab="76fc396a-1732-48b1-aee5-7a703f6ea7c2" data-name="data-struct">
   
       <li class="active" id="data-struct-yaml">
           <a href="#">yaml </a>
@@ -265,7 +268,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="48494589-0453-42d2-b395-194fd1ef046d" data-name="data-struct">
+<ul class="tab-content" id="76fc396a-1732-48b1-aee5-7a703f6ea7c2" data-name="data-struct">
   
       <li class="active">
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
@@ -287,7 +290,7 @@ Content 2
 
 <h2 id="tabs-for-something-else">Tabs for something else</h2>
 
-<ul id="something-else" class="tab" data-tab="e32b1594-1c96-4c60-bd2e-e4b8d0c60e83" data-name="something-else">
+<ul id="something-else" class="tab" data-tab="ddd160d7-9921-4a39-8c3f-8d92562d68b9" data-name="something-else">
   
       <li class="active" id="something-else-text">
           <a href="#">text </a>
@@ -302,7 +305,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="e32b1594-1c96-4c60-bd2e-e4b8d0c60e83" data-name="something-else">
+<ul class="tab-content" id="ddd160d7-9921-4a39-8c3f-8d92562d68b9" data-name="something-else">
   
       <li class="active">
 <p>Regular text</p>

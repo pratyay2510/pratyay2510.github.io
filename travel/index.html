@@ -43,6 +43,9 @@
 <!-- To customize for your needs, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
+<!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
+<script src="/assets/js/image-ext-fallback.js?v=2b603aec650eae2f15f206bc993b9c95"></script>
+
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
@@ -108,8 +111,8 @@
 
         <ul class="navbar-nav flex-nowrap home-nav-links">
           <li class="nav-item"><a class="nav-link section-link" href="/#hero">About</a></li>
-          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link section-link" href="/#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#publications">Publications</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link section-link" href="/#projects">Projects</a></li>
@@ -295,7 +298,7 @@
         A photograph of Kolkata — recommended: Victoria Memorial, Howrah Bridge, or the trams.
       -->
       <a class="tr-home-card reveal-up" href="/travel/kolkata/" style="--delay:0.06s">
-        <img src="/assets/img/travel/destinations/kolkata-cover.jpg" alt="Kolkata — The city of joy" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)'">
+        <img src="/assets/img/travel/destinations/kolkata-cover.jpg" alt="Kolkata — The city of joy" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100804 0%,#2a1006 60%,#160a04 100%)" onerror="imageExtFallback(this)">
         <div class="tr-home-card-overlay"></div>
         <div class="tr-home-card-arrow" aria-hidden="true">→</div>
         <div class="tr-home-card-content">
@@ -310,7 +313,7 @@
         A photo of Riverside — UCR Bell Tower, Box Springs Mountain, or downtown orange groves.
       -->
       <a class="tr-home-card reveal-up" href="/travel/riverside/" style="--delay:0.12s">
-        <img src="/assets/img/travel/riverside/cover.jpg" alt="Riverside, California" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#060810 0%,#0c1428 60%,#080e1e 100%)'">
+        <img src="/assets/img/travel/riverside/cover.jpg" alt="Riverside, California" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060810 0%,#0c1428 60%,#080e1e 100%)" onerror="imageExtFallback(this)">
         <div class="tr-home-card-overlay"></div>
         <div class="tr-home-card-arrow" aria-hidden="true">→</div>
         <div class="tr-home-card-content">
@@ -337,7 +340,7 @@
         A wide shot of India — Rajasthan desert, Himalayan peak, or the Ganges at dusk.
       -->
       <a class="tr-dest-card reveal-up" href="/travel/india/" style="--delay:0.06s">
-        <img class="tr-dest-img" src="/assets/img/travel/destinations/india-cover.jpg" alt="India" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#100a02 0%,#221402 60%,#180c02 100%)'">
+        <img class="tr-dest-img" src="/assets/img/travel/destinations/india-cover.jpg" alt="India" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100a02 0%,#221402 60%,#180c02 100%)" onerror="imageExtFallback(this)">
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
           <div class="tr-dest-tag">South Asia</div>
@@ -352,7 +355,7 @@
         Halifax waterfront, CN Tower, or Niagara Falls.
       -->
       <a class="tr-dest-card reveal-up" href="/travel/canada/" style="--delay:0.12s">
-        <img class="tr-dest-img" src="/assets/img/travel/destinations/canada-cover.jpg" alt="Canada" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040810 0%,#061828 60%,#040e1e 100%)'">
+        <img class="tr-dest-img" src="/assets/img/travel/destinations/canada-cover.jpg" alt="Canada" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#061828 60%,#040e1e 100%)" onerror="imageExtFallback(this)">
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
           <div class="tr-dest-tag">North America</div>
@@ -367,7 +370,7 @@
         Golden Gate, national park, or California coast.
       -->
       <a class="tr-dest-card reveal-up" href="/travel/usa/" style="--delay:0.18s">
-        <img class="tr-dest-img" src="/assets/img/travel/destinations/usa-cover.jpg" alt="United States" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#080a10 0%,#141c2a 60%,#0c1220 100%)'">
+        <img class="tr-dest-img" src="/assets/img/travel/destinations/usa-cover.jpg" alt="United States" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080a10 0%,#141c2a 60%,#0c1220 100%)" onerror="imageExtFallback(this)">
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
           <div class="tr-dest-tag">North America</div>
@@ -382,7 +385,7 @@
         Petronas Twin Towers, street food, or the rainforest.
       -->
       <a class="tr-dest-card reveal-up" href="/travel/malaysia/" style="--delay:0.24s">
-        <img class="tr-dest-img" src="/assets/img/travel/destinations/malaysia-cover.jpg" alt="Malaysia" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(160deg,#040a04 0%,#081808 60%,#060e06 100%)'">
+        <img class="tr-dest-img" src="/assets/img/travel/destinations/malaysia-cover.jpg" alt="Malaysia" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a04 0%,#081808 60%,#060e06 100%)" onerror="imageExtFallback(this)">
         <div class="tr-dest-overlay"></div>
         <div class="tr-dest-content">
           <div class="tr-dest-tag">Southeast Asia</div>
