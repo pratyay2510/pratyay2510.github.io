@@ -73,23 +73,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/india/himachal/
-      photo-01.jpg — Manali town / pine forest / Beas River
-      photo-02.jpg — Mountain view from valley
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-01.jpg' | relative_url }}" alt="Manali" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#0a1828 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-02.jpg' | relative_url }}" alt="Himachal mountains" loading="lazy" data-fallback-bg="linear-gradient(160deg,#050a14 0%,#0c1c2a 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="india/himachal" name="Himachal" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Rohtang &amp; Solang</div>
@@ -100,23 +84,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-03.jpg' | relative_url }}" alt="Rohtang Pass" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#081420 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-04.jpg' | relative_url }}" alt="Solang Valley" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060a10 0%,#0e1822 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/himachal/photo-05.jpg' | relative_url }}" alt="Himachal landscape" loading="lazy" data-fallback-bg="linear-gradient(160deg,#050810 0%,#0c1628 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="india/himachal" name="Himachal" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"The mountain road does not prepare you for the mountains. No amount of description does. You simply have to go up and let them happen to you."</p>

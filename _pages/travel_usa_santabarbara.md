@@ -73,23 +73,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/usa/santa-barbara/
-      photo-01.jpg — Mission Santa Barbara or State Street
-      photo-02.jpg — Stearns Wharf or the harbour
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/santa-barbara/photo-01.jpg' | relative_url }}" alt="Mission Santa Barbara" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0808 0%,#1e1408 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/santa-barbara/photo-02.jpg' | relative_url }}" alt="Santa Barbara harbour" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0808 0%,#1c1408 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="usa/santa-barbara" name="Santa Barbara" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">The Funk Zone</div>
@@ -100,23 +84,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/santa-barbara/photo-03.jpg' | relative_url }}" alt="Funk Zone" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0e0a06 0%,#1c1408 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/santa-barbara/photo-04.jpg' | relative_url }}" alt="Santa Barbara coastline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0806 0%,#1a1206 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/santa-barbara/photo-05.jpg' | relative_url }}" alt="County Courthouse" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0806 0%,#181206 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="usa/santa-barbara" name="Santa Barbara" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"Every city makes claims about its lifestyle. Santa Barbara's claims are unusually well-substantiated — by the mountains, the ocean, the tiles, and a farmers' market that makes everything else seem like an approximation."</p>

@@ -4146,7 +4146,7 @@ a:not(.hero-social-link):not(.nav-link) {
   border-radius: 16px;
   overflow: hidden;
   isolation: isolate;
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 0;
   text-decoration: none;
   min-height: 340px;
   transition:
@@ -4429,36 +4429,53 @@ a:not(.hero-social-link):not(.nav-link) {
   strong { color: var(--global-text-color); }
 }
 
-/* Photo grid */
+/* Photo grid — masonry column flow.
+   Photos keep their own aspect ratio and are never cropped, so portrait and
+   landscape shots can share a wall. The --2col / --3col / --asymmetric
+   modifiers now control column COUNT only; the old fixed aspect-ratio
+   modifiers (--tall / --landscape / --square) are inert inside the wall and
+   kept only so existing markup keeps working. */
+$tr-photo-gap: 0.75rem;
+
 .tr-dest-photo-grid {
-  display: grid;
-  gap: 0.75rem;
+  display: block;
+  column-count: 2;
+  column-gap: $tr-photo-gap;
   margin-bottom: 3rem;
 }
 
 .tr-dest-photo-grid--2col {
-  grid-template-columns: repeat(2, 1fr);
+  column-count: 2;
 }
 
 .tr-dest-photo-grid--3col {
-  grid-template-columns: repeat(3, 1fr);
+  column-count: 3;
 }
 
 .tr-dest-photo-grid--asymmetric {
-  grid-template-columns: 2fr 1fr;
+  column-count: 2;
 }
 
 .tr-dest-photo {
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(217, 170, 46, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: transparent;
+  border: 0;
   position: relative;
+
+  /* Keep a figure whole inside one column. */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 0 0 $tr-photo-gap;
+
+  /* The image dictates the height. A tile whose photo is missing entirely gets
+     a placeholder height from image-ext-fallback.js, so pages without photos
+     yet still render as a wall rather than collapsing to nothing. */
 
   img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     display: block;
     transition: transform 0.48s ease;
   }
@@ -4486,16 +4503,220 @@ a:not(.hero-social-link):not(.nav-link) {
   }
 }
 
-.tr-dest-photo--tall {
-  aspect-ratio: 3 / 4;
+/* Touch devices have no hover, so a hover-only caption is unreachable there. */
+@media (hover: none) {
+  .tr-dest-photo figcaption {
+    opacity: 1;
+  }
 }
 
-.tr-dest-photo--landscape {
-  aspect-ratio: 16 / 9;
+/* Featured slot with no photo in the folder yet. */
+.tr-dest-photo--empty {
+  min-height: 420px;
+  background: linear-gradient(160deg, rgba(20, 26, 38, 0.9) 0%, rgba(8, 5, 2, 0.85) 100%);
 }
 
+/* Legacy shape modifiers — neutralised, since the wall sizes to the photo. */
+.tr-dest-photo--tall,
+.tr-dest-photo--landscape,
 .tr-dest-photo--square {
-  aspect-ratio: 1;
+  aspect-ratio: auto;
+}
+
+/* ── Travel gallery rail ─────────────────────────────────────────────────
+   Every tile is the same height with automatic width, so portrait and
+   landscape photos share a row without being cropped. Overflow scrolls. */
+
+.tr-gallery {
+  margin-bottom: 3rem;
+}
+
+.tr-gallery-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.tr-gallery-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.tr-gallery-count {
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: rgba(217, 170, 46, 0.9);
+  border: 1px solid rgba(217, 170, 46, 0.3);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+}
+
+.tr-gallery-controls {
+  display: flex;
+  gap: 0.4rem;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.tr-gallery-arrow {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 170, 46, 0.28);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(217, 170, 46, 0.95);
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(217, 170, 46, 0.14);
+    border-color: rgba(217, 170, 46, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.tr-gallery-rail {
+  display: flex;
+  gap: $tr-photo-gap;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-left: 0;
+  padding-bottom: 0.6rem;
+
+  /* Thin, unobtrusive scrollbar rather than the platform default. */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 170, 46, 0.35) transparent;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(217, 170, 46, 0.35);
+    border-radius: 999px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(217, 170, 46, 0.6);
+    outline-offset: 4px;
+    border-radius: 12px;
+  }
+}
+
+.tr-gallery-item {
+  flex: 0 0 auto;
+  height: 460px;
+  margin: 0;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  scroll-snap-align: start;
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    display: block;
+    transition: transform 0.48s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.4rem 0.9rem 0.7rem;
+    background: linear-gradient(to top, rgba(8, 5, 2, 0.9) 0%, transparent 100%);
+    font-size: 0.72rem;
+    font-style: italic;
+    color: rgba(220, 205, 165, 0.92);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover figcaption {
+    opacity: 1;
+  }
+}
+
+/* Placeholder tiles for a folder with no photos in it yet. */
+.tr-gallery-item--empty {
+  width: 320px;
+  background: linear-gradient(160deg, var(--tint, #141a26) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.tr-gallery-hint {
+  align-self: center;
+  flex: 0 0 auto;
+  max-width: 260px;
+  padding: 0 0.5rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+
+  code {
+    font-size: 0.7rem;
+    word-break: break-all;
+  }
+}
+
+@media (hover: none) {
+  .tr-gallery-item figcaption {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .tr-gallery-item {
+    height: 340px;
+  }
+
+  .tr-gallery-item--empty {
+    width: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tr-gallery-rail {
+    scroll-behavior: auto;
+  }
+
+  .tr-gallery-item:hover img {
+    transform: none;
+  }
 }
 
 /* Highlights / facts strip */
@@ -4548,11 +4769,11 @@ a:not(.hero-social-link):not(.nav-link) {
   }
 
   .tr-dest-photo-grid--3col {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
 
   .tr-dest-photo-grid--asymmetric {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 }
 
@@ -4561,9 +4782,10 @@ a:not(.hero-social-link):not(.nav-link) {
     grid-template-columns: 1fr;
   }
 
+  .tr-dest-photo-grid,
   .tr-dest-photo-grid--2col,
   .tr-dest-photo-grid--3col {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 
   .mm-card--travel .mm-card-content {
@@ -4596,7 +4818,7 @@ a:not(.hero-social-link):not(.nav-link) {
   overflow: hidden;
   text-decoration: none;
   isolation: isolate;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 0;
 
   img {
     position: absolute;
@@ -4723,10 +4945,15 @@ a:not(.hero-social-link):not(.nav-link) {
   padding-bottom: 5rem;
 }
 
-/* Sub-destination place cards */
+/* Sub-destination place cards.
+   The featured card is a 2x2 block, so a set of N cards occupies N+3 cells —
+   choose card counts that are a multiple of 3 and the grid tiles with no
+   holes. Dense packing backfills any single-column slot left beside a
+   featured block. */
 .tr-hub-places {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row dense;
   gap: 1.2rem;
   margin-top: 2rem;
 }
@@ -4738,7 +4965,7 @@ a:not(.hero-social-link):not(.nav-link) {
   overflow: hidden;
   text-decoration: none;
   isolation: isolate;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 0;
 
   img {
     position: absolute;
@@ -4802,8 +5029,11 @@ a:not(.hero-social-link):not(.nav-link) {
 
 /* Featured hub place ─ spans 2 columns, wider aspect */
 .tr-hub-place--featured {
-  aspect-ratio: 16 / 9;
   grid-column: span 2;
+  grid-row: span 2;
+  /* Height comes from the two rows it spans, so the block ends flush with the
+     stacked cards beside it rather than leaving a gap under them. */
+  aspect-ratio: auto;
 }
 
 /* National parks section */
@@ -4955,7 +5185,8 @@ a:not(.hero-social-link):not(.nav-link) {
   .tr-hub-places { grid-template-columns: repeat(2, 1fr); }
   .tr-hub-place--featured {
     grid-column: span 2;
-    aspect-ratio: 4 / 3;
+    grid-row: span 1;
+    aspect-ratio: 16 / 9;
   }
   .tr-dest-grid--countries { grid-template-columns: 1fr 1fr; }
 }
@@ -4965,6 +5196,7 @@ a:not(.hero-social-link):not(.nav-link) {
   .tr-hub-places { grid-template-columns: 1fr; }
   .tr-hub-place--featured {
     grid-column: span 1;
+    grid-row: span 1;
     aspect-ratio: 4 / 3;
   }
   .tr-park-grid { grid-template-columns: 1fr; }

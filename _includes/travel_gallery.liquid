@@ -1,0 +1,76 @@
+{% comment %}
+  Dynamic travel photo gallery — a horizontal scroll rail.
+
+  Renders every photo from photo-03 onward in assets/img/travel/<dir>/ (the
+  first two belong to the large featured pair higher up the page). The list is
+  built at BUILD time from the folder itself, so the gallery grows simply by
+  dropping in photo-06, photo-07, photo-08 — no markup edits, no slot count.
+
+  Every tile is rendered at the same height with automatic width, so portrait
+  and landscape photos sit side by side without a single pixel being cropped.
+  A few photos fit on screen and the rail doesn't scroll; many photos scroll
+  horizontally with snap points and arrow controls.
+
+  Captions come from assets/img/travel/<dir>/captions.yml, keyed by filename
+  without extension. See _plugins/travel-captions.rb.
+
+  Parameters:
+    dir    (required) folder under assets/img/travel/ — e.g. "usa/san-diego"
+    label  (optional) small uppercase eyebrow above the rail
+    name   (optional) human name used in alt text; defaults to dir
+    skip   (optional) leading photos reserved for the featured pair; defaults
+                      to 2. Pass skip=0 to put every photo in the carousel.
+{% endcomment %}
+
+{% include travel_photo_list.liquid dir=include.dir skip=include.skip %}
+{% assign tg_name = include.name | default: include.dir %}
+
+<div class="tr-gallery reveal-up" data-travel-gallery>
+  <div class="tr-gallery-head">
+    <div class="tr-gallery-label">
+      {{ include.label | default: 'Photographs' }}
+      {% if tp_rest.size > 0 %}
+        <span class="tr-gallery-count">{{ tp_rest.size }}</span>
+      {% endif %}
+    </div>
+    <div class="tr-gallery-controls" data-gallery-controls hidden>
+      <button type="button" class="tr-gallery-arrow" data-gallery-prev aria-label="Previous photos">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <button type="button" class="tr-gallery-arrow" data-gallery-next aria-label="More photos">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="tr-gallery-rail" data-gallery-rail tabindex="0" role="region" aria-label="{{ tg_name }} photo gallery">
+    {% if tp_rest.size > 0 %}
+      {% for photo in tp_rest %}
+        {% assign caption = tp_captions[photo.basename] | default: '' | strip %}
+        <figure class="tr-gallery-item">
+          <img
+            src="{{ photo.path | relative_url }}"
+            alt="{% if caption != '' %}{{ caption | escape }}{% else %}{{ tg_name }} photograph {{ forloop.index | plus: tp_skip }}{% endif %}"
+            loading="lazy"
+            decoding="async"
+          >
+          {% if caption != '' %}
+            <figcaption>{{ caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endfor %}
+    {% else %}
+      {% comment %}
+        Nothing past photo-02 yet — render placeholder tiles so the page still
+        reads as designed rather than showing an empty band.
+      {% endcomment %}
+      {% assign placeholder_tints = '#141a26,#1a1410,#101a18,#181018' | split: ',' %}
+      {% for tint in placeholder_tints %}
+        <figure class="tr-gallery-item tr-gallery-item--empty" style="--tint: {{ tint }}" aria-hidden="true"></figure>
+      {% endfor %}
+      <div class="tr-gallery-hint">
+        Add <code>photo-03</code> onward to <code>assets/img/travel/{{ include.dir }}/</code> and they appear here automatically.
+      </div>
+    {% endif %}
+  </div>
+</div>

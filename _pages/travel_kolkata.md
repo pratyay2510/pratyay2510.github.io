@@ -78,37 +78,8 @@ full_width: true
       </div>
     </div>
 
-    <!-- Photo grid: 2 col -->
-    <!--
-      IMAGE SLOTS: Add your Kolkata photos to assets/img/travel/kolkata/
-      Name them photo-01, photo-02, etc. The extension does not have to match
-      the src below — .jpg, .jpeg, .png, .webp, .svg and .heic are all resolved
-      automatically by assets/js/image-ext-fallback.js, so photo-01.jpeg and
-      photo-02.jpg can sit side by side. Caveat: .heic only renders in Safari,
-      so convert iPhone photos to .jpg for everyone else.
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img
-          src="{{ '/assets/img/travel/kolkata/photo-01.jpg' | relative_url }}"
-          alt="The Writers' Building, Kolkata"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#140a04 0%,#2a1006 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Writers' Building</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img
-          src="{{ '/assets/img/travel/kolkata/photo-02.jpg' | relative_url }}"
-          alt="Durga Puja celebrations in Kolkata"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#0c0808 0%,#201008 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Durga Puja</figcaption>
-      </figure>
-    </div>
+    <!-- Featured pair -->
+    {% include travel_featured.liquid dir="kolkata" name="Kolkata" %}
 
     <!-- Section: Jadavpur -->
     <div class="tr-dest-section reveal-up">
@@ -120,39 +91,8 @@ full_width: true
       </div>
     </div>
 
-    <!-- Photo grid: 3 col -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/kolkata/photo-03.jpg' | relative_url }}"
-          alt="Howrah Bridge, Kolkata"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#100c04 0%,#22180a 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Howrah Bridge</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/kolkata/photo-04.jpg' | relative_url }}"
-          alt="Maa Flyover, Kolkata"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#0a0c10 0%,#101822 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Maa Flyover</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/kolkata/photo-05.jpg' | relative_url }}"
-          alt="Eastern Metropolitan Bypass, Kolkata"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#080a08 0%,#10180e 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Metropolitan Bypass</figcaption>
-      </figure>
-    </div>
+    <!-- Photo gallery — auto-populated from the folder -->
+    {% include travel_gallery.liquid dir="kolkata" name="Kolkata" label="Photographs" %}
 
     <!-- Closing pull quote -->
     <div class="tr-pull-quote reveal-up">

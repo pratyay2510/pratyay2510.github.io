@@ -74,23 +74,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/india/goa/
-      photo-01.jpg — Beach scene / coastal view
-      photo-02.jpg — Portuguese architecture / church
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/goa/photo-01.jpg' | relative_url }}" alt="Goa beach" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040c0a 0%,#081a14 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/goa/photo-02.jpg' | relative_url }}" alt="Old Goa church" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060e0a 0%,#0c1a12 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="india/goa" name="Goa" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Old Goa</div>
@@ -101,23 +85,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/goa/photo-03.jpg' | relative_url }}" alt="Goa sunset" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04100c 0%,#081e14 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/goa/photo-04.jpg' | relative_url }}" alt="Portuguese heritage" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c0a 0%,#0a1810 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/goa/photo-05.jpg' | relative_url }}" alt="Goa fishing boats" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040e08 0%,#081808 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="india/goa" name="Goa" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"The best Goan meal I ever had cost almost nothing and was eaten at a plastic table next to the sea. The kingfish was grilled over charcoal and served with rice and kokum curry. I have been chasing it ever since."</p>

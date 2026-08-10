@@ -73,23 +73,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/usa/niagara/
-      photo-01.jpg — American Falls from Goat Island
-      photo-02.jpg — Cave of the Winds / spray deck
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/niagara/photo-01.jpg' | relative_url }}" alt="American Falls" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a0a 0%,#081818 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/niagara/photo-02.jpg' | relative_url }}" alt="Cave of the Winds" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c0c 0%,#0c1c1c 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="usa/niagara" name="Niagara Falls" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Comparing perspectives</div>
@@ -100,23 +84,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/niagara/photo-03.jpg' | relative_url }}" alt="Niagara State Park" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a0a 0%,#081a18 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/niagara/photo-04.jpg' | relative_url }}" alt="Horseshoe Falls view" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c0a 0%,#0e1c16 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/niagara/photo-05.jpg' | relative_url }}" alt="Rainbow over the falls" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a08 0%,#081810 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="usa/niagara" name="Niagara Falls" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"There is a rainbow in the mist almost every afternoon. On the Canadian side it arches over the falls. On the American side it is right in front of you, at eye level, impossible and ordinary at the same time."</p>

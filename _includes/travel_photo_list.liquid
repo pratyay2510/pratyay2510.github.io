@@ -1,0 +1,39 @@
+{% comment %}
+  Shared photo lookup for a travel destination. Included by
+  travel_featured.liquid and travel_gallery.liquid — Jekyll includes share the
+  parent scope, so the variables assigned here are visible to the caller.
+
+  Collects every photo-* image in assets/img/travel/<dir>/, sorted by filename,
+  and exposes:
+
+    tp_photos    all photos, in order
+    tp_featured  the first two — the large pair near the top of the page
+    tp_rest      everything from photo-03 onward — the scrolling gallery
+    tp_captions  caption map for this destination, from its captions.yml
+
+  Parameters:
+    dir   — folder under assets/img/travel/, e.g. "kolkata", "usa/solvang"
+    skip  — how many leading photos belong to the featured pair rather than the
+            gallery. Defaults to 2; pass 0 on pages where every photo belongs
+            to the carousel (the national parks page).
+{% endcomment %}
+
+{% assign tp_skip = include.skip | default: 2 %}
+
+{% assign tp_dir = '/assets/img/travel/' | append: include.dir | append: '/' %}
+{% assign tp_exts = '.jpg.jpeg.png.webp.gif.avif.heic.JPG.JPEG.PNG.WEBP.GIF.AVIF.HEIC' %}
+
+{% assign tp_photos = site.static_files
+  | where_exp: 'f', 'f.path contains tp_dir'
+  | where_exp: 'f', 'tp_exts contains f.extname'
+  | where_exp: 'f', 'f.basename contains "photo-"'
+  | sort: 'name' %}
+
+{% assign tp_featured = tp_photos | slice: 0, 2 %}
+{% if tp_photos.size > tp_skip %}
+  {% assign tp_rest = tp_photos | slice: tp_skip, tp_photos.size %}
+{% else %}
+  {% assign tp_rest = '' | split: ',' %}
+{% endif %}
+
+{% assign tp_captions = site.data.travel_captions[include.dir] %}

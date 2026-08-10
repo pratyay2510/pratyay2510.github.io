@@ -55,25 +55,8 @@ full_width: true
         Recommended dimensions: 800×600px (4:3 landscape), JPG or WEBP.
       -->
 
-      <!-- Rajasthan — featured wide card -->
-      <a class="tr-hub-place tr-hub-place--featured reveal-up" href="{{ '/travel/india/rajasthan/' | relative_url }}" style="--delay:0.06s">
-        <img
-          src="{{ '/assets/img/travel/india/rajasthan-cover.jpg' | relative_url }}"
-          alt="Rajasthan, India"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <div class="tr-hub-place-overlay"></div>
-        <div class="tr-hub-place-content">
-          <div class="tr-hub-place-tag">Rajasthan</div>
-          <div class="tr-hub-place-name">The Land of Kings</div>
-          <div class="tr-hub-place-sub">Jaipur, Jodhpur, Udaipur — palaces, forts, and desert light.</div>
-        </div>
-      </a>
-
-      <!-- Kashmir -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/kashmir/' | relative_url }}" style="--delay:0.08s">
+      <!-- Kashmir — featured -->
+      <a class="tr-hub-place tr-hub-place--featured reveal-up" href="{{ '/travel/india/kashmir/' | relative_url }}" style="--delay:0.06s">
         <img
           src="{{ '/assets/img/travel/india/kashmir-cover.jpg' | relative_url }}"
           alt="Kashmir"
@@ -89,25 +72,8 @@ full_width: true
         </div>
       </a>
 
-      <!-- Himachal -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/himachal/' | relative_url }}" style="--delay:0.10s">
-        <img
-          src="{{ '/assets/img/travel/india/himachal-cover.jpg' | relative_url }}"
-          alt="Himachal Pradesh"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <div class="tr-hub-place-overlay"></div>
-        <div class="tr-hub-place-content">
-          <div class="tr-hub-place-tag">Himachal Pradesh</div>
-          <div class="tr-hub-place-name">Himachal</div>
-          <div class="tr-hub-place-sub">Where the sky begins and the mountain roads never end.</div>
-        </div>
-      </a>
-
       <!-- North Bengal -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/north-bengal/' | relative_url }}" style="--delay:0.12s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/north-bengal/' | relative_url }}" style="--delay:0.08s">
         <img
           src="{{ '/assets/img/travel/india/north-bengal-cover.jpg' | relative_url }}"
           alt="North Bengal — Darjeeling"
@@ -124,7 +90,7 @@ full_width: true
       </a>
 
       <!-- Goa -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/goa/' | relative_url }}" style="--delay:0.14s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/goa/' | relative_url }}" style="--delay:0.10s">
         <img
           src="{{ '/assets/img/travel/india/goa-cover.jpg' | relative_url }}"
           alt="Goa, India"
@@ -137,6 +103,40 @@ full_width: true
           <div class="tr-hub-place-tag">Goa</div>
           <div class="tr-hub-place-name">Goa</div>
           <div class="tr-hub-place-sub">Salt, slowness, and Portuguese tiles in the afternoon light.</div>
+        </div>
+      </a>
+
+      <!-- Rajasthan -->
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/rajasthan/' | relative_url }}" style="--delay:0.12s">
+        <img
+          src="{{ '/assets/img/travel/india/rajasthan-cover.jpg' | relative_url }}"
+          alt="Rajasthan, India"
+          loading="lazy"
+          data-fallback-bg="linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)"
+          onerror="imageExtFallback(this)"
+        >
+        <div class="tr-hub-place-overlay"></div>
+        <div class="tr-hub-place-content">
+          <div class="tr-hub-place-tag">Rajasthan</div>
+          <div class="tr-hub-place-name">The Land of Kings</div>
+          <div class="tr-hub-place-sub">Jaipur, Jodhpur, Udaipur — palaces, forts, and desert light.</div>
+        </div>
+      </a>
+
+      <!-- Himachal -->
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/india/himachal/' | relative_url }}" style="--delay:0.14s">
+        <img
+          src="{{ '/assets/img/travel/india/himachal-cover.jpg' | relative_url }}"
+          alt="Himachal Pradesh"
+          loading="lazy"
+          data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)"
+          onerror="imageExtFallback(this)"
+        >
+        <div class="tr-hub-place-overlay"></div>
+        <div class="tr-hub-place-content">
+          <div class="tr-hub-place-tag">Himachal Pradesh</div>
+          <div class="tr-hub-place-name">Himachal</div>
+          <div class="tr-hub-place-sub">Where the sky begins and the mountain roads never end.</div>
         </div>
       </a>
 

@@ -77,33 +77,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: Add your Riverside photos to assets/img/travel/riverside/
-      Name them: photo-01.jpg, photo-02.jpg, etc.
-      Suggestions: UCR campus, Box Springs Mountain hike, orange grove, downtown Mission Inn.
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img
-          src="{{ '/assets/img/travel/riverside/photo-01.jpg' | relative_url }}"
-          alt="Riverside photograph 1"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#060810 0%,#0c1428 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>UCR campus on a particularly pretty day</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img
-          src="{{ '/assets/img/travel/riverside/photo-02.jpg' | relative_url }}"
-          alt="Riverside photograph 2"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#080a14 0%,#101e32 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Sycamore Canyon: The best place to catch a mesmerizing sunset in Riverside</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="riverside" name="Riverside" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">The landscape</div>
@@ -114,38 +88,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/riverside/photo-03.jpg' | relative_url }}"
-          alt="View from the lab, UC Riverside"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#070810 0%,#0e142a 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>View from the lab</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/riverside/photo-04.jpg' | relative_url }}"
-          alt="The mountains around Riverside"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0c1222 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>The mountains echo sometimes</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/riverside/photo-05.jpg' | relative_url }}"
-          alt="Palm tree grove in front of Glen Mor ground, UC Riverside"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#080a0e 0%,#12162a 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>UCR palm tree grove in front of Glen Mor ground</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="riverside" name="Riverside" label="Photographs" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Living here</div>

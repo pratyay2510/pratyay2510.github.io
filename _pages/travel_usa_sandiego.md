@@ -73,23 +73,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/usa/san-diego/
-      photo-01.jpg — Balboa Park or Spanish Colonial architecture
-      photo-02.jpg — La Jolla Cove or Pacific coastline
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/san-diego/photo-01.jpg' | relative_url }}" alt="Balboa Park" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#081424 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/san-diego/photo-02.jpg' | relative_url }}" alt="La Jolla coastline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0c141e 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="usa/san-diego" name="San Diego" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">La Jolla &amp; the coast</div>
@@ -100,23 +84,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-diego/photo-03.jpg' | relative_url }}" alt="San Diego bay" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#081828 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-diego/photo-04.jpg' | relative_url }}" alt="Old Town San Diego" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060a10 0%,#0c1622 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-diego/photo-05.jpg' | relative_url }}" alt="Torrey Pines" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1420 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="usa/san-diego" name="San Diego" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"San Diego is what Los Angeles would be if it had decided to stay at a reasonable size and not try to become a continent. The contrast, two hours up the coast, is instructive."</p>

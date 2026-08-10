@@ -73,23 +73,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/india/rajasthan/
-      photo-01.jpg — Hawa Mahal / Jaipur street scene
-      photo-02.jpg — Amber Fort view
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/rajasthan/photo-01.jpg' | relative_url }}" alt="Jaipur" loading="lazy" data-fallback-bg="linear-gradient(160deg,#180e02 0%,#301804 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/rajasthan/photo-02.jpg' | relative_url }}" alt="Amber Fort" loading="lazy" data-fallback-bg="linear-gradient(160deg,#140a02 0%,#281402 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="india/rajasthan" name="Rajasthan" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Jodhpur</div>
@@ -100,23 +84,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/rajasthan/photo-03.jpg' | relative_url }}" alt="Jodhpur blue houses" loading="lazy" data-fallback-bg="linear-gradient(160deg,#140c02 0%,#221402 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/rajasthan/photo-04.jpg' | relative_url }}" alt="Mehrangarh Fort" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100a02 0%,#1e1202 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/rajasthan/photo-05.jpg' | relative_url }}" alt="Rajasthan landscape" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0e0802 0%,#1c1002 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="india/rajasthan" name="Rajasthan" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"Udaipur is the place you go when you need reminding that human beings are capable of extraordinary things when they decide to build something beautiful."</p>

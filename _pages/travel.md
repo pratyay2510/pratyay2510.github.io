@@ -262,32 +262,10 @@ full_width: true
       </a>
 
       <!--
-        IMAGE SLOT: assets/img/travel/destinations/canada-cover.jpg
-        Halifax waterfront, CN Tower, or Niagara Falls.
-      -->
-      <a class="tr-dest-card reveal-up" href="{{ '/travel/canada/' | relative_url }}" style="--delay:0.12s">
-        <img
-          class="tr-dest-img"
-          src="{{ '/assets/img/travel/destinations/canada-cover.jpg' | relative_url }}"
-          alt="Canada"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#040810 0%,#061828 60%,#040e1e 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <div class="tr-dest-overlay"></div>
-        <div class="tr-dest-content">
-          <div class="tr-dest-tag">North America</div>
-          <h3 class="tr-dest-name">Canada</h3>
-          <p class="tr-dest-sub">Halifax, Toronto, and Niagara — research and exploration on the Atlantic coast.</p>
-        </div>
-        <div class="tr-dest-arrow" aria-hidden="true">→</div>
-      </a>
-
-      <!--
         IMAGE SLOT: assets/img/travel/destinations/usa-cover.jpg
         Golden Gate, national park, or California coast.
       -->
-      <a class="tr-dest-card reveal-up" href="{{ '/travel/usa/' | relative_url }}" style="--delay:0.18s">
+      <a class="tr-dest-card reveal-up" href="{{ '/travel/usa/' | relative_url }}" style="--delay:0.12s">
         <img
           class="tr-dest-img"
           src="{{ '/assets/img/travel/destinations/usa-cover.jpg' | relative_url }}"
@@ -301,6 +279,28 @@ full_width: true
           <div class="tr-dest-tag">North America</div>
           <h3 class="tr-dest-name">United States</h3>
           <p class="tr-dest-sub">California, New York, Nevada, national parks — a continent of contrasts.</p>
+        </div>
+        <div class="tr-dest-arrow" aria-hidden="true">→</div>
+      </a>
+
+      <!--
+        IMAGE SLOT: assets/img/travel/destinations/canada-cover.jpg
+        Halifax waterfront, CN Tower, or Niagara Falls.
+      -->
+      <a class="tr-dest-card reveal-up" href="{{ '/travel/canada/' | relative_url }}" style="--delay:0.18s">
+        <img
+          class="tr-dest-img"
+          src="{{ '/assets/img/travel/destinations/canada-cover.jpg' | relative_url }}"
+          alt="Canada"
+          loading="lazy"
+          data-fallback-bg="linear-gradient(160deg,#040810 0%,#061828 60%,#040e1e 100%)"
+          onerror="imageExtFallback(this)"
+        >
+        <div class="tr-dest-overlay"></div>
+        <div class="tr-dest-content">
+          <div class="tr-dest-tag">North America</div>
+          <h3 class="tr-dest-name">Canada</h3>
+          <p class="tr-dest-sub">Halifax, Toronto, and Niagara — research and exploration on the Atlantic coast.</p>
         </div>
         <div class="tr-dest-arrow" aria-hidden="true">→</div>
       </a>

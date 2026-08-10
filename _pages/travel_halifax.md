@@ -80,32 +80,7 @@ full_width: true
     </div>
 
     <!-- Photo grid -->
-    <!--
-      IMAGE SLOTS: Add your Halifax photos to assets/img/travel/halifax/
-      Name them: photo-01.jpg, photo-02.jpg, etc.
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--asymmetric reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/halifax/photo-01.jpg' | relative_url }}"
-          alt="Halifax photograph 1"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#040810 0%,#081220 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--square">
-        <img
-          src="{{ '/assets/img/travel/halifax/photo-02.jpg' | relative_url }}"
-          alt="Halifax photograph 2"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#050b12 0%,#0a1828 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="halifax" name="Halifax" %}
 
     <!-- Section: The city -->
     <div class="tr-dest-section reveal-up">
@@ -118,38 +93,7 @@ full_width: true
     </div>
 
     <!-- 3-col photo grid -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--square">
-        <img
-          src="{{ '/assets/img/travel/halifax/photo-03.jpg' | relative_url }}"
-          alt="Halifax photograph 3"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#040a12 0%,#0a1822 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--square">
-        <img
-          src="{{ '/assets/img/travel/halifax/photo-04.jpg' | relative_url }}"
-          alt="Halifax photograph 4"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#060c14 0%,#0c1e2a 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--square">
-        <img
-          src="{{ '/assets/img/travel/halifax/photo-05.jpg' | relative_url }}"
-          alt="Halifax photograph 5"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#04080e 0%,#08121c 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="halifax" name="Halifax" label="Photographs" %}
 
     <!-- Closing quote -->
     <div class="tr-pull-quote reveal-up">

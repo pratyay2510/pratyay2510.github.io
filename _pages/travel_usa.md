@@ -70,8 +70,20 @@ full_width: true
         </div>
       </a>
 
+      <!-- National Parks — featured -->
+      <a class="tr-hub-place tr-hub-place--featured reveal-up" href="{{ '/travel/usa/national-parks/' | relative_url }}" style="--delay:0.07s">
+        <img src="{{ '/assets/img/travel/usa/national-parks-cover.jpg' | relative_url }}" alt="US National Parks" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a04 0%,#0a1808 60%,#061006 100%)"
+ onerror="imageExtFallback(this)">
+        <div class="tr-hub-place-overlay"></div>
+        <div class="tr-hub-place-content">
+          <div class="tr-hub-place-tag">Redwood · Joshua Tree · Pinnacles · Yosemite · Lake Tahoe · Red Rock</div>
+          <div class="tr-hub-place-name">National Parks</div>
+          <div class="tr-hub-place-sub">The land America had the wisdom to protect — six parks and the landscape they contain.</div>
+        </div>
+      </a>
+
       <!-- San Francisco -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/san-francisco/' | relative_url }}" style="--delay:0.07s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/san-francisco/' | relative_url }}" style="--delay:0.08s">
         <img src="{{ '/assets/img/travel/usa/san-francisco-cover.jpg' | relative_url }}" alt="San Francisco" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e1220 60%,#080e1a 100%)"
  onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
@@ -83,7 +95,7 @@ full_width: true
       </a>
 
       <!-- San Diego -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/san-diego/' | relative_url }}" style="--delay:0.08s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/san-diego/' | relative_url }}" style="--delay:0.09s">
         <img src="{{ '/assets/img/travel/usa/san-diego-cover.jpg' | relative_url }}" alt="San Diego" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#081422 60%,#06101e 100%)"
  onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
@@ -95,7 +107,7 @@ full_width: true
       </a>
 
       <!-- Santa Barbara -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/santa-barbara/' | relative_url }}" style="--delay:0.09s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/santa-barbara/' | relative_url }}" style="--delay:0.10s">
         <img src="{{ '/assets/img/travel/usa/santa-barbara-cover.jpg' | relative_url }}" alt="Santa Barbara" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0804 0%,#1e1406 60%,#160e04 100%)"
  onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
@@ -107,7 +119,7 @@ full_width: true
       </a>
 
       <!-- Solvang -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/solvang/' | relative_url }}" style="--delay:0.10s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/solvang/' | relative_url }}" style="--delay:0.11s">
         <img src="{{ '/assets/img/travel/usa/solvang-cover.jpg' | relative_url }}" alt="Solvang, California" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0804 0%,#1c1408 60%,#120e04 100%)"
  onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
@@ -119,7 +131,7 @@ full_width: true
       </a>
 
       <!-- New York -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/new-york/' | relative_url }}" style="--delay:0.11s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/new-york/' | relative_url }}" style="--delay:0.12s">
         <img src="{{ '/assets/img/travel/usa/new-york-cover.jpg' | relative_url }}" alt="New York City" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080808 0%,#141414 60%,#0e0e0e 100%)"
  onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
@@ -131,7 +143,7 @@ full_width: true
       </a>
 
       <!-- Las Vegas -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/las-vegas/' | relative_url }}" style="--delay:0.12s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/las-vegas/' | relative_url }}" style="--delay:0.13s">
         <img src="{{ '/assets/img/travel/usa/las-vegas-cover.jpg' | relative_url }}" alt="Las Vegas, Nevada" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060408 0%,#140c16 60%,#0c0810 100%)"
  onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
@@ -143,7 +155,7 @@ full_width: true
       </a>
 
       <!-- Niagara USA -->
-      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/niagara/' | relative_url }}" style="--delay:0.13s">
+      <a class="tr-hub-place reveal-up" href="{{ '/travel/usa/niagara/' | relative_url }}" style="--delay:0.14s">
         <img src="{{ '/assets/img/travel/usa/niagara-cover.jpg' | relative_url }}" alt="Niagara Falls, New York" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a0a 0%,#081818 60%,#061414 100%)"
  onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
@@ -151,18 +163,6 @@ full_width: true
           <div class="tr-hub-place-tag">New York</div>
           <div class="tr-hub-place-name">Niagara Falls</div>
           <div class="tr-hub-place-sub">The same falls, seen from the American side — a different angle, a different silence.</div>
-        </div>
-      </a>
-
-      <!-- National Parks — featured -->
-      <a class="tr-hub-place tr-hub-place--featured reveal-up" href="{{ '/travel/usa/national-parks/' | relative_url }}" style="--delay:0.14s">
-        <img src="{{ '/assets/img/travel/usa/national-parks-cover.jpg' | relative_url }}" alt="US National Parks" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a04 0%,#0a1808 60%,#061006 100%)"
- onerror="imageExtFallback(this)">
-        <div class="tr-hub-place-overlay"></div>
-        <div class="tr-hub-place-content">
-          <div class="tr-hub-place-tag">Joshua Tree · Pinnacles · Yosemite · Red Rock Canyon</div>
-          <div class="tr-hub-place-name">National Parks</div>
-          <div class="tr-hub-place-sub">The land America had the wisdom to protect — four parks and the landscape they contain.</div>
         </div>
       </a>
 

@@ -1,0 +1,13 @@
+# Captions for the photos in this folder.
+# One line per photo: <filename without extension>: caption
+# photo-01 and photo-02 are the two large images near the top of the page;
+# photo-03 onward fill the scrolling gallery below. Delete a line for no caption.
+
+photo-01: "UCR campus on a particularly pretty day"
+photo-02: "Sycamore Canyon: the best place to catch a sunset in Riverside"
+photo-03: "View from the lab"
+photo-04: "The mountains echo sometimes"
+photo-05: "UCR palm tree grove in front of Glen Mor ground"
+photo-06: ""
+photo-07: ""
+photo-08: ""

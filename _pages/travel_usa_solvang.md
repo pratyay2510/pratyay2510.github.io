@@ -74,23 +74,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/usa/solvang/
-      photo-01.jpg — Main Street windmills and Danish architecture
-      photo-02.jpg — Santa Ynez Valley vineyards
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-01.jpg' | relative_url }}" alt="Solvang windmills" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0804 0%,#1c1408 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-02.jpg' | relative_url }}" alt="Santa Ynez Valley" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080804 0%,#181408 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="usa/solvang" name="Solvang" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Wine country</div>
@@ -101,23 +85,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-03.jpg' | relative_url }}" alt="Solvang street" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0a06 0%,#1e1808 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-04.jpg' | relative_url }}" alt="Valley vineyards" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080804 0%,#161206 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/solvang/photo-05.jpg' | relative_url }}" alt="Danish pastries" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0804 0%,#1a1408 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="usa/solvang" name="Solvang" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"Between the wine, the pastries, and the inexplicable Danish windmills against a backdrop of California hills, Solvang achieves something rare: it is exactly as good as it has no right to be."</p>

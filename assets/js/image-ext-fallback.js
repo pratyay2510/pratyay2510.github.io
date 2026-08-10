@@ -55,7 +55,14 @@
 
   function giveUp(img) {
     var bg = img.getAttribute("data-fallback-bg");
-    if (bg && img.parentElement) img.parentElement.style.background = bg;
+    if (bg && img.parentElement) {
+      img.parentElement.style.background = bg;
+      /* Photo tiles size to their image, so a tile with no image at all would
+         collapse to zero height. Give the placeholder a portrait-ish body. */
+      if (!img.parentElement.style.minHeight) {
+        img.parentElement.style.minHeight = img.getAttribute("data-fallback-height") || "320px";
+      }
+    }
 
     var next = img.getAttribute("data-fallback-next");
     if (next && img.nextElementSibling) img.nextElementSibling.style.display = next;

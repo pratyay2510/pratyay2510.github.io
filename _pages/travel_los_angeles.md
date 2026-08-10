@@ -79,33 +79,8 @@ full_width: true
       </div>
     </div>
 
-    <!-- Photo grid: 2 col -->
-    <!--
-      IMAGE SLOTS: Add your LA photos to assets/img/travel/la/
-      Name them: photo-01.jpg, photo-02.jpg, etc.
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/la/photo-01.jpg' | relative_url }}"
-          alt="Los Angeles photograph 1"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#0c0c04 0%,#201e06 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img
-          src="{{ '/assets/img/travel/la/photo-02.jpg' | relative_url }}"
-          alt="Los Angeles photograph 2"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#0a0a06 0%,#1c1a08 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    <!-- Featured pair -->
+    {% include travel_featured.liquid dir="la" name="Los Angeles" %}
 
     <!-- Section: Griffith & Museums -->
     <div class="tr-dest-section reveal-up">
@@ -118,38 +93,7 @@ full_width: true
     </div>
 
     <!-- 3 col photos -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--square">
-        <img
-          src="{{ '/assets/img/travel/la/photo-03.jpg' | relative_url }}"
-          alt="Los Angeles photograph 3"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#0e0e04 0%,#221e06 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--square">
-        <img
-          src="{{ '/assets/img/travel/la/photo-04.jpg' | relative_url }}"
-          alt="Los Angeles photograph 4"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#0c0c06 0%,#1c1a08 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--square">
-        <img
-          src="{{ '/assets/img/travel/la/photo-05.jpg' | relative_url }}"
-          alt="Los Angeles photograph 5"
-          loading="lazy"
-          data-fallback-bg="linear-gradient(160deg,#0a0a04 0%,#181608 100%)"
-          onerror="imageExtFallback(this)"
-        >
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="la" name="Los Angeles" label="Photographs" %}
 
     <!-- Closing quote -->
     <div class="tr-pull-quote reveal-up">

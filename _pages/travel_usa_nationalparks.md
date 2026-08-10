@@ -2,7 +2,7 @@
 layout: default
 title: National Parks — Travel
 permalink: /travel/usa/national-parks/
-description: National parks visited — Joshua Tree, Pinnacles, Yosemite, Red Rock Canyon. The land America protected from itself.
+description: National parks visited — Redwood, Joshua Tree, Pinnacles, Yosemite, Lake Tahoe, Red Rock Canyon. The land America protected from itself.
 nav: false
 full_width: true
 ---
@@ -35,7 +35,7 @@ full_width: true
     <div class="tr-dest-hero-text">
       <div class="tr-dest-hero-tag">United States &nbsp;·&nbsp; Protected Wilderness</div>
       <h1 class="tr-dest-hero-title">National Parks</h1>
-      <p class="tr-dest-hero-subtitle">The land America had the wisdom to protect from itself — four parks, four arguments for why wilderness matters.</p>
+      <p class="tr-dest-hero-subtitle">The land America had the wisdom to protect from itself — six parks, six arguments for why wilderness matters.</p>
     </div>
   </div>
 
@@ -43,9 +43,9 @@ full_width: true
 
     <div class="tr-highlights reveal-up">
       <div class="tr-highlight-item">
-        <span class="tr-highlight-icon">🌵</span>
-        <div class="tr-highlight-val">Joshua Tree</div>
-        <div class="tr-highlight-label">Mojave &amp; Colorado Desert</div>
+        <span class="tr-highlight-icon">🌲</span>
+        <div class="tr-highlight-val">Redwood</div>
+        <div class="tr-highlight-label">Tallest trees on Earth</div>
       </div>
       <div class="tr-highlight-item">
         <span class="tr-highlight-icon">🦅</span>
@@ -64,42 +64,38 @@ full_width: true
       <cite>— Personal notes, various parks</cite>
     </div>
 
-    <!-- ── Joshua Tree ─────────────────────────────────────────────────── -->
+    <!-- ── Redwood ─────────────────────────────────────────────────────── -->
     <div class="tr-park-section">
       <div class="tr-section-header reveal-up">
         <div class="tr-section-label">Park 01</div>
+        <h2 class="tr-section-title">Redwood National Park</h2>
+      </div>
+
+      <p class="tr-park-intro">The tallest living things on Earth, standing in fog on the northern California coast — a forest that was old before anyone thought to write anything down.</p>
+
+      {% include travel_gallery.liquid dir="usa/national-parks/redwood" name="Redwood" label="Photographs" skip=0 %}
+
+      <div class="tr-dest-section reveal-up" style="margin-top:2rem;">
+        <div class="tr-dest-section-label">Field notes</div>
+        <h3 class="tr-dest-section-title" style="font-size:clamp(1.2rem,2vw,1.6rem);">Standing under something older than the idea of a country</h3>
+        <div class="tr-dest-richtext">
+          <p>Coast redwoods grow to over 350 feet and live for two thousand years, and neither of those numbers means anything until you are standing at the base of one looking up and failing to find the top. The scale defeats photography in a way that is genuinely frustrating — there is no vantage point that contains the tree, and no foreground object that conveys the height. You simply have to be there, neck craned, recalibrating.</p>
+          <p>What surprised me most was the quiet. The canopy absorbs sound the way it absorbs light, and the fog that rolls in off the Pacific — which is what the trees drink, condensing it directly through their needles — flattens everything further. Ninety-five percent of the old growth was logged in the century after 1850. What remains is protected, and walking through it feels less like visiting a park than like being allowed into somewhere that survived on a technicality.</p>
+          <p><strong>Best visited:</strong> May through October, though the fog is part of the experience year-round. Lady Bird Johnson Grove and the Tall Trees Grove are the classic walks; the latter needs a free permit. Bring layers — it is cold under the canopy even in summer.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Joshua Tree ─────────────────────────────────────────────────── -->
+    <div class="tr-park-section">
+      <div class="tr-section-header reveal-up">
+        <div class="tr-section-label">Park 02</div>
         <h2 class="tr-section-title">Joshua Tree National Park</h2>
       </div>
 
       <p class="tr-park-intro">Where the Mojave and Colorado Deserts meet, and the trees look like they were drawn by a child who had never seen a tree.</p>
 
-      <div class="tr-park-grid reveal-up">
-        <!--
-          IMAGE SLOTS: assets/img/travel/usa/national-parks/joshua-tree/
-          photo-01.jpg — Joshua trees at sunset / silhouette
-          photo-02.jpg — Boulder formations / Skull Rock area
-        -->
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/joshua-tree/photo-01.jpg' | relative_url }}" alt="Joshua Tree NP" loading="lazy" data-fallback-bg="linear-gradient(160deg,#120c02 0%,#241804 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">California &nbsp;·&nbsp; 790,636 acres</div>
-            <div class="tr-park-card-name">Joshua Tree</div>
-            <div class="tr-park-card-tagline">The Mojave and Colorado Deserts, where the yucca trees silhouette against a sky that was made for astrophotography.</div>
-          </div>
-        </div>
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/joshua-tree/photo-02.jpg' | relative_url }}" alt="Joshua Tree boulders" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0e0a02 0%,#1e1404 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">Hidden Valley &amp; Cholla Garden</div>
-            <div class="tr-park-card-name">Boulders &amp; silence</div>
-            <div class="tr-park-card-tagline">Monzogranite formations sculpted by millennia into shapes that the desert light makes sacred at dawn and dusk.</div>
-          </div>
-        </div>
-      </div>
+      {% include travel_gallery.liquid dir="usa/national-parks/joshua-tree" name="Joshua Tree" label="Photographs" skip=0 %}
 
       <div class="tr-dest-section reveal-up" style="margin-top:2rem;">
         <div class="tr-dest-section-label">Field notes</div>
@@ -115,39 +111,13 @@ full_width: true
     <!-- ── Pinnacles ───────────────────────────────────────────────────── -->
     <div class="tr-park-section">
       <div class="tr-section-header reveal-up">
-        <div class="tr-section-label">Park 02</div>
+        <div class="tr-section-label">Park 03</div>
         <h2 class="tr-section-title">Pinnacles National Park</h2>
       </div>
 
       <p class="tr-park-intro">Ancient volcanic rock, talus caves, and the sky above them patrolled by the California Condor — the largest flying bird in North America, brought back from the edge of extinction.</p>
 
-      <div class="tr-park-grid reveal-up">
-        <!--
-          IMAGE SLOTS: assets/img/travel/usa/national-parks/pinnacles/
-          photo-01.jpg — The rock formations / spires
-          photo-02.jpg — Condor in flight / talus caves
-        -->
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/pinnacles/photo-01.jpg' | relative_url }}" alt="Pinnacles NP formations" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100c04 0%,#201804 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">California &nbsp;·&nbsp; Volcanic remnants</div>
-            <div class="tr-park-card-name">Pinnacles</div>
-            <div class="tr-park-card-tagline">The eroded remains of a 23-million-year-old volcano, pointing upward in shapes that geology takes seriously and tourists find photogenic.</div>
-          </div>
-        </div>
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/pinnacles/photo-02.jpg' | relative_url }}" alt="California Condor" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0c0c04 0%,#181804 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">Condor recovery programme</div>
-            <div class="tr-park-card-name">The condor's sky</div>
-            <div class="tr-park-card-tagline">A 3-metre wingspan riding thermals above the spires — once reduced to 27 individuals, now recovering. Seeing one is a privilege.</div>
-          </div>
-        </div>
-      </div>
+      {% include travel_gallery.liquid dir="usa/national-parks/pinnacles" name="Pinnacles" label="Photographs" skip=0 %}
 
       <div class="tr-dest-section reveal-up" style="margin-top:2rem;">
         <div class="tr-dest-section-label">Field notes</div>
@@ -163,39 +133,13 @@ full_width: true
     <!-- ── Yosemite ────────────────────────────────────────────────────── -->
     <div class="tr-park-section">
       <div class="tr-section-header reveal-up">
-        <div class="tr-section-label">Park 03</div>
+        <div class="tr-section-label">Park 04</div>
         <h2 class="tr-section-title">Yosemite National Park</h2>
       </div>
 
       <p class="tr-park-intro">The valley that made John Muir weep and Ansel Adams return forty times — and that still manages to be, despite everything, exactly as advertised.</p>
 
-      <div class="tr-park-grid reveal-up">
-        <!--
-          IMAGE SLOTS: assets/img/travel/usa/national-parks/yosemite/
-          photo-01.jpg — Yosemite Valley from Tunnel View
-          photo-02.jpg — El Capitan / Half Dome / Yosemite Falls
-        -->
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/yosemite/photo-01.jpg' | relative_url }}" alt="Yosemite Valley" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a04 0%,#0a1808 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">California &nbsp;·&nbsp; Sierra Nevada</div>
-            <div class="tr-park-card-name">Yosemite Valley</div>
-            <div class="tr-park-card-tagline">The glacier-carved valley that Ansel Adams photographed 40 times without exhausting its subject. Still true.</div>
-          </div>
-        </div>
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/yosemite/photo-02.jpg' | relative_url }}" alt="El Capitan" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060a06 0%,#0e180a 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">El Capitan &nbsp;·&nbsp; 3,000 ft of granite</div>
-            <div class="tr-park-card-name">El Capitan</div>
-            <div class="tr-park-card-tagline">The largest exposed granite monolith on Earth. Even from the valley floor, the scale does not register properly. This is intentional.</div>
-          </div>
-        </div>
-      </div>
+      {% include travel_gallery.liquid dir="usa/national-parks/yosemite" name="Yosemite" label="Photographs" skip=0 %}
 
       <div class="tr-dest-section reveal-up" style="margin-top:2rem;">
         <div class="tr-dest-section-label">Field notes</div>
@@ -208,42 +152,38 @@ full_width: true
       </div>
     </div>
 
+    <!-- ── Lake Tahoe ──────────────────────────────────────────────────── -->
+    <div class="tr-park-section">
+      <div class="tr-section-header reveal-up">
+        <div class="tr-section-label">Park 05</div>
+        <h2 class="tr-section-title">Lake Tahoe</h2>
+      </div>
+
+      <p class="tr-park-intro">The largest alpine lake in North America, sitting a mile up in the Sierra Nevada — water so clear that the bottom stays visible seventy feet down.</p>
+
+      {% include travel_gallery.liquid dir="usa/national-parks/lake-tahoe" name="Lake Tahoe" label="Photographs" skip=0 %}
+
+      <div class="tr-dest-section reveal-up" style="margin-top:2rem;">
+        <div class="tr-dest-section-label">Field notes</div>
+        <h3 class="tr-dest-section-title" style="font-size:clamp(1.2rem,2vw,1.6rem);">A lake that does not look real</h3>
+        <div class="tr-dest-richtext">
+          <p>Tahoe straddles the California–Nevada line at 6,225 feet, holds enough water to cover the whole of California to a depth of over a foot, and is old enough — around two million years — that the number stops being useful. What you actually notice is the colour. The clarity is extraordinary, and in the shallows near Sand Harbor the water goes through a range of blues and greens that photographs consistently fail to believe.</p>
+          <p>It is not a national park — the shoreline is a patchwork of state parks, national forest, and private land — but it belongs on this page for the same reason Red Rock does. Emerald Bay from the overlook on the west shore is the postcard, and it earns it. The east shore is quieter, the water is colder than you expect in August, and the drive around the whole lake takes about three hours if you do not stop, which you will.</p>
+          <p><strong>Best visited:</strong> Summer for the water and the hiking, winter for the skiing — the shoulder seasons are the quietest. Sand Harbor and Emerald Bay fill up early in July and August; arrive before nine or plan on parking a long walk away.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- ── Red Rock Canyon ────────────────────────────────────────────── -->
     <div class="tr-park-section">
       <div class="tr-section-header reveal-up">
-        <div class="tr-section-label">Park 04</div>
+        <div class="tr-section-label">Park 06</div>
         <h2 class="tr-section-title">Red Rock Canyon NCA</h2>
       </div>
 
       <p class="tr-park-intro">Seventeen miles from the Las Vegas Strip — sandstone cathedrals, petroglyphs, and the Mojave Desert reminding you what Nevada looked like before the neon.</p>
 
-      <div class="tr-park-grid reveal-up">
-        <!--
-          IMAGE SLOTS: assets/img/travel/usa/national-parks/red-rock/
-          photo-01.jpg — Calico Hills red sandstone formations
-          photo-02.jpg — Scenic drive overlook or canyon view
-        -->
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/red-rock/photo-01.jpg' | relative_url }}" alt="Red Rock Canyon Calico Hills" loading="lazy" data-fallback-bg="linear-gradient(160deg,#180a02 0%,#2e1204 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">Nevada &nbsp;·&nbsp; Calico Hills</div>
-            <div class="tr-park-card-name">Red Rock Canyon</div>
-            <div class="tr-park-card-tagline">Red and cream sandstone formations rising from the Mojave floor — seventeen miles from the Bellagio and an entirely different universe.</div>
-          </div>
-        </div>
-        <div class="tr-park-card">
-          <img src="{{ '/assets/img/travel/usa/national-parks/red-rock/photo-02.jpg' | relative_url }}" alt="Red Rock scenic drive" loading="lazy" data-fallback-bg="linear-gradient(160deg,#140802 0%,#281204 100%)"
- onerror="imageExtFallback(this)">
-          <div class="tr-park-card-overlay"></div>
-          <div class="tr-park-card-content">
-            <div class="tr-park-card-state">13-mile scenic loop</div>
-            <div class="tr-park-card-name">The canyon road</div>
-            <div class="tr-park-card-tagline">The 13-mile one-way loop that traces the base of the escarpment — best driven at sunrise before the heat builds and the Las Vegas crowd arrives.</div>
-          </div>
-        </div>
-      </div>
+      {% include travel_gallery.liquid dir="usa/national-parks/red-rock" name="Red Rock Canyon" label="Photographs" skip=0 %}
 
       <div class="tr-dest-section reveal-up" style="margin-top:2rem;">
         <div class="tr-dest-section-label">Field notes</div>

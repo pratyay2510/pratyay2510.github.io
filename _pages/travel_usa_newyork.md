@@ -74,23 +74,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/usa/new-york/
-      photo-01.jpg — Manhattan skyline or Brooklyn Bridge
-      photo-02.jpg — Central Park or street scene
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-01.jpg' | relative_url }}" alt="New York skyline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080808 0%,#181818 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-02.jpg' | relative_url }}" alt="Brooklyn Bridge" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0a0a 0%,#1c1c1c 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="usa/new-york" name="New York" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Brooklyn &amp; the bridges</div>
@@ -101,23 +85,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-03.jpg' | relative_url }}" alt="Central Park" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080a08 0%,#141a12 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-04.jpg' | relative_url }}" alt="New York street" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080808 0%,#141414 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/new-york/photo-05.jpg' | relative_url }}" alt="Brooklyn view" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060606 0%,#121212 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="usa/new-york" name="New York" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"New York is the only city I have visited where the energy of the place feels like a physical force — something you lean into rather than observe. You leave exhausted and immediately want to go back."</p>

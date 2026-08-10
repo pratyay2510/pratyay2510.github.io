@@ -73,23 +73,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/canada/niagara/
-      photo-01.jpg — Horseshoe Falls panorama
-      photo-02.jpg — Mist cloud or close-up of the falls
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-01.jpg' | relative_url }}" alt="Niagara Horseshoe Falls" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a10 0%,#081828 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-02.jpg' | relative_url }}" alt="Niagara mist" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c14 0%,#0c1e2c 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="canada/niagara" name="Niagara Falls" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Beyond the falls</div>
@@ -100,23 +84,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-03.jpg' | relative_url }}" alt="Niagara-on-the-Lake" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#08142a 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-04.jpg' | relative_url }}" alt="Niagara wine region" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060a12 0%,#0e1828 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/canada/niagara/photo-05.jpg' | relative_url }}" alt="Niagara river" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0c1424 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="canada/niagara" name="Niagara Falls" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"You come for the falls and stay for the wine country. Or you come for the wine country and are ambushed by the falls. Either way, the Niagara Peninsula refuses to be reduced to a single experience."</p>

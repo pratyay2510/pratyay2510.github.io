@@ -1,0 +1,11 @@
+# Captions for the photos in this folder.
+# One line per photo: <filename without extension>: caption
+# Every photo here goes into this park's carousel, in filename order.
+# Delete a line (or leave it empty) for no caption.
+
+photo-01: ""
+photo-02: ""
+photo-03: ""
+photo-04: ""
+photo-05: ""
+photo-06: ""

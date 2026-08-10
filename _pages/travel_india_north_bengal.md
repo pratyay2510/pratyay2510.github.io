@@ -74,23 +74,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/india/north-bengal/
-      photo-01.jpg — Tea gardens / Darjeeling town
-      photo-02.jpg — Toy train or misty hills
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-01.jpg' | relative_url }}" alt="Darjeeling tea gardens" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060e06 0%,#0e1c0c 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-02.jpg' | relative_url }}" alt="Darjeeling Himalayan Railway" loading="lazy" data-fallback-bg="linear-gradient(160deg,#081008 0%,#101c0e 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="india/north-bengal" name="North Bengal" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Tiger Hill</div>
@@ -101,23 +85,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-03.jpg' | relative_url }}" alt="Tiger Hill sunrise" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c04 0%,#0e1808 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-04.jpg' | relative_url }}" alt="Kanchenjunga" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080c06 0%,#121a0a 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/north-bengal/photo-05.jpg' | relative_url }}" alt="North Bengal hills" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080a 0%,#101408 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="india/north-bengal" name="North Bengal" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"For a Bengali, North Bengal is not a destination. It is a return — to hills your grandparents visited, and their grandparents before them. The continuity of this is its own kind of comfort."</p>

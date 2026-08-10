@@ -1,0 +1,40 @@
+{% comment %}
+  The two large photos near the top of a destination page.
+
+  Renders photo-01 and photo-02 from assets/img/travel/<dir>/ — whatever their
+  extension. Uncropped, so portrait shots stay portrait. If the folder has
+  fewer than two photos yet, the missing tiles render as gradient placeholders
+  so the page still reads as designed.
+
+  Parameters:
+    dir   (required) folder under assets/img/travel/ — e.g. "kolkata"
+    name  (optional) human name used in alt text; defaults to dir
+{% endcomment %}
+
+{% include travel_photo_list.liquid dir=include.dir %}
+{% assign tf_name = include.name | default: include.dir %}
+
+{% assign tf_slots = '1,2' | split: ',' %}
+
+<div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
+  {% for slot in tf_slots %}
+    {% assign idx = forloop.index0 %}
+    {% assign photo = tp_featured[idx] %}
+    {% if photo %}
+      {% assign caption = tp_captions[photo.basename] | default: '' | strip %}
+      <figure class="tr-dest-photo">
+        <img
+          src="{{ photo.path | relative_url }}"
+          alt="{% if caption != '' %}{{ caption | escape }}{% else %}{{ tf_name }} photograph {{ forloop.index }}{% endif %}"
+          loading="lazy"
+          decoding="async"
+        >
+        {% if caption != '' %}
+          <figcaption>{{ caption }}</figcaption>
+        {% endif %}
+      </figure>
+    {% else %}
+      <figure class="tr-dest-photo tr-dest-photo--empty" aria-hidden="true"></figure>
+    {% endif %}
+  {% endfor %}
+</div>

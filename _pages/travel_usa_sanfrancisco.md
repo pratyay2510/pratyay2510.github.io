@@ -73,23 +73,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/usa/san-francisco/
-      photo-01.jpg — Golden Gate Bridge
-      photo-02.jpg — City view or painted ladies
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-01.jpg' | relative_url }}" alt="Golden Gate Bridge" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e1224 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-02.jpg' | relative_url }}" alt="San Francisco skyline" loading="lazy" data-fallback-bg="linear-gradient(160deg,#08080c 0%,#101420 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="usa/san-francisco" name="San Francisco" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Neighbourhoods</div>
@@ -100,23 +84,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-03.jpg' | relative_url }}" alt="Mission District" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0e1222 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-04.jpg' | relative_url }}" alt="Fisherman's Wharf" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#0c1428 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/san-francisco/photo-05.jpg' | relative_url }}" alt="Marin Headlands view" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080c 0%,#0e141e 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="usa/san-francisco" name="San Francisco" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"The Golden Gate does not become ordinary. This is its remarkable property. You see it in photographs for years before you arrive, and then you stand in front of it and it is still surprising — the scale, the colour, the way it belongs to the landscape as if it grew there."</p>

@@ -74,23 +74,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/usa/las-vegas/
-      photo-01.jpg — The Strip at night
-      photo-02.jpg — Bellagio fountains or casino interior
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/las-vegas/photo-01.jpg' | relative_url }}" alt="Las Vegas Strip" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060408 0%,#120c16 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/usa/las-vegas/photo-02.jpg' | relative_url }}" alt="Bellagio fountains" loading="lazy" data-fallback-bg="linear-gradient(160deg,#08040a 0%,#160c18 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="usa/las-vegas" name="Las Vegas" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">The desert</div>
@@ -101,23 +85,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/las-vegas/photo-03.jpg' | relative_url }}" alt="Las Vegas by day" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060408 0%,#120e14 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/las-vegas/photo-04.jpg' | relative_url }}" alt="Red Rock Canyon" loading="lazy" data-fallback-bg="linear-gradient(160deg,#100804 0%,#1e1006 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/usa/las-vegas/photo-05.jpg' | relative_url }}" alt="Nevada desert" loading="lazy" data-fallback-bg="linear-gradient(160deg,#0a0606 0%,#160e08 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="usa/las-vegas" name="Las Vegas" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"The desert is the true Las Vegas. The Strip is just the thing the desert decided to tolerate on its surface, in the way that deserts tolerate everything eventually — with indifference and geological patience."</p>

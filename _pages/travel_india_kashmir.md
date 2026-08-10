@@ -74,23 +74,7 @@ full_width: true
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: assets/img/travel/india/kashmir/
-      photo-01.jpg — Dal Lake / shikara / houseboats
-      photo-02.jpg — Mountains or valley view
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/kashmir/photo-01.jpg' | relative_url }}" alt="Dal Lake shikara" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a16 0%,#081a2e 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="{{ '/assets/img/travel/india/kashmir/photo-02.jpg' | relative_url }}" alt="Kashmir mountains" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060c18 0%,#0e1c2e 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_featured.liquid dir="india/kashmir" name="Kashmir" %}
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">The gardens and beyond</div>
@@ -101,23 +85,7 @@ full_width: true
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/kashmir/photo-03.jpg' | relative_url }}" alt="Shalimar Bagh" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040810 0%,#081420 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/kashmir/photo-04.jpg' | relative_url }}" alt="Gulmarg" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0c1220 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="{{ '/assets/img/travel/india/kashmir/photo-05.jpg' | relative_url }}" alt="Kashmir valley" loading="lazy" data-fallback-bg="linear-gradient(160deg,#050810 0%,#0a1428 100%)"
- onerror="imageExtFallback(this)">
-        <figcaption>Add caption here</figcaption>
-      </figure>
-    </div>
+    {% include travel_gallery.liquid dir="india/kashmir" name="Kashmir" label="Photographs" %}
 
     <div class="tr-pull-quote reveal-up">
       <p>"Every empire that came to Kashmir found a reason to stay. Standing at the edge of Dal Lake at dusk, watching the mountains go dark one peak at a time, you understand exactly why."</p>
