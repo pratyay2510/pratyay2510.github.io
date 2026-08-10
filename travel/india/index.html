@@ -44,7 +44,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
 <!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
-<script src="/assets/js/image-ext-fallback.js?v=ba9181aa81bc71c5fd1f83f1a0d78bff"></script>
+<script src="/assets/js/image-ext-fallback.js?v=c79c4c4801aa0b236d10af02ee866204"></script>
 
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
@@ -187,19 +187,8 @@
         Recommended dimensions: 800×600px (4:3 landscape), JPG or WEBP.
       -->
 
-      <!-- Rajasthan — featured wide card -->
-      <a class="tr-hub-place tr-hub-place--featured reveal-up" href="/travel/india/rajasthan/" style="--delay:0.06s">
-        <img src="/assets/img/travel/india/rajasthan-cover.jpg" alt="Rajasthan, India" loading="lazy" data-fallback-bg="linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)" onerror="imageExtFallback(this)">
-        <div class="tr-hub-place-overlay"></div>
-        <div class="tr-hub-place-content">
-          <div class="tr-hub-place-tag">Rajasthan</div>
-          <div class="tr-hub-place-name">The Land of Kings</div>
-          <div class="tr-hub-place-sub">Jaipur, Jodhpur, Udaipur — palaces, forts, and desert light.</div>
-        </div>
-      </a>
-
-      <!-- Kashmir -->
-      <a class="tr-hub-place reveal-up" href="/travel/india/kashmir/" style="--delay:0.08s">
+      <!-- Kashmir — featured -->
+      <a class="tr-hub-place tr-hub-place--featured reveal-up" href="/travel/india/kashmir/" style="--delay:0.06s">
         <img src="/assets/img/travel/india/kashmir-cover.jpg" alt="Kashmir" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040a14 0%,#081628 60%,#060c1e 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -209,19 +198,8 @@
         </div>
       </a>
 
-      <!-- Himachal -->
-      <a class="tr-hub-place reveal-up" href="/travel/india/himachal/" style="--delay:0.10s">
-        <img src="/assets/img/travel/india/himachal-cover.jpg" alt="Himachal Pradesh" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)" onerror="imageExtFallback(this)">
-        <div class="tr-hub-place-overlay"></div>
-        <div class="tr-hub-place-content">
-          <div class="tr-hub-place-tag">Himachal Pradesh</div>
-          <div class="tr-hub-place-name">Himachal</div>
-          <div class="tr-hub-place-sub">Where the sky begins and the mountain roads never end.</div>
-        </div>
-      </a>
-
       <!-- North Bengal -->
-      <a class="tr-hub-place reveal-up" href="/travel/india/north-bengal/" style="--delay:0.12s">
+      <a class="tr-hub-place reveal-up" href="/travel/india/north-bengal/" style="--delay:0.08s">
         <img src="/assets/img/travel/india/north-bengal-cover.jpg" alt="North Bengal — Darjeeling" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060e06 0%,#0e1c0c 60%,#081408 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
@@ -232,13 +210,35 @@
       </a>
 
       <!-- Goa -->
-      <a class="tr-hub-place reveal-up" href="/travel/india/goa/" style="--delay:0.14s">
+      <a class="tr-hub-place reveal-up" href="/travel/india/goa/" style="--delay:0.10s">
         <img src="/assets/img/travel/india/goa-cover.jpg" alt="Goa, India" loading="lazy" data-fallback-bg="linear-gradient(160deg,#040c0a 0%,#081a16 60%,#061410 100%)" onerror="imageExtFallback(this)">
         <div class="tr-hub-place-overlay"></div>
         <div class="tr-hub-place-content">
           <div class="tr-hub-place-tag">Goa</div>
           <div class="tr-hub-place-name">Goa</div>
           <div class="tr-hub-place-sub">Salt, slowness, and Portuguese tiles in the afternoon light.</div>
+        </div>
+      </a>
+
+      <!-- Rajasthan -->
+      <a class="tr-hub-place reveal-up" href="/travel/india/rajasthan/" style="--delay:0.12s">
+        <img src="/assets/img/travel/india/rajasthan-cover.jpg" alt="Rajasthan, India" loading="lazy" data-fallback-bg="linear-gradient(160deg,#160c02 0%,#2e1a04 60%,#1c1004 100%)" onerror="imageExtFallback(this)">
+        <div class="tr-hub-place-overlay"></div>
+        <div class="tr-hub-place-content">
+          <div class="tr-hub-place-tag">Rajasthan</div>
+          <div class="tr-hub-place-name">The Land of Kings</div>
+          <div class="tr-hub-place-sub">Jaipur, Jodhpur, Udaipur — palaces, forts, and desert light.</div>
+        </div>
+      </a>
+
+      <!-- Himachal -->
+      <a class="tr-hub-place reveal-up" href="/travel/india/himachal/" style="--delay:0.14s">
+        <img src="/assets/img/travel/india/himachal-cover.jpg" alt="Himachal Pradesh" loading="lazy" data-fallback-bg="linear-gradient(160deg,#04080e 0%,#0a1620 60%,#06101a 100%)" onerror="imageExtFallback(this)">
+        <div class="tr-hub-place-overlay"></div>
+        <div class="tr-hub-place-content">
+          <div class="tr-hub-place-tag">Himachal Pradesh</div>
+          <div class="tr-hub-place-name">Himachal</div>
+          <div class="tr-hub-place-sub">Where the sky begins and the mountain roads never end.</div>
         </div>
       </a>
 
@@ -350,6 +350,7 @@
 <script src="/assets/js/no_defer.js?v=2781658a0a2b13ed609542042a859126"></script>
 <script defer src="/assets/js/common.js?v=c15de51d4bb57887caa2c21988d97279"></script>
 <script defer src="/assets/js/interactive-dotfield.js?v=19240cf350981f236a802d6ff18a74f2"></script>
+<script defer src="/assets/js/travel-gallery.js?v=ddd346b22292fec4461f1b00239b4d9f"></script>
 <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
 
 <!-- Jupyter Open External Links New Tab -->

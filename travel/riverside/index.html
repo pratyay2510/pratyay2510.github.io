@@ -44,7 +44,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;">
 
 <!-- Image extension fallback (jpg/jpeg/png/webp) — must load before any <img> is parsed -->
-<script src="/assets/js/image-ext-fallback.js?v=ba9181aa81bc71c5fd1f83f1a0d78bff"></script>
+<script src="/assets/js/image-ext-fallback.js?v=c79c4c4801aa0b236d10af02ee866204"></script>
 
 <!-- Bootstrap & MDB -->
 <link rel="stylesheet" href="/assets/css/bootstrap.min.css?v=a4b3f509e79c54a512b890d73235ef04">
@@ -204,21 +204,54 @@
       </div>
     </div>
 
-    <!--
-      IMAGE SLOTS: Add your Riverside photos to assets/img/travel/riverside/
-      Name them: photo-01.jpg, photo-02.jpg, etc.
-      Suggestions: UCR campus, Box Springs Mountain hike, orange grove, downtown Mission Inn.
-    -->
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/riverside/photo-01.jpg" alt="Riverside photograph 1" loading="lazy" data-fallback-bg="linear-gradient(160deg,#060810 0%,#0c1428 100%)" onerror="imageExtFallback(this)">
-        <figcaption>UCR campus on a particularly pretty day</figcaption>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
+  
+    
+    
+    
+      
+      <figure class="tr-dest-photo">
+        <img src="/assets/img/travel/riverside/photo-01.jpg" alt="UCR campus on a particularly pretty day" loading="lazy" decoding="async">
+        
+          <figcaption>UCR campus on a particularly pretty day</figcaption>
+        
       </figure>
-      <figure class="tr-dest-photo tr-dest-photo--tall">
-        <img src="/assets/img/travel/riverside/photo-02.jpg" alt="Riverside photograph 2" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080a14 0%,#101e32 100%)" onerror="imageExtFallback(this)">
-        <figcaption>Sycamore Canyon: The best place to catch a mesmerizing sunset in Riverside</figcaption>
+    
+  
+    
+    
+    
+      
+      <figure class="tr-dest-photo">
+        <img src="/assets/img/travel/riverside/photo-02.jpg" alt="Sycamore Canyon: the best place to catch a sunset in Riverside" loading="lazy" decoding="async">
+        
+          <figcaption>Sycamore Canyon: the best place to catch a sunset in Riverside</figcaption>
+        
       </figure>
-    </div>
+    
+  
+</div>
+
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">The landscape</div>
@@ -229,20 +262,97 @@
       </div>
     </div>
 
-    <div class="tr-dest-photo-grid tr-dest-photo-grid--3col reveal-up">
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/riverside/photo-03.jpg" alt="View from the lab, UC Riverside" loading="lazy" data-fallback-bg="linear-gradient(160deg,#070810 0%,#0e142a 100%)" onerror="imageExtFallback(this)">
-        <figcaption>View from the lab</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/riverside/photo-04.jpg" alt="The mountains around Riverside" loading="lazy" data-fallback-bg="linear-gradient(160deg,#06080e 0%,#0c1222 100%)" onerror="imageExtFallback(this)">
-        <figcaption>The mountains echo sometimes</figcaption>
-      </figure>
-      <figure class="tr-dest-photo tr-dest-photo--landscape">
-        <img src="/assets/img/travel/riverside/photo-05.jpg" alt="Palm tree grove in front of Glen Mor ground, UC Riverside" loading="lazy" data-fallback-bg="linear-gradient(160deg,#080a0e 0%,#12162a 100%)" onerror="imageExtFallback(this)">
-        <figcaption>UCR palm tree grove in front of Glen Mor ground</figcaption>
-      </figure>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tr-gallery reveal-up" data-travel-gallery="">
+  <div class="tr-gallery-head">
+    <div class="tr-gallery-label">
+      Photographs
+      
+        <span class="tr-gallery-count">7</span>
+      
     </div>
+    <div class="tr-gallery-controls" data-gallery-controls="" hidden="">
+      <button type="button" class="tr-gallery-arrow" data-gallery-prev="" aria-label="Previous photos">
+        <svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path></svg>
+      </button>
+      <button type="button" class="tr-gallery-arrow" data-gallery-next="" aria-label="More photos">
+        <svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="tr-gallery-rail" data-gallery-rail="" tabindex="0" role="region" aria-label="Riverside photo gallery">
+    
+      
+        
+        <figure class="tr-gallery-item">
+          <img src="/assets/img/travel/riverside/photo-03.JPG" alt="View from the lab" loading="lazy" decoding="async">
+          
+            <figcaption>View from the lab</figcaption>
+          
+        </figure>
+      
+        
+        <figure class="tr-gallery-item">
+          <img src="/assets/img/travel/riverside/photo-04.JPG" alt="The mountains echo sometimes" loading="lazy" decoding="async">
+          
+            <figcaption>The mountains echo sometimes</figcaption>
+          
+        </figure>
+      
+        
+        <figure class="tr-gallery-item">
+          <img src="/assets/img/travel/riverside/photo-05.jpeg" alt="UCR palm tree grove in front of Glen Mor ground" loading="lazy" decoding="async">
+          
+            <figcaption>UCR palm tree grove in front of Glen Mor ground</figcaption>
+          
+        </figure>
+      
+        
+        <figure class="tr-gallery-item">
+          <img src="/assets/img/travel/riverside/photo-06.JPG" alt="Riverside photograph 6" loading="lazy" decoding="async">
+          
+        </figure>
+      
+        
+        <figure class="tr-gallery-item">
+          <img src="/assets/img/travel/riverside/photo-07.JPG" alt="Riverside photograph 7" loading="lazy" decoding="async">
+          
+        </figure>
+      
+        
+        <figure class="tr-gallery-item">
+          <img src="/assets/img/travel/riverside/photo-08.HEIC" alt="Riverside photograph 8" loading="lazy" decoding="async">
+          
+        </figure>
+      
+        
+        <figure class="tr-gallery-item">
+          <img src="/assets/img/travel/riverside/photo-08.JPG" alt="Riverside photograph 9" loading="lazy" decoding="async">
+          
+        </figure>
+      
+    
+  </div>
+</div>
+
 
     <div class="tr-dest-section reveal-up">
       <div class="tr-dest-section-label">Living here</div>
@@ -353,6 +463,7 @@
 <script src="/assets/js/no_defer.js?v=2781658a0a2b13ed609542042a859126"></script>
 <script defer src="/assets/js/common.js?v=c15de51d4bb57887caa2c21988d97279"></script>
 <script defer src="/assets/js/interactive-dotfield.js?v=19240cf350981f236a802d6ff18a74f2"></script>
+<script defer src="/assets/js/travel-gallery.js?v=ddd346b22292fec4461f1b00239b4d9f"></script>
 <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script>
 
 <!-- Jupyter Open External Links New Tab -->

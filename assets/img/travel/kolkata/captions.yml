@@ -1,0 +1,10 @@
+# Captions for the photos in this folder.
+# One line per photo: <filename without extension>: caption
+# photo-01 and photo-02 are the two large images near the top of the page;
+# photo-03 onward fill the scrolling gallery below. Delete a line for no caption.
+
+photo-01: "Writers' Building"
+photo-02: "Durga Puja"
+photo-03: "Howrah Bridge"
+photo-04: "Maa Flyover"
+photo-05: "Metropolitan Bypass"
