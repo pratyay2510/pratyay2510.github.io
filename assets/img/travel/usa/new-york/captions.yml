@@ -3,8 +3,14 @@
 # photo-01 and photo-02 are the two large images near the top of the page;
 # photo-03 onward fill the scrolling gallery below. Delete a line for no caption.
 
-photo-01: ""
-photo-02: ""
-photo-03: ""
-photo-04: ""
-photo-05: ""
+photo-01: "Statue of Liberty from the Staten Island Ferry"
+photo-02: "Empire State Building from the Edge"
+photo-03: "Dumbo: the best view of the Manhattan Bridge"
+photo-04: "Van Gogh original at the MET"
+photo-05: "WTC from the Staten Island Ferry"
+photo-06: "MET lobby"
+photo-07: "Bubba Gump Shrimp Co. in Times Square"
+photo-08: "New York skyline from the Staten Island Ferry"
+photo-09: "The concrete jungle"
+photo-10: "New York skyline from the Edge"
+photo-11: "The Oculus at the WTC"

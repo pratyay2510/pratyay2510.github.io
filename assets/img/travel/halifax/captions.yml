@@ -3,8 +3,13 @@
 # photo-01 and photo-02 are the two large images near the top of the page;
 # photo-03 onward fill the scrolling gallery below. Delete a line for no caption.
 
-photo-01: ""
-photo-02: ""
-photo-03: ""
-photo-04: ""
-photo-05: ""
+photo-01: "Halifax pride parade"
+photo-02: "MacDonald Bridge from the Halifax waterfront"
+photo-03: "Shirreff Hall: my abode for the summer"
+photo-04: "Paddleboarding at Shubie Park"
+photo-05: "Halifax Jazz Festival at the waterfront"
+photo-06: "Halifax Waterfront"
+photo-07: "Engineering building at Dalhousie University"
+photo-08: "Peggy's Cove lighthouse"
+photo-09: "Lawrencetown Beach"
+photo-10: "Halifax Downtown"
