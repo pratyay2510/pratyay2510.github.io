@@ -16,7 +16,7 @@
 
 {% assign tf_slots = '1,2' | split: ',' %}
 
-<div class="tr-dest-photo-grid tr-dest-photo-grid--2col reveal-up">
+<div class="tr-dest-photo-grid reveal-up">
   {% for slot in tf_slots %}
     {% assign idx = forloop.index0 %}
     {% assign photo = tp_featured[idx] %}

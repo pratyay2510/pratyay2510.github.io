@@ -4429,53 +4429,33 @@ a:not(.hero-social-link):not(.nav-link) {
   strong { color: var(--global-text-color); }
 }
 
-/* Photo grid — masonry column flow.
-   Photos keep their own aspect ratio and are never cropped, so portrait and
-   landscape shots can share a wall. The --2col / --3col / --asymmetric
-   modifiers now control column COUNT only; the old fixed aspect-ratio
-   modifiers (--tall / --landscape / --square) are inert inside the wall and
-   kept only so existing markup keeps working. */
+/* Featured pair — the two large photos near the top of a destination page.
+   Both tiles are the same fixed portrait ratio and the photo is cover-filled,
+   so the pair always matches in size no matter what the source dimensions are.
+   The scrolling gallery below is where uncropped, mixed-orientation photos
+   live; this pair is the deliberately uniform one. */
 $tr-photo-gap: 0.75rem;
 
 .tr-dest-photo-grid {
-  display: block;
-  column-count: 2;
-  column-gap: $tr-photo-gap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $tr-photo-gap;
   margin-bottom: 3rem;
 }
 
-.tr-dest-photo-grid--2col {
-  column-count: 2;
-}
-
-.tr-dest-photo-grid--3col {
-  column-count: 3;
-}
-
-.tr-dest-photo-grid--asymmetric {
-  column-count: 2;
-}
-
 .tr-dest-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
   border-radius: 12px;
   overflow: hidden;
   background: transparent;
   border: 0;
-  position: relative;
-
-  /* Keep a figure whole inside one column. */
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  margin: 0 0 $tr-photo-gap;
-
-  /* The image dictates the height. A tile whose photo is missing entirely gets
-     a placeholder height from image-ext-fallback.js, so pages without photos
-     yet still render as a wall rather than collapsing to nothing. */
+  margin: 0;
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.48s ease;
   }
@@ -4510,17 +4490,9 @@ $tr-photo-gap: 0.75rem;
   }
 }
 
-/* Featured slot with no photo in the folder yet. */
+/* Featured slot with no photo in the folder yet — keeps the pair symmetrical. */
 .tr-dest-photo--empty {
-  min-height: 420px;
   background: linear-gradient(160deg, rgba(20, 26, 38, 0.9) 0%, rgba(8, 5, 2, 0.85) 100%);
-}
-
-/* Legacy shape modifiers — neutralised, since the wall sizes to the photo. */
-.tr-dest-photo--tall,
-.tr-dest-photo--landscape,
-.tr-dest-photo--square {
-  aspect-ratio: auto;
 }
 
 /* ── Travel gallery rail ─────────────────────────────────────────────────
@@ -4767,14 +4739,6 @@ $tr-photo-gap: 0.75rem;
   .tr-highlights {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .tr-dest-photo-grid--3col {
-    column-count: 2;
-  }
-
-  .tr-dest-photo-grid--asymmetric {
-    column-count: 1;
-  }
 }
 
 @media (max-width: 480px) {
@@ -4782,10 +4746,10 @@ $tr-photo-gap: 0.75rem;
     grid-template-columns: 1fr;
   }
 
-  .tr-dest-photo-grid,
-  .tr-dest-photo-grid--2col,
-  .tr-dest-photo-grid--3col {
-    column-count: 1;
+  /* One per row on the narrowest screens — a half-width portrait tile is
+     too small to read. */
+  .tr-dest-photo-grid {
+    grid-template-columns: 1fr;
   }
 
   .mm-card--travel .mm-card-content {
