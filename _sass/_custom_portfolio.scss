@@ -4910,14 +4910,21 @@ $tr-photo-gap: 0.75rem;
 }
 
 /* Sub-destination place cards.
-   The featured card is a 2x2 block, so a set of N cards occupies N+3 cells —
-   choose card counts that are a multiple of 3 and the grid tiles with no
-   holes. Dense packing backfills any single-column slot left beside a
-   featured block. */
+   Every card — featured or not — has its OWN explicit aspect-ratio, sized
+   purely from its own column width. That is deliberate: every child inside a
+   card (img, overlay, content) is position: absolute, so a card has no
+   natural height of its own to size by. A featured card that instead spanned
+   multiple ROWS would have to borrow its height from neighbouring cards —
+   and browsers disagree on exactly how that borrowed height is computed,
+   which is what showed up as cards visually overlapping. Spanning COLUMNS
+   only sidesteps that entirely: a wider card is simply wider, its height
+   still comes from its own ratio, so nothing needs to be borrowed and
+   nothing can be computed inconsistently. Auto-flow stays in normal source
+   order (not dense) so the cards never visually reorder out of the order
+   they're written in. */
 .tr-hub-places {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-flow: row dense;
   gap: 1.2rem;
   margin-top: 2rem;
 }
@@ -4991,13 +4998,11 @@ $tr-photo-gap: 0.75rem;
   opacity: 1;
 }
 
-/* Featured hub place ─ spans 2 columns, wider aspect */
+/* Featured hub place ─ spans 2 columns, wider aspect. Single-row only: see
+   the note on .tr-hub-places for why row-spanning is deliberately avoided. */
 .tr-hub-place--featured {
   grid-column: span 2;
-  grid-row: span 2;
-  /* Height comes from the two rows it spans, so the block ends flush with the
-     stacked cards beside it rather than leaving a gap under them. */
-  aspect-ratio: auto;
+  aspect-ratio: 2.4 / 1;
 }
 
 /* National parks section */
@@ -5149,7 +5154,6 @@ $tr-photo-gap: 0.75rem;
   .tr-hub-places { grid-template-columns: repeat(2, 1fr); }
   .tr-hub-place--featured {
     grid-column: span 2;
-    grid-row: span 1;
     aspect-ratio: 16 / 9;
   }
   .tr-dest-grid--countries { grid-template-columns: 1fr 1fr; }
@@ -5160,7 +5164,6 @@ $tr-photo-gap: 0.75rem;
   .tr-hub-places { grid-template-columns: 1fr; }
   .tr-hub-place--featured {
     grid-column: span 1;
-    grid-row: span 1;
     aspect-ratio: 4 / 3;
   }
   .tr-park-grid { grid-template-columns: 1fr; }
