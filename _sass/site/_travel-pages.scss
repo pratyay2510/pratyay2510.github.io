@@ -1,0 +1,766 @@
+/* Travel destination, country hub and national-parks pages, photo gallery rail. */
+@use "tokens" as *;
+
+/* -------------------------------------------------------------------------- */
+/* Travel destination sub-pages (tr-dest-page)                                */
+/* -------------------------------------------------------------------------- */
+
+.tr-dest-page {
+  min-height: 100dvh;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+}
+
+.tr-dest-hero {
+  height: clamp(380px, 55vh, 620px);
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+    transition: transform 0.6s ease;
+  }
+}
+
+.tr-dest-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10, 10, 10, 0.25) 0%, rgba(10, 10, 10, 0.6) 60%, rgba(10, 10, 10, 1) 100%);
+  z-index: 1;
+}
+
+.tr-dest-hero-text {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+}
+
+.tr-dest-hero-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: $lime;
+  margin-bottom: 0.7rem;
+}
+
+.tr-dest-hero-title {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  color: #f8f8f8;
+  line-height: 1.0;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.tr-dest-hero-subtitle {
+  font-family: var(--font-sub, 'Cormorant Garamond', serif);
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  font-style: italic;
+  color: rgba(210, 195, 155, 0.9);
+  margin-top: 0.6rem;
+}
+
+/* Body */
+.tr-dest-body {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+
+/* Pull quote */
+.tr-pull-quote {
+  padding: 3rem 2rem;
+  margin-block: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  text-align: center;
+
+  p {
+    font-family: var(--font-sub, 'Cormorant Garamond', serif);
+    font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+    font-style: italic;
+    color: #e8d8b4;
+    line-height: 1.6;
+    max-width: 56ch;
+    margin-inline: auto;
+  }
+
+  cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    font-style: normal;
+  }
+}
+
+/* Editorial text sections */
+.tr-dest-section {
+  margin-bottom: 3rem;
+}
+
+.tr-dest-section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: $lime;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  &::before {
+    content: '';
+    width: 1.5rem;
+    height: 1px;
+    background: $lime;
+    flex-shrink: 0;
+  }
+}
+
+.tr-dest-section-title {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin: 0 0 1.2rem;
+  line-height: 1.15;
+}
+
+.tr-dest-richtext {
+  font-size: 0.96rem;
+  line-height: 1.85;
+  color: #b8b0a4;
+  max-width: 66ch;
+
+  p { margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--global-text-color); }
+}
+
+/* Featured pair — the two large photos near the top of a destination page.
+   Both tiles are the same fixed portrait ratio and the photo is cover-filled,
+   so the pair always matches in size no matter what the source dimensions are.
+   The scrolling gallery below is where uncropped, mixed-orientation photos
+   live; this pair is the deliberately uniform one. */
+$tr-photo-gap: 0.75rem;
+
+.tr-dest-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $tr-photo-gap;
+  margin-bottom: 3rem;
+}
+
+.tr-dest-photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  margin: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.48s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.2rem 0.9rem 0.65rem;
+    background: linear-gradient(to top, rgba(8, 5, 2, 0.88) 0%, transparent 100%);
+    font-size: 0.7rem;
+    font-style: italic;
+    color: rgba(210, 195, 155, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover figcaption {
+    opacity: 1;
+  }
+}
+
+/* Touch devices have no hover, so a hover-only caption is unreachable there. */
+@media (hover: none) {
+  .tr-dest-photo figcaption {
+    opacity: 1;
+  }
+}
+
+/* Featured slot with no photo in the folder yet — keeps the pair symmetrical. */
+.tr-dest-photo--empty {
+  background: linear-gradient(160deg, rgba(20, 26, 38, 0.9) 0%, rgba(8, 5, 2, 0.85) 100%);
+}
+
+/* ── Travel gallery rail ─────────────────────────────────────────────────
+   Every tile is the same height with automatic width, so portrait and
+   landscape photos share a row without being cropped. Overflow scrolls. */
+
+.tr-gallery {
+  margin-bottom: 3rem;
+}
+
+.tr-gallery-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.tr-gallery-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.tr-gallery-count {
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: rgba(217, 170, 46, 0.9);
+  border: 1px solid rgba(217, 170, 46, 0.3);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+}
+
+.tr-gallery-controls {
+  display: flex;
+  gap: 0.4rem;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.tr-gallery-arrow {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 170, 46, 0.28);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(217, 170, 46, 0.95);
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, opacity 0.25s ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(217, 170, 46, 0.14);
+    border-color: rgba(217, 170, 46, 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+.tr-gallery-rail {
+  display: flex;
+  gap: $tr-photo-gap;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-left: 0;
+  padding-bottom: 0.6rem;
+
+  /* Thin, unobtrusive scrollbar rather than the platform default. */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(217, 170, 46, 0.35) transparent;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 999px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(217, 170, 46, 0.35);
+    border-radius: 999px;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(217, 170, 46, 0.6);
+    outline-offset: 4px;
+    border-radius: 12px;
+  }
+}
+
+.tr-gallery-item {
+  flex: 0 0 auto;
+  height: 460px;
+  margin: 0;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  scroll-snap-align: start;
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    display: block;
+    transition: transform 0.48s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.4rem 0.9rem 0.7rem;
+    background: linear-gradient(to top, rgba(8, 5, 2, 0.9) 0%, transparent 100%);
+    font-size: 0.72rem;
+    font-style: italic;
+    color: rgba(220, 205, 165, 0.92);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover figcaption {
+    opacity: 1;
+  }
+}
+
+/* Placeholder tiles for a folder with no photos in it yet. */
+.tr-gallery-item--empty {
+  width: 320px;
+  background: linear-gradient(160deg, var(--tint, #141a26) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.tr-gallery-hint {
+  align-self: center;
+  flex: 0 0 auto;
+  max-width: 260px;
+  padding: 0 0.5rem;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+
+  code {
+    font-size: 0.7rem;
+    word-break: break-all;
+  }
+}
+
+@media (hover: none) {
+  .tr-gallery-item figcaption {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .tr-gallery-item {
+    height: 340px;
+  }
+
+  .tr-gallery-item--empty {
+    width: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tr-gallery-rail {
+    scroll-behavior: auto;
+  }
+
+  .tr-gallery-item:hover img {
+    transform: none;
+  }
+}
+
+/* Highlights / facts strip */
+.tr-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.tr-highlight-item {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(217, 170, 46, 0.14);
+  border-radius: 14px;
+  padding: 1.4rem 1.2rem;
+  text-align: center;
+  transition: border-color 0.3s ease, background 0.3s ease;
+
+  &:hover {
+    border-color: rgba(217, 170, 46, 0.35);
+    background: rgba(217, 170, 46, 0.06);
+  }
+}
+
+.tr-highlight-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.tr-highlight-val {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f4e5be;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.tr-highlight-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+@media (max-width: 768px) {
+  .tr-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .tr-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  /* One per row on the narrowest screens — a half-width portrait tile is
+     too small to read. */
+  .tr-dest-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mm-card--travel .mm-card-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Travel — Home & Heart cards, Country hub pages, National Parks
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Home & Heart ─ two featured cards on the landing page */
+.tr-hometowns {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-bottom: 3rem;
+}
+
+.tr-home-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.tr-home-card {
+  position: relative;
+  min-height: 380px;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  isolation: isolate;
+  border: 0;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s ease;
+  }
+
+  &:hover img { transform: scale(1.045); }
+}
+
+.tr-home-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,5,2,0.96) 0%, rgba(8,5,2,0.48) 55%, rgba(8,5,2,0.12) 100%);
+  transition: background 0.35s ease;
+}
+
+.tr-home-card:hover .tr-home-card-overlay {
+  background: linear-gradient(to top, rgba(8,5,2,0.99) 0%, rgba(8,5,2,0.58) 55%, rgba(8,5,2,0.2) 100%);
+}
+
+.tr-home-card-arrow {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(217, 170, 46, 0.12);
+  border: 1px solid rgba(217, 170, 46, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $lime;
+  font-size: 1rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tr-home-card:hover .tr-home-card-arrow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.tr-home-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1.8rem 2rem 2rem;
+}
+
+.tr-home-card-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0e0b06;
+  background: $lime;
+  padding: 0.28rem 0.65rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+
+.tr-home-card-title {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #f8f8f8;
+  line-height: 1;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.tr-home-card-sub {
+  font-family: var(--font-sub, 'Cormorant Garamond', serif);
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-style: italic;
+  color: rgba(210, 195, 155, 0.82);
+  line-height: 1.45;
+  max-width: 36ch;
+}
+
+/* Countries grid ─ 2×2 */
+.tr-dest-grid--countries {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tr-hub-intro {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+}
+
+.tr-hub-intro-text {
+  font-family: var(--font-sub, 'Cormorant Garamond', serif);
+  font-size: clamp(1.1rem, 1.9vw, 1.45rem);
+  font-style: italic;
+  color: rgba(210, 195, 155, 0.8);
+  line-height: 1.72;
+  max-width: 60ch;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(217, 170, 46, 0.4);
+}
+
+.tr-hub-places-section {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-bottom: 5rem;
+}
+
+/* Sub-destination place cards.
+   Every card — featured or not — has its OWN explicit aspect-ratio, sized
+   purely from its own column width. That is deliberate: every child inside a
+   card (img, overlay, content) is position: absolute, so a card has no
+   natural height of its own to size by. A featured card that instead spanned
+   multiple ROWS would have to borrow its height from neighbouring cards —
+   and browsers disagree on exactly how that borrowed height is computed,
+   which is what showed up as cards visually overlapping. Spanning COLUMNS
+   only sidesteps that entirely: a wider card is simply wider, its height
+   still comes from its own ratio, so nothing needs to be borrowed and
+   nothing can be computed inconsistently. Auto-flow stays in normal source
+   order (not dense) so the cards never visually reorder out of the order
+   they're written in. */
+.tr-hub-places {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.tr-hub-place {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  isolation: isolate;
+  border: 0;
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.55s ease;
+  }
+
+  &:hover img { transform: scale(1.06); }
+}
+
+.tr-hub-place-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,5,2,0.94) 0%, rgba(8,5,2,0.35) 55%, transparent 100%);
+}
+
+.tr-hub-place-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.25rem 1.15rem;
+  z-index: 2;
+}
+
+.tr-hub-place-tag {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $lime;
+  margin-bottom: 0.35rem;
+}
+
+.tr-hub-place-name {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-weight: 700;
+  color: #f8f8f8;
+  line-height: 1.1;
+  margin: 0 0 0.25rem;
+}
+
+.tr-hub-place-sub {
+  font-size: 0.76rem;
+  color: rgba(210, 195, 155, 0.72);
+  font-style: italic;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+
+.tr-hub-place:hover .tr-hub-place-sub {
+  max-height: 60px;
+  opacity: 1;
+}
+
+/* Featured hub place ─ spans 2 columns, wider aspect. Single-row only: see
+   the note on .tr-hub-places for why row-spanning is deliberately avoided. */
+.tr-hub-place--featured {
+  grid-column: span 2;
+  aspect-ratio: 2.4 / 1;
+}
+
+/* National parks section */
+.tr-park-section {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-bottom: 5rem;
+}
+
+.tr-park-intro {
+  font-family: var(--font-sub, 'Cormorant Garamond', serif);
+  font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+  font-style: italic;
+  color: rgba(200, 230, 180, 0.78);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(120, 200, 80, 0.45);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .tr-home-cards { grid-template-columns: 1fr; }
+  .tr-home-card { min-height: 280px; }
+  .tr-hub-places { grid-template-columns: repeat(2, 1fr); }
+  .tr-hub-place--featured {
+    grid-column: span 2;
+    aspect-ratio: 16 / 9;
+  }
+  .tr-dest-grid--countries { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .tr-dest-grid--countries { grid-template-columns: 1fr; }
+  .tr-hub-places { grid-template-columns: 1fr; }
+  .tr-hub-place--featured {
+    grid-column: span 1;
+    aspect-ratio: 4 / 3;
+  }
+
+  
+}

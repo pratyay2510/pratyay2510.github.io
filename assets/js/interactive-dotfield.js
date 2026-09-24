@@ -39,9 +39,7 @@
     targetY: window.innerHeight * 0.35,
     focusX: window.innerWidth * 0.5,
     focusY: window.innerHeight * 0.35,
-    pointerActive: false,
-    lastPointerTime: 0,
-    elapsed: 0,
+    lastFrame: 0,
     rafId: 0
   };
 
@@ -52,23 +50,48 @@
     canvas.width = Math.floor(state.width * state.dpr);
     canvas.height = Math.floor(state.height * state.dpr);
     ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+    // Resizing the canvas clears it, so repaint even when the loop is asleep.
+    render();
   }
 
-  function drawFrame() {
-    state.elapsed += 0.016;
+  function restAtCenter() {
+    state.targetX = state.width * 0.5;
+    state.targetY = state.height * 0.35;
+  }
 
-    var idleFor = performance.now() - state.lastPointerTime;
-    if (!state.pointerActive && idleFor > 500) {
-      // Keep gentle motion when idle so the field remains alive without cursor input.
-      state.targetX = state.width * 0.5 + Math.sin(state.elapsed * 0.45) * (state.width * 0.12);
-      state.targetY = state.height * 0.42 + Math.cos(state.elapsed * 0.33) * (state.height * 0.09);
+  // Runs only while the focus point is travelling; a settled field costs nothing.
+  function schedule() {
+    if (!state.rafId) {
+      state.rafId = window.requestAnimationFrame(tick);
     }
+  }
+
+  function tick(now) {
+    state.rafId = 0;
+    // Time-based so the trail feels the same at 60Hz and 120Hz.
+    var dt = state.lastFrame ? Math.min((now - state.lastFrame) / 1000, 0.05) : 1 / 60;
+    state.lastFrame = now;
 
     // Smooth lag/inertia to mimic antigravity-like trailing interaction.
-    var lag = 0.09;
-    state.focusX += (state.targetX - state.focusX) * lag;
-    state.focusY += (state.targetY - state.focusY) * lag;
+    var follow = 1 - Math.pow(1 - 0.09, dt * 60);
+    state.focusX += (state.targetX - state.focusX) * follow;
+    state.focusY += (state.targetY - state.focusY) * follow;
 
+    var settled = Math.abs(state.targetX - state.focusX) < 0.5 && Math.abs(state.targetY - state.focusY) < 0.5;
+    if (settled) {
+      state.focusX = state.targetX;
+      state.focusY = state.targetY;
+      state.lastFrame = 0;
+    }
+
+    render();
+
+    if (!settled) {
+      schedule();
+    }
+  }
+
+  function render() {
     ctx.clearRect(0, 0, state.width, state.height);
 
     // Deep-space gradient backdrop with warm floor glow.
@@ -118,36 +141,27 @@
 
       y += rowSpacing;
     }
-
-    if (!reduceMotion) {
-      state.rafId = window.requestAnimationFrame(drawFrame);
-    }
   }
 
   function pointerMove(event) {
-    state.pointerActive = true;
-    state.lastPointerTime = performance.now();
     state.targetX = event.clientX;
     state.targetY = event.clientY;
-
-    if (reduceMotion) {
-      drawFrame();
-    }
+    schedule();
   }
 
+  // Pointer gone: drift back to the resting point once, then stop.
   function pointerLeave() {
-    state.pointerActive = false;
-    state.lastPointerTime = performance.now();
-
-    if (reduceMotion) {
-      drawFrame();
-    }
+    restAtCenter();
+    schedule();
   }
 
   window.addEventListener('resize', resize, { passive: true });
-  window.addEventListener('pointermove', pointerMove, { passive: true });
-  window.addEventListener('pointerleave', pointerLeave, { passive: true });
+
+  // Reduced motion gets the same field, painted once and left still.
+  if (!reduceMotion) {
+    window.addEventListener('pointermove', pointerMove, { passive: true });
+    document.documentElement.addEventListener('pointerleave', pointerLeave, { passive: true });
+  }
 
   resize();
-  drawFrame();
 })();

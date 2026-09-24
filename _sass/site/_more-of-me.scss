@@ -1,0 +1,270 @@
+/* More of me landing page (mm-*). */
+@use "tokens" as *;
+
+/* -------------------------------------------------------------------------- */
+/* More of Me landing page (mm-*)                                              */
+/* -------------------------------------------------------------------------- */
+
+.mm-page {
+  min-height: 100dvh;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+}
+
+.mm-hero {
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 70% 0%, rgba(217, 170, 46, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(217, 170, 46, 0.07) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0a 0%, #0d0d09 60%, #0a0a0a 100%);
+}
+
+.mm-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+
+.mm-hero-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 900;
+  color: var(--global-text-color);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.mm-hero-subtitle {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--global-text-color-light);
+  max-width: 52ch;
+}
+
+/* Three interactive cards */
+.mm-body {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-top: 2.5rem;
+  padding-bottom: 4rem;
+}
+
+.mm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.mm-card {
+  position: relative;
+  min-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  text-decoration: none;
+  isolation: isolate;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: rgba(217, 170, 46, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+  }
+}
+
+/* Thumbnail image — fills the card as a background photo */
+.mm-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  display: block;
+}
+
+.mm-card:hover .mm-card-img {
+  transform: scale(1.07);
+}
+
+/* Gradient overlays — tinted per card to match the accent palette */
+.mm-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: background 0.35s ease;
+}
+
+/* Bookshelf — warm gold tint */
+.mm-card-overlay--books {
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 8, 3, 0.97) 0%,
+      rgba(10, 8, 3, 0.75) 40%,
+      rgba(217, 170, 46, 0.12) 80%,
+      rgba(217, 170, 46, 0.06) 100%
+    );
+}
+
+.mm-card:hover .mm-card-overlay--books {
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 8, 3, 0.98) 0%,
+      rgba(10, 8, 3, 0.7) 38%,
+      rgba(217, 170, 46, 0.28) 72%,
+      rgba(217, 170, 46, 0.14) 100%
+    );
+}
+
+/* Digital Art — purple/magenta tint */
+.mm-card-overlay--digital {
+  background:
+    linear-gradient(
+      to top,
+      rgba(8, 3, 12, 0.97) 0%,
+      rgba(8, 3, 12, 0.72) 40%,
+      rgba(160, 60, 220, 0.15) 80%,
+      rgba(217, 170, 46, 0.06) 100%
+    );
+}
+
+.mm-card:hover .mm-card-overlay--digital {
+  background:
+    linear-gradient(
+      to top,
+      rgba(8, 3, 12, 0.98) 0%,
+      rgba(8, 3, 12, 0.65) 38%,
+      rgba(160, 60, 220, 0.32) 72%,
+      rgba(217, 170, 46, 0.12) 100%
+    );
+}
+
+/* Pen Art — cool blue-grey tint */
+.mm-card-overlay--pen {
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 6, 12, 0.97) 0%,
+      rgba(3, 6, 12, 0.72) 40%,
+      rgba(80, 140, 200, 0.14) 80%,
+      rgba(217, 170, 46, 0.06) 100%
+    );
+}
+
+.mm-card:hover .mm-card-overlay--pen {
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 6, 12, 0.98) 0%,
+      rgba(3, 6, 12, 0.65) 38%,
+      rgba(80, 140, 200, 0.28) 72%,
+      rgba(217, 170, 46, 0.12) 100%
+    );
+}
+
+.mm-card-content {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 1.5rem;
+}
+
+.mm-card-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: $lime;
+  margin-bottom: 0.4rem;
+}
+
+.mm-card-category {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mm-card-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.mm-card-tagline {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  line-height: 1.5;
+  margin: 0 0 0.8rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.mm-card-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(217, 170, 46, 0.5);
+  border: 1px solid rgba(217, 170, 46, 0.65);
+  color: #1a1306;
+  font-size: 1rem;
+  opacity: 0;
+  transform: scale(0.75) translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mm-card:hover .mm-card-category {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mm-card:hover .mm-card-tagline {
+  max-height: 80px;
+  opacity: 1;
+}
+
+.mm-card:hover .mm-card-arrow {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+@media (max-width: 900px) {
+  .mm-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mm-card {
+    min-height: 280px;
+  }
+
+  .mm-card-category,
+  .mm-card-tagline,
+  .mm-card-arrow {
+    opacity: 1;
+    transform: none;
+    max-height: 100px;
+  }
+}

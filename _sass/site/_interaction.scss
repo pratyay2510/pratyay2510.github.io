@@ -1,0 +1,110 @@
+/* Touch sticky-hover reset, press states, reduced motion / transparency / contrast. */
+
+/* -------------------------------------------------------------------------- */
+/* Touch, press and accessibility preferences                                  */
+/* -------------------------------------------------------------------------- */
+
+/* On touch screens :hover sticks after a tap, leaving cards lifted or zoomed.
+   Undo every hover lift there; the :active press below gives the feedback instead. */
+@media (hover: none) {
+  .timeline-content:hover,
+  .exp-card:hover,
+  .cf-submit:hover,
+  .pub-item:hover,
+  .pub-item:hover .pub-img,
+  .edu-card:hover,
+  .skill-box:hover,
+  .project-card:hover,
+  .project-card:hover .project-card-bg,
+  .pj-swatch:hover,
+  .mm-card:hover,
+  .mm-card:hover .mm-card-img,
+  .tc-list-item:hover,
+  .tc-list-item:hover .tc-list-img img,
+  .tr-carousel-slide:hover img,
+  .tr-carousel-arrow:hover,
+  .tr-dest-card:hover,
+  .tr-dest-card:hover .tr-dest-img,
+  .tr-dest-photo:hover img,
+  .tr-gallery-item:hover img,
+  .tr-home-card:hover img,
+  .tr-hub-place:hover img {
+    transform: none;
+  }
+
+  .hero-social-link:hover {
+    transform: none !important;
+  }
+}
+
+/* Feedback on press, not release: anything you can tap settles in slightly,
+   fast, the instant the pointer goes down. */
+.hero-link:active,
+.cf-submit:active,
+.pub-item:active,
+.project-card:active,
+.mm-card:active,
+.tc-list-item:active,
+.tr-dest-card:active,
+.tr-home-card:active,
+.tr-hub-place:active,
+.tr-gallery-arrow:not(:disabled):active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
+}
+
+.hero-social-link:active {
+  transform: scale(0.94) !important;
+  transition-duration: 0.1s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .gpa-arc,
+  .score-fill,
+  .lang-fill {
+    transition: none;
+  }
+
+  .hero-link:active,
+  .cf-submit:active,
+  .pub-item:active,
+  .project-card:active,
+  .mm-card:active,
+  .tc-list-item:active,
+  .tr-dest-card:active,
+  .tr-home-card:active,
+  .tr-hub-place:active,
+  .tr-gallery-arrow:not(:disabled):active,
+  .hero-social-link:active {
+    transform: none !important;
+  }
+}
+
+/* Frosted chrome goes solid when the reader asks for less transparency. */
+@media (prefers-reduced-transparency: reduce) {
+  .prerana-navbar {
+    background: #0b0906 !important;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .pj-nav {
+    background: #0b0b0b;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .prerana-navbar,
+  .pj-nav {
+    background: #000 !important;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 236, 196, 0.5);
+  }
+}

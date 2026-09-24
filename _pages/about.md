@@ -3,7 +3,7 @@ layout: about
 title: Home
 permalink: /
 subtitle: Ph.D. Candidate in Computer Science | University of California, Riverside
-short_bio: Specializing in Computer Vision, Deep Learning, and Physics-based Modeling.
+short_bio: Specializing in Computer Vision, Large Language and Multimodal Models, Inverse Problems, and Physics-based Modeling.
 
 profile:
   align: left
@@ -21,6 +21,6 @@ latest_posts:
   enabled: false
 ---
 
-I specialize in computer vision, deep learning, and physics-based modeling. My research focuses on designing algorithms that learn effectively from data and bridge physical principles with neural networks.
+I specialize in computer vision, large language and multimodal models, inverse problems, deep learning, and physics-based modeling. My research focuses on designing algorithms that learn effectively from data and bridge physical principles with neural networks.
 
 I aim to push the boundaries of robust and interpretable AI by collaborating with interdisciplinary teams and contributing solutions that impact real-world vision tasks, from person re-identification to event-based perception.

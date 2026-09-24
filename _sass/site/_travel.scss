@@ -1,0 +1,505 @@
+/* Travel card on More of me, and the travel landing page (tr-*). */
+@use "tokens" as *;
+
+/* -------------------------------------------------------------------------- */
+/* More-of-Me — Travel card (horizontal, full-width below mm-grid)            */
+/* -------------------------------------------------------------------------- */
+
+.mm-card--travel {
+  display: block;
+  min-height: 240px;
+  margin-top: 1.25rem;
+}
+
+/* Higher-specificity overrides: force travel card content visible regardless of hover state */
+.mm-card.mm-card--travel .mm-card-content {
+  display: flex;
+  padding: 2rem 2.2rem;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.mm-card.mm-card--travel .mm-card-category {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.mm-card.mm-card--travel .mm-card-tagline {
+  max-height: 200px !important;
+  opacity: 0.82 !important;
+  overflow: visible !important;
+  transform: none !important;
+  max-width: 52ch;
+}
+
+.mm-card.mm-card--travel .mm-card-arrow {
+  opacity: 1 !important;
+  transform: scale(1) translateX(0) !important;
+  position: static;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.mm-card.mm-card--travel .mm-card-name {
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  margin: 0.15rem 0 0.4rem;
+}
+
+.mm-card-travel-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.mm-card-overlay--travel {
+  background:
+    linear-gradient(
+      to right,
+      rgba(8, 5, 2, 0.95) 0%,
+      rgba(8, 5, 2, 0.7) 45%,
+      rgba(217, 170, 46, 0.1) 80%,
+      rgba(217, 170, 46, 0.05) 100%
+    );
+  transition: background 0.35s ease;
+}
+
+.mm-card:hover .mm-card-overlay--travel {
+  background:
+    linear-gradient(
+      to right,
+      rgba(8, 5, 2, 0.98) 0%,
+      rgba(8, 5, 2, 0.65) 42%,
+      rgba(217, 170, 46, 0.24) 78%,
+      rgba(217, 170, 46, 0.1) 100%
+    );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Travel landing page                                                         */
+/* -------------------------------------------------------------------------- */
+
+.tr-page {
+  min-height: 100dvh;
+  background: var(--global-bg-color);
+  color: var(--global-text-color);
+}
+
+/* Hero */
+.tr-hero {
+  padding-top: 5rem;
+  padding-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(217, 170, 46, 0.16) 0%, transparent 55%),
+    radial-gradient(ellipse at 88% 80%, rgba(217, 170, 46, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0a 0%, #0d0d08 60%, #0a0a0a 100%);
+}
+
+.tr-hero-bg-word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(6rem, 20vw, 18rem);
+  font-weight: 900;
+  font-family: var(--font-display, 'Playfair Display', serif);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(217, 170, 46, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+  z-index: 0;
+  letter-spacing: 0.06em;
+}
+
+.tr-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+
+.tr-hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $lime;
+  margin-bottom: 1rem;
+}
+
+.tr-hero-title {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.02;
+  color: var(--global-text-color);
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.tr-hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(232, 232, 232, 0.7);
+}
+
+.tr-hero-subtitle {
+  font-family: var(--font-sub, 'Cormorant Garamond', serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-style: italic;
+  color: #c8b48a;
+  max-width: 52ch;
+  line-height: 1.55;
+}
+
+/* Scrollable gallery strip */
+.tr-gallery-section {
+  width: 100%;
+  padding: 1rem 0 2.5rem;
+  overflow: hidden;
+}
+
+.tr-gallery-label {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.07);
+  }
+}
+
+/* ── Carousel ─────────────────────────────────────────────────────────── */
+.tr-carousel {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+}
+
+.tr-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.tr-carousel-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.tr-carousel-slide {
+  flex-shrink: 0;
+  /* width is set via JS; CSS fallback: show 3 items */
+  width: calc(33.333% - 0.667rem);
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #0d0b06;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.tr-carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1rem 0.9rem;
+  background: linear-gradient(to top, rgba(8, 5, 2, 0.92) 0%, transparent 100%);
+  font-size: 0.72rem;
+  font-style: italic;
+  color: rgba(232, 218, 188, 0.85);
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tr-carousel-slide:hover .tr-carousel-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bottom UI bar */
+.tr-carousel-ui {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.25rem 0;
+}
+
+/* Dot indicators */
+.tr-carousel-dots {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.tr-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.25s ease, width 0.25s ease, border-radius 0.25s ease;
+
+  &.active {
+    width: 22px;
+    border-radius: 4px;
+    background: $lime;
+  }
+
+  &:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.48);
+  }
+}
+
+/* Arrow buttons */
+.tr-carousel-arrows {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tr-carousel-arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(217, 170, 46, 0.1);
+  border: 1px solid rgba(217, 170, 46, 0.3);
+  color: $lime;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+
+  svg { pointer-events: none; }
+
+  &:hover {
+    background: rgba(217, 170, 46, 0.22);
+    border-color: rgba(217, 170, 46, 0.6);
+    transform: scale(1.07);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+/* Responsive: 2 items on tablet */
+@media (max-width: 1023px) and (min-width: 640px) {
+  .tr-carousel-slide {
+    width: calc(50% - 0.5rem);
+  }
+}
+
+/* Responsive: 1 item on mobile */
+@media (max-width: 639px) {
+  .tr-carousel-slide {
+    width: 100%;
+  }
+}
+
+/* Destinations grid */
+.tr-destinations {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+  padding-bottom: 5rem;
+}
+
+.tr-section-header {
+  margin-bottom: 2rem;
+}
+
+.tr-section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: $lime;
+  margin-bottom: 0.5rem;
+}
+
+.tr-section-title {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.tr-dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.tr-dest-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 0;
+  text-decoration: none;
+  min-height: 340px;
+  transition:
+    transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.32s ease,
+    box-shadow 0.32s ease;
+
+  &:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: rgba(217, 170, 46, 0.4);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    text-decoration: none;
+  }
+}
+
+.tr-dest-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.48s ease;
+  z-index: 0;
+}
+
+.tr-dest-card:hover .tr-dest-img {
+  transform: scale(1.06);
+}
+
+.tr-dest-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(6, 4, 2, 0.95) 0%, rgba(6, 4, 2, 0.5) 50%, rgba(6, 4, 2, 0.1) 100%);
+  transition: background 0.32s ease;
+}
+
+.tr-dest-card:hover .tr-dest-overlay {
+  background: linear-gradient(to top, rgba(6, 4, 2, 0.97) 0%, rgba(217, 170, 46, 0.22) 58%, rgba(217, 170, 46, 0.07) 100%);
+}
+
+.tr-dest-content {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  padding: 1.4rem 1.5rem;
+}
+
+.tr-dest-tag {
+  display: inline-flex;
+  padding: 0.18rem 0.65rem;
+  background: rgba(217, 170, 46, 0.15);
+  border: 1px solid rgba(217, 170, 46, 0.3);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $lime;
+  margin-bottom: 0.55rem;
+}
+
+.tr-dest-name {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 700;
+  color: #f4f4f4;
+  margin: 0 0 0.3rem;
+  line-height: 1.15;
+}
+
+.tr-dest-sub {
+  font-family: var(--font-sub, 'Cormorant Garamond', serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(200, 185, 150, 0.75);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.tr-dest-card:hover .tr-dest-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tr-dest-arrow {
+  position: absolute;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  z-index: 3;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(217, 170, 46, 0.5);
+  border: 1px solid rgba(217, 170, 46, 0.68);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1205;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: scale(0.75);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.tr-dest-card:hover .tr-dest-arrow {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 900px) {
+  .tr-dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .tr-dest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tr-dest-sub {
+    opacity: 1;
+    transform: none;
+  }
+}

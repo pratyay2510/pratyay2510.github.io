@@ -1,0 +1,45 @@
+/* Site-wide tokens as CSS custom properties, root scrolling and page wrappers. */
+@use "tokens" as *;
+
+:root,
+html[data-theme="dark"],
+html[data-theme="light"] {
+  --global-bg-color: #{$black};
+  --global-text-color: #e8e8e8;
+  --global-text-color-light: #a0a0a0;
+  --global-theme-color: #{$lime};
+  --global-hover-color: #{$lime-bright};
+  --global-hover-text-color: #{$black};
+  --global-card-bg-color: #151515;
+  --global-divider-color: rgba(255, 255, 255, 0.08);
+  --global-footer-bg-color: #050505;
+  --global-footer-text-color: #a0a0a0;
+  --global-footer-link-color: #{$lime};
+
+  /* ── Typography families ── */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sub:     'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+}
+
+/* Smooth scroll, prevent horizontal overflow at the root */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Home page: full-width, no container */
+.home-main {
+  padding: 0;
+  max-width: none;
+}
+
+/* Full-width pages (project detail, more-of-me) */
+.full-width-main {
+  padding: 0;
+  max-width: none;
+}

@@ -1,0 +1,45 @@
+/* Navbar colours, link colour and back-to-top button shared by every page. */
+
+/* Navbar: dark background, lime links */
+.navbar-light {
+  background-color: var(--global-bg-color) !important;
+  box-shadow: 0 1px 0 var(--global-divider-color);
+}
+
+/* Name at extreme left on Projects, Publications, etc. */
+.navbar-container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--global-text-color-light);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--global-theme-color);
+}
+
+.navbar-light .navbar-brand {
+  color: var(--global-text-color);
+}
+
+.navbar-light .navbar-toggler {
+  border-color: var(--global-divider-color);
+  color: var(--global-text-color);
+}
+
+.navbar-light .icon-bar {
+  background-color: var(--global-text-color);
+}
+
+a:not(.hero-social-link):not(.nav-link) {
+  color: var(--global-theme-color);
+}
+
+#back-to-top {
+  background: var(--global-theme-color) !important;
+  color: var(--global-hover-text-color) !important;
+}

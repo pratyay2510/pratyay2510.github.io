@@ -22,19 +22,14 @@
 @use "typography";
 @use "navbar";
 @use "footer";
-@use "blog";
-@use "publications";
+@use "page";
 @use "components";
 @use "utilities";
 
-// Other specialized styles
-@use "distill";
-@use "cv";
-@use "tabs";
-@use "teachings";
-@use "typograms";
+// Icons
 @use "font-awesome/fontawesome";
 @use "font-awesome/brands";
 @use "font-awesome/solid";
-@use "font-awesome/regular";
-@use "custom_portfolio";
+
+// Site design, one partial per page area (see _sass/site/_index.scss)
+@use "site";
