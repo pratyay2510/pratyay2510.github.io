@@ -1,1 +1,1 @@
-document.addEventListener("DOMContentLoaded",function(){AOS.init({duration:650,once:!0,easing:"ease-out-cubic",offset:60})});
+document.addEventListener("DOMContentLoaded",function(){var e=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;AOS.init({duration:500,once:!0,easing:"ease-out-cubic",offset:60,disable:e})});
